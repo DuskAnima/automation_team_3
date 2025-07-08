@@ -16,11 +16,11 @@ public int getId() {
     return id;
   }
 
-  public String getClient() {
+  public String getTarea() {
     return titulo;
   }
 
-  public String getAmount() {
+  public String getDescripcion() {
     return descripcion;
   }
  
