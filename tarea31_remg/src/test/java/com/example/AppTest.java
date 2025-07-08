@@ -3,7 +3,7 @@ package com.example;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-import com.example.model.Tarea;
+import com.example.Tarea;
 
 public class AppTest {
     private AppTarea manager;

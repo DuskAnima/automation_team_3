@@ -12,7 +12,19 @@ public class Tarea {
     
     }
 
+public int getId() {
+    return id;
+  }
 
+  public String getClient() {
+    return titulo;
+  }
 
+  public String getAmount() {
+    return descripcion;
+  }
+ 
+
+  
 
 }
