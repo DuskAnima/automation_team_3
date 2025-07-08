@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! - in com.example.AppTest
+initializationError(com.example.AppTest)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: AppTarea
+Caused by: java.lang.ClassNotFoundException: AppTarea
+
