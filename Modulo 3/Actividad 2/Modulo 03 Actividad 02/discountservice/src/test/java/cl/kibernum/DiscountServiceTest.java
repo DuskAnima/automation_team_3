@@ -1,16 +1,13 @@
 package cl.kibernum;
 
 import static org.junit.Assert.assertEquals;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import org.junit.Test;
 
 
 public class DiscountServiceTest 
 {
-
      DiscountService discountService = new DiscountService();
-     Random random = new Random();
 
     @Test
     public void testDescuento15Porciento() {
@@ -44,6 +41,4 @@ public class DiscountServiceTest
         System.out.println(montoConDescuento);
         assertEquals((monto * 0.9), montoConDescuento, 100000);
     }
-
-
 }
