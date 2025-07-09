@@ -1,24 +1,37 @@
 package com.example;
 
-import static org.junit.Assert.assertThat;
+
+import com.example.model.Tarea;
+import com.example.service.TareaManager;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.*;
+
+/*import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
 import org.junit.Test;
-import com.example.TareaTest;
+*/
+
+
+//import com.example.TareaTest;
 
 public class TareaTest {
-    private Tareamaager manager;
+    private TareaManager manager;
 
      @BeforeEach
     void setUp() {
-        manager = new Tareamaager();
+        manager = new TareaManager();
     }
 
 
     //----------agregar tarea--------//
     @Test
     void crearTarea(){
-        Tarea   inv =  manager.crearTarea("Los Dinosaurios","Trabajo de Investigación del Dr. Jaime Castillo");
-        assertThat(inv.getId(),isEqualTo(1));
+        Tarea   inv =  manager.crearTarea(1,"<Los Dinosaurios","Trabajo de Investigación del Dr. Jaime Castillo");
+        assertThat(inv.getId()).isEqualTo(1);
         assertThat(manager.getAll()).hasSize(1);
 
     }
@@ -26,7 +39,7 @@ public class TareaTest {
     //------------actualizar Tarea ------------//
     @Test
     void actualizarTarea() {
-        Tarea inv  = manager.crearTarea("Los Dinosaurios", "Trabajo de Investigación del Dr. Jaime Castillo");
+        Tarea inv  = manager.crearTarea(1,"Los Dinosaurios", "Trabajo de Investigación del Dr. Jaime Castillo");
         boolean updated = manager.updateTitulo(inv.getId(), "Los Dinosaurios 2025");
         assertThat(updated).isTrue();
         assertThat(inv.getTitulo()).isEqualTo("Los Dinosaurios 2025");
@@ -35,7 +48,7 @@ public class TareaTest {
     //------------eliminar tarea ------------------//
      @Test
     void eliminarTarea() {
-        Tarea inv  = manager.crearTarea("Los Dinosaurios", "Trabajo de Investigación del Dr. Jaime Castillo");
+        Tarea inv  = manager.crearTarea(1,"Los Dinosaurios", "Trabajo de Investigación del Dr. Jaime Castillo");
         boolean removed = manager.deleteTarea(inv.getId());
         assertThat(removed).isTrue();
         assertThat(manager.getAll()).isEmpty();
