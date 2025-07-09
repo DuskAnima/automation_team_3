@@ -1,22 +1,17 @@
 package com.example;
 
 
-import com.example.model.Tarea;
-import com.example.service.TareaManager;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
 
-/*import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
-*/
 
 
-//import com.example.TareaTest;
+
+import com.example.TareaTest;
 
 public class TareaTest {
     private TareaManager manager;
