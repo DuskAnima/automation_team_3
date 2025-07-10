@@ -25,6 +25,7 @@ public class DiscountServiceTest
         double discountApplied = discountService.calcularDescuento(inputAmount); // Cálculo del servicio
         // Se compara el monto esperado (inputMonto * 0.85) con el resultado procesado por el servicio. 
         assertEquals((inputAmount * 0.85), discountApplied); // No hay necesidad de redondear los números ni agregar delta porque la lógica del servicio tampoco lo hace.
+        
         // Verificación del caso borde
         double edgeInputAmount = Math.nextUp(100000.0); // Numero flotante siguiente.
         assertThat(discountService.calcularDescuento(edgeInputAmount)).isEqualTo(edgeInputAmount * 0.85);
@@ -36,6 +37,7 @@ public class DiscountServiceTest
         double discountApplied = discountService.calcularDescuento(inputAmount);
         // Se compara el monto esperado (inputMonto * 0.9) con el resultado procesado por el servicio. 
         assertEquals((inputAmount * 0.9), discountApplied);
+       
         // Verificación del caso borde
         double maxEdgeInputAmount = 100000.0; // Numero máximo
         double minEdgeInputAmount = 50000.0; // Numero mínimo
@@ -47,7 +49,8 @@ public class DiscountServiceTest
     public void noDiscountShouldApply() { // Prueba menos de 50k
         double inputAmount = ThreadLocalRandom.current().nextDouble(1, 49999.9);
         double discountApplied = discountService.calcularDescuento(inputAmount);
-        assertEquals(inputAmount, discountApplied); // Sin operaciones no hay necesidad de un márgen de error.
+        assertEquals(inputAmount, discountApplied);
+       
         // Verificación del caso borde.
         double edgeInputAmount = Math.nextDown(50000.0); // Numero flotante anterior.
         assertThat(discountService.calcularDescuento(edgeInputAmount)).isEqualTo(edgeInputAmount);
