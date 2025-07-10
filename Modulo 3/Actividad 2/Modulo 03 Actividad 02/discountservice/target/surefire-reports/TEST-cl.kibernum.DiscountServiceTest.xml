@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cl.kibernum.DiscountServiceTest" time="0.034" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cl.kibernum.DiscountServiceTest" time="0.03" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="F:\dev\automation_team_3\Modulo 3\Actividad 1\Modulo 03 Actividad 02\discountservice\target\test-classes;F:\dev\automation_team_3\Modulo 3\Actividad 1\Modulo 03 Actividad 02\discountservice\target\classes;C:\Users\cjacc\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\cjacc\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="F:\dev\automation_team_3\Modulo 3\Actividad 2\Modulo 03 Actividad 02\discountservice\target\test-classes;F:\dev\automation_team_3\Modulo 3\Actividad 2\Modulo 03 Actividad 02\discountservice\target\classes;C:\Users\cjacc\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\cjacc\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Amazon.com Inc."/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.15_6\bin"/>
-    <property name="sun.java.command" value="C:\Users\cjacc\AppData\Local\Temp\surefire16105975934451854797\surefirebooter3752300714452833767.jar C:\Users\cjacc\AppData\Local\Temp\surefire16105975934451854797 2025-07-08T19-55-25_566-jvmRun1 surefire8983284094190397159tmp surefire_05215696224455798704tmp"/>
+    <property name="sun.java.command" value="C:\Users\cjacc\AppData\Local\Temp\surefire9356046053929632430\surefirebooter16113016945907439949.jar C:\Users\cjacc\AppData\Local\Temp\surefire9356046053929632430 2025-07-09T22-45-57_128-jvmRun1 surefire17609650658029105782tmp surefire_08850753040051574503tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="F:\dev\automation_team_3\Modulo 3\Actividad 1\Modulo 03 Actividad 02\discountservice\target\test-classes;F:\dev\automation_team_3\Modulo 3\Actividad 1\Modulo 03 Actividad 02\discountservice\target\classes;C:\Users\cjacc\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\cjacc\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="F:\dev\automation_team_3\Modulo 3\Actividad 2\Modulo 03 Actividad 02\discountservice\target\test-classes;F:\dev\automation_team_3\Modulo 3\Actividad 2\Modulo 03 Actividad 02\discountservice\target\classes;C:\Users\cjacc\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\cjacc\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\cjacc"/>
     <property name="user.language" value="en"/>
@@ -25,12 +25,12 @@
     <property name="java.version.date" value="2025-04-15"/>
     <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk17.0.15_6"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="F:\dev\automation_team_3\Modulo 3\Actividad 1\Modulo 03 Actividad 02\discountservice"/>
+    <property name="basedir" value="F:\dev\automation_team_3\Modulo 3\Actividad 2\Modulo 03 Actividad 02\discountservice"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\cjacc\AppData\Local\Temp\surefire16105975934451854797\surefirebooter3752300714452833767.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\cjacc\AppData\Local\Temp\surefire9356046053929632430\surefirebooter16113016945907439949.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.15+6-LTS"/>
@@ -45,7 +45,7 @@
     <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-17/issues/"/>
     <property name="java.io.tmpdir" value="C:\Users\cjacc\AppData\Local\Temp\"/>
     <property name="java.version" value="17.0.15"/>
-    <property name="user.dir" value="F:\dev\automation_team_3\Modulo 3\Actividad 1\Modulo 03 Actividad 02\discountservice"/>
+    <property name="user.dir" value="F:\dev\automation_team_3\Modulo 3\Actividad 2\Modulo 03 Actividad 02\discountservice"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testNoDescuentoBajo50000" classname="cl.kibernum.DiscountServiceTest" time="0.002"/>
-  <testcase name="testDescuento15Porciento" classname="cl.kibernum.DiscountServiceTest" time="0.001"/>
-  <testcase name="testDescuento10Porciento10" classname="cl.kibernum.DiscountServiceTest" time="0"/>
+  <testcase name="noDiscountShouldApply" classname="cl.kibernum.DiscountServiceTest" time="0.001"/>
+  <testcase name="shouldDiscount_10Percent" classname="cl.kibernum.DiscountServiceTest" time="0"/>
+  <testcase name="shouldDiscount_15Percent" classname="cl.kibernum.DiscountServiceTest" time="0"/>
 </testsuite>
