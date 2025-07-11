@@ -16,10 +16,12 @@ public class ProductManagerTest
 
 
 
-    //-------------------------------------------------------------------------------//
-    //--------          agregar producto sin PARAMETRIZAR    -----------------------//
-     //-------------------------------------------------------------------------------//
-    @Test //------test 1----agregar 1er producto----- ZONA RED --------------------//
+    //***************************************************************-//
+    //--------           agregar producto      -----------------------//
+    //***************************************************************-//
+
+     //------------------- sin parametrizar    ---------------//
+    @Test //------test 1----agregar 1er producto----- --------------------//
     void testAddProduct1()
     {   String  nombre ='Comida etapa 1';
         String  descripcion = "de 1 hasta 6 meses";
@@ -30,7 +32,7 @@ public class ProductManagerTest
     }
 
 
-    @Test //-------test 2 agregar 2do producto-------- ZONA RED --------------------//
+    @Test //-------test 2 agregar 2do producto-----------------------//
     void testAddProduct2()
     {   String  nombre ='Comida etapa 2';
         String  descripcion = "de 6 hasta 18 meses";
@@ -41,7 +43,7 @@ public class ProductManagerTest
     }
 
 
-    @Test //-------test 3 agregar 3do producto-------- ZONA RED --------------------//
+    @Test //-------test 3 agregar 3do producto-----------------------//
     void testAddProduct3()
     {   String  nombre ='Comida etapa 3';
         String  descripcion = "mayores de 18 meses";
@@ -50,25 +52,22 @@ public class ProductManagerTest
         Product product = productManager.editProduct(nombre,descripcion,precio);
         assertNotNull(product, "El producto no puede ser nulo");
     }
-//----------------------------fin agrear producto sin parametrizar --------------------//
+//-----------------fin agrear producto sin parametrizar --------------------//
 
 
-
-
-
-
-//**---------agregar con pruebas parametrizadas ---------- */
+//**---------agregar producto con pruebas parametrizadas ---------- */
 @ParameterizedTest
-    @CsvSource({ "Comida etapa 1, de 1 hasta 6 meses, 19990", "Comida etapa 2, de 6 hasta 18 meses, 15990", "Comida etapa 3, mayores de 18 meses, 12990" })
+    @CsvSource({ "Comida etapa 1, de 1 hasta 6 meses, 19990", "Comida etapa 2, de 6 hasta 18 meses, 15990",
+     "Comida etapa 3, mayores de 18 meses, 12990"} )
     @DisplayName("AGREGAR PRODUCTOS")
-    void testAgregarVarios(String = nombre, String = descripcion, int = precio") {
+    void testAgregarVarios(String = nombre, String = descripcion, int = precio) {
         Product p =library.addProduct(nombre,descripcion,precio);
         assertNotNull(p);
         assertEquals(nombre, p.getnombre());
     }
 }
 
-
+//-------------
 
 
 /*
