@@ -4,7 +4,7 @@ package com.productmanager;
  * Hello world!
  *
  */
-public class App 
+public class ProductManager 
 {
     public static void main( String[] args )
     {
