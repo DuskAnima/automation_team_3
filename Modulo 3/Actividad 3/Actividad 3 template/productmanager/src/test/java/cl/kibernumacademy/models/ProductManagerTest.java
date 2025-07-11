@@ -17,6 +17,10 @@ public class ProductManagerTest {
     @DisplayName("Prueba de agregación de productos")
     @Test 
     shouldAddProduct() {
+        Product product = manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
+        assertNotNull(product.getId(), "El producto no puede ser nulo"); // Verifica que se haya creado la tarea
+        assertThat(manager.getList()).hasSize(1); // Verifica que la tarea fue agregada a la lista
+
         // Cada producto debe tener nombre, descripción y precio.
         // Debe almacenarse en una lista
     }
@@ -24,6 +28,11 @@ public class ProductManagerTest {
     @DisplayName("Prueba de modificación de productos")
     @Test
     shouldUpdateProduct() {
+        Product producto = manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
+        boolean updateName = manager.updateName(producto.getId(), "Comida primeros años");
+        boolean updateDescription = manager.updateDescription(producto.getId(), "Para recién nacidos");
+        boolean updatePrice = manager.updatePrice(producto.getId(), 18990);
+
         // Permitir modificar nombre, descripción o precio
         // Validación de que el producto existe
     }
