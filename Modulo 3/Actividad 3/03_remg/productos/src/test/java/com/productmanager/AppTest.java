@@ -14,60 +14,59 @@ public class ProductManagerTest
             productManager = new ProductManager();        }
     }
 
+
+
+    //-------------------------------------------------------------------------------//
+    //--------          agregar producto sin PARAMETRIZAR    -----------------------//
+     //-------------------------------------------------------------------------------//
     @Test //------test 1----agregar 1er producto----- ZONA RED --------------------//
     void testAddProduct1()
-    {   String  nombre ='Comida para gatos etapa 1';
-        String  descripcion = "Comida semi húmeda para felinos etapa 1 de 3 hasta 6 meses.";
+    {   String  nombre ='Comida etapa 1';
+        String  descripcion = "de 1 hasta 6 meses";
         int     precio = 19990;
 
         Product product = productManager.editProduct(nombre,descripcion,precio);
         assertNotNull(product, "El producto no puede ser nulo");
-        
-
-
     }
 
 
     @Test //-------test 2 agregar 2do producto-------- ZONA RED --------------------//
     void testAddProduct2()
-    {   String  nombre ='Comida para gatos etapa 2';
-        String  descripcion = "Comida 30% de húmedad para felinos etapa 2 de 6 hasta 18 meses.";
+    {   String  nombre ='Comida etapa 2';
+        String  descripcion = "de 6 hasta 18 meses";
         int     precio = 15990;
 
         Product product = productManager.editProduct(nombre,descripcion,precio);
         assertNotNull(product, "El producto no puede ser nulo");
-         
-
-
     }
+
 
     @Test //-------test 3 agregar 3do producto-------- ZONA RED --------------------//
     void testAddProduct3()
-    {   String  nombre ='Comida para gatos etapa 3';
-        String  descripcion = "Comida 10% de húmedad para felinos etapa 3 mayores de 18 meses.";
+    {   String  nombre ='Comida etapa 3';
+        String  descripcion = "mayores de 18 meses";
         int     precio = 12990;
 
         Product product = productManager.editProduct(nombre,descripcion,precio);
         assertNotNull(product, "El producto no puede ser nulo");
-         
-
-
     }
+//----------------------------fin agrear producto sin parametrizar --------------------//
 
 
 
-        //--------agregar producto sin PARAMETRIZAR-----------------------//
-       
-       // assertEquals(nombre, product.getTitle());
 
-            //**---------------esto es para las pruebas parametrizadas ---------- */
-            /*
-             * assertNotNull(product, "El producto no puede ser nulo");
-               
-             * 
-             * 
-             * 
-             */
+ 
+
+//**---------agregar con pruebas parametrizadas ---------- */
+@ParameterizedTest
+    @CsvSource({ "Comida etapa 1, de 1 hasta 6 meses, 19990", "Comida etapa 2, de 6 hasta 18 meses, 15990", "Comida etapa 3, mayores de 18 meses, 12990" })
+    @DisplayName("AGREGAR PRODUCTOS")
+    void addProduct(String = nombre, String = descripcion, int = precio") {
+        Rectangle rectangle = new Rectangle(length, width);
+        assertEquals(expectedArea, rectangle.getArea());
+    }
+}
+            
 
 /*
 
