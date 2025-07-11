@@ -20,6 +20,9 @@ public class ProductManagerTest
         String  descripcion = "Comida semi humeda para felinos etapa 1 de 3 hasta 6 meses.";
         int     precio = 12990;
 
+        Product product = productManager.addProduct(nombre,descripcion,precio);
+        assertNotNull(product, "El producto no puede ser nulo");
+        assertEquals(nombre, product.getTitle());
 
 
     }
