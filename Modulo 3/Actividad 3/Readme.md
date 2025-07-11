@@ -12,7 +12,8 @@
         o precio. 
         o Validar que el producto exista antes de actualizarlo.
 • Eliminar un producto:
-        o Permitir eliminar un producto por su identificador único. o Verificar que exista antes de eliminarlo.
+        o Permitir eliminar un producto por su identificador único.
+        o Verificar que exista antes de eliminarlo.
 
 4.Implementa pruebas unitarias que incluyan: 
 • Aserciones tradicionales de JUnit. 
