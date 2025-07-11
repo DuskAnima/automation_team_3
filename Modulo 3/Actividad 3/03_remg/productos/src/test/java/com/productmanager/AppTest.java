@@ -55,30 +55,29 @@ public class ProductManagerTest
 
 
 
- 
+
 
 //**---------agregar con pruebas parametrizadas ---------- */
 @ParameterizedTest
     @CsvSource({ "Comida etapa 1, de 1 hasta 6 meses, 19990", "Comida etapa 2, de 6 hasta 18 meses, 15990", "Comida etapa 3, mayores de 18 meses, 12990" })
     @DisplayName("AGREGAR PRODUCTOS")
-    void addProduct(String = nombre, String = descripcion, int = precio") {
-        Rectangle rectangle = new Rectangle(length, width);
-        assertEquals(expectedArea, rectangle.getArea());
+    void testAgregarVarios(String = nombre, String = descripcion, int = precio") {
+        Product p =library.addProduct(nombre,descripcion,precio);
+        assertNotNull(p);
+        assertEquals(nombre, p.getnombre());
     }
 }
-            
+
+
+
 
 /*
 
         //--------------actualizar producto -------------------//
-        Product product = productManager.editProduct(nombre,descripcion,precio);
-        assertNotNull(product, "El producto no puede ser nulo");
-        assertEquals(nombre, product.getTitle());
+        
 
         //------------eliminar producto -------------------//
-        Product product = productManager.deleteProduct(nombre,descripcion,precio);
-        assertNotNull(product, "El producto no puede ser nulo");
-        assertEquals(nombre, product.getTitle());
+         
  */
    
 
