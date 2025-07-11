@@ -8,8 +8,7 @@
         o Cada producto debe tener un nombre, una descripción y un precio. 
         o Debe almacenarse correctamente en una lista de productos.
 •    Actualizar un producto:
-        o Permitir modificar el nombre, descripción
-        o precio. 
+        o Permitir modificar el nombre, descripción, precio. 
         o Validar que el producto exista antes de actualizarlo.
 • Eliminar un producto:
         o Permitir eliminar un producto por su identificador único.
