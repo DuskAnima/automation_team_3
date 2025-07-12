@@ -1,37 +1,48 @@
 package cl.kibernumacademy.models;
 
-import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.params.ParameterizedTest;
-import static org.hamcrest.MatcherAssert.*;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class ProductManagerTest {
     private ProductManager manager; // servicio
 
     @BeforeEach
     void setUp() {
-        manager = new ProductManager();
+        manager = new ProductManager(); 
     }
 
 // TODO: Hacer tests para CRUD
 // Implementar pruebas assert con JUnit y Hamcrest. Usar assumeTrue() o assumeThat(). Integrar @ParameterizedTest, @BeforeEach y @AfterEach  
     @DisplayName("Prueba de agregación de productos")
     @Test 
-    shouldAddProduct() {
-        Product product = manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
-        assertNotNull(product.getId(), "El producto no puede ser nulo"); // Verifica que se haya creado la tarea
-        assertThat(manager.getList()).hasSize(1); // Verifica que la tarea fue agregada a la lista
+    shouldAddProductToAList() {
+        manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
+        Product product =  manager.getList().get(0); // Acceso a la tarea agregada desde la lista.
 
-        // Cada producto debe tener nombre, descripción y precio.
-        // Debe almacenarse en una lista
+        assertNotNull(product, "El producto no puede ser nulo"); // Verifica que se haya creado la tarea
+        assertThat(manager.getList(), hasSize(1)); // Verifica que la tarea fue agregada a la lista
+        assertThat(product, allOf(      // Verifica asignación de atributos del producto
+            hasProperty("name", is("Comida etapa 1")),
+            hasProperty("description", is("de 1 hasta 6 meses")),
+            hasProperty("price", is(19990))
+        ));
     }
 
     @DisplayName("Prueba de modificación de productos")
     @Test
-    shouldUpdateProduct() {
-        Product producto = manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
-        boolean updateName = manager.updateName(producto.getId(), "Comida primeros años");
-        boolean updateDescription = manager.updateDescription(producto.getId(), "Para recién nacidos");
-        boolean updatePrice = manager.updatePrice(producto.getId(), 18990);
+    void shouldUpdateProduct() {
+        manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
+        manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
+        manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
+        Product producto = manager.getProductByID(1);
+
+        boolean updateName = manager.updateName(producto, "Comida primeros años");
+        boolean updateDescription = manager.updateDescription(producto, "Para recién nacidos");
+        boolean updatePrice = manager.updatePrice(producto, 18990);
         assertThat(null, updatePrice);
 
         // Permitir modificar nombre, descripción o precio
@@ -40,7 +51,7 @@ public class ProductManagerTest {
 
     @DisplayName("Prueba de eliminación de productos")
     @Test
-    shouldDeleteProduct() {
+    void shouldDeleteProduct() {
         // Eliminar producto desdde su Id
         // Validar que el producto existe
     }
