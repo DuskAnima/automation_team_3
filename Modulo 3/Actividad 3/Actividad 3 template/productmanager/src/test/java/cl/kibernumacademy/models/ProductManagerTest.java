@@ -32,6 +32,7 @@ public class ProductManagerTest {
         boolean updateName = manager.updateName(producto.getId(), "Comida primeros años");
         boolean updateDescription = manager.updateDescription(producto.getId(), "Para recién nacidos");
         boolean updatePrice = manager.updatePrice(producto.getId(), 18990);
+        assertThat(null, updatePrice);
 
         // Permitir modificar nombre, descripción o precio
         // Validación de que el producto existe
