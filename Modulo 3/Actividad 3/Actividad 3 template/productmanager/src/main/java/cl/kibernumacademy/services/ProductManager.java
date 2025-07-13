@@ -31,11 +31,11 @@ public class ProductManager {
 
     }
 
-    private int getProductById(int id) {
-        products.stream().
-        filter(product -> product.getId() == id).
-        findFirst().
-        orElseThrow(() -> new IllegalArgumentException("Este producto no existe"));
+    private Product getProductById(int id) {
+        return products.stream().
+            filter(product -> product.getId() == id).
+            findFirst().
+            orElseThrow(() -> new IllegalArgumentException("Este producto no existe"));
     }
 
 
