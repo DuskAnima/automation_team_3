@@ -1,6 +1,7 @@
 package cl.kibernumacademy.models;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 import org.junit.jupiter.api.AfterEach;
@@ -13,6 +14,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+
+import cl.kibernumacademy.models.Product;
+import cl.kibernumacademy.services.ProductManager;
 
 public class ProductManagerTest {
     private ProductManager manager; // servicio
@@ -32,6 +36,7 @@ public class ProductManagerTest {
     @DisplayName("Prueba de agregación de productos")
     @Test 
     void shouldAddProductToAList() {
+        assertThat(manager.getList(), iterableWithSize(0)); // Validación de lista vacía.
         manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990); // Producto agregado por medio del manager
         Product product =  manager.getList().get(0); // Acceso a la tarea agregada desde la lista.
 
@@ -57,7 +62,7 @@ public class ProductManagerTest {
 
         // Verifica la no nulidad del producto
         assertNotNull(product, "El producto no puede ser nulo");
-        
+
         // Verifica la integridad de los cambios de datos correspondientes
         assumingThat(test.equals("Cambio de nombre"), () -> {
             manager.updateName(product.getId(), attributesToUpdate);
@@ -75,9 +80,13 @@ public class ProductManagerTest {
 
     @DisplayName("Prueba de eliminación de productos")
     @Test
-    void shouldDeleteProduct() {
-        // Eliminar producto desdde su Id
-        // Validar que el producto existe
+    void shouldDeleteProductById() {
+        manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
+        assertThat(manager.getList(), iterableWithSize(1)); // Validación de lista con 1 objeto.
+        int productId = manager.getList().get(0).getId();
+        
+        // Verifica la eliminación del producto
+        manager.deleteProduct(productId);
+        assertThat(manager.getList(), iterableWithSize(0));
     }
-
 }
