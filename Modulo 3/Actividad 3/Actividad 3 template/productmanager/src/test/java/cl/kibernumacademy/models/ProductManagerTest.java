@@ -1,7 +1,6 @@
 package cl.kibernumacademy.models;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 import org.junit.jupiter.api.AfterEach;
@@ -10,12 +9,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-import cl.kibernumacademy.models.Product;
 import cl.kibernumacademy.services.ProductManager;
 
 public class ProductManagerTest {
@@ -38,7 +35,7 @@ public class ProductManagerTest {
     void shouldAddProductToAList() {
         assertThat(manager.getList(), iterableWithSize(0)); // Validación de lista vacía.
         manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990); // Producto agregado por medio del manager
-        Product product =  manager.getList().get(0); // Acceso a la tarea agregada desde la lista.
+        var product =  manager.getList().get(0); // Acceso a la tarea agregada desde la lista.
 
         assertNotNull(product, "El producto no puede ser nulo"); // Verifica que la tarea creada está en lista.
         assertThat(manager.getList(), hasSize(1)); // Verifica que la tarea fue agregada a la lista.
@@ -58,7 +55,7 @@ public class ProductManagerTest {
     })
     void shouldUpdateProduct(String test, String attributesToUpdate) {
         manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990);
-        Product product = manager.getList().get(0);
+        var product = manager.getList().get(0);
 
         // Verifica la no nulidad del producto
         assertNotNull(product, "El producto no puede ser nulo");
