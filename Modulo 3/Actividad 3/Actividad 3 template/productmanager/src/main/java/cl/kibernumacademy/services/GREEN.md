@@ -9,7 +9,7 @@ public class ProductManager {
     private final List<Product> products = new ArrayList<>();
     private int nextId = 1;
 
-    public void addProduct(String name, String description, Double price) {
+    public void addProduct(String name, String description, double price) {
         Product newProduct = new Product(nextId++, name, description, price);
         products.add(newProduct);
     }
