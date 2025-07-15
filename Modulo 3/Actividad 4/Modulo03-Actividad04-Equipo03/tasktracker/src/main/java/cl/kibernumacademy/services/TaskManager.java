@@ -6,7 +6,7 @@ import java.util.List;
 
 import cl.kibernumacademy.models.Task;
 
-public class TaskTracker {
+public class TaskManager {
     private final List<Task> tasks = new ArrayList<>();
     private int nextId = 1;
 
