@@ -13,7 +13,7 @@ public class ProductManager {
     public void addProduct(String name, String description, double price) {
         if (name   == null || name.isBlank()) throw new IllegalArgumentException("Nombre inválido");
         if (description == null || description.isBlank()) throw new IllegalArgumentException("Descripción inválida");
-        if (price  < 0)    throw new IllegalArgumentException("Precio inválido");
+        if (price < 0)    throw new IllegalArgumentException("Precio inválido");
         Product newProduct = new Product(nextId++, name, description, price);
         products.add(newProduct);
     }

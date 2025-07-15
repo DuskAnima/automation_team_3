@@ -31,7 +31,7 @@ public class ProductManagerTest {
 
 // Implementar pruebas assert con JUnit y Hamcrest. Usar assumeTrue() o assumeThat(). Integrar @ParameterizedTest, @BeforeEach y @AfterEach  
     @DisplayName("Prueba de agregación de productos")
-    @Test 
+    @Test
     void shouldAddProductToAList() {
         assertThat(manager.getList(), iterableWithSize(0)); // Validación de lista vacía.
         manager.addProduct("Comida etapa 1", "de 1 hasta 6 meses", 19990.0); // Producto agregado por medio del manager
