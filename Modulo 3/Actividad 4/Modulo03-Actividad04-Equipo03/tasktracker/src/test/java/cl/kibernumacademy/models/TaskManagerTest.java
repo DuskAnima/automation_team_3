@@ -2,7 +2,6 @@ package cl.kibernumacademy.models;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 import java.util.List;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -69,7 +67,7 @@ public class TaskManagerTest {
         });
         assumingThat(list.isEmpty(), () -> { // Verifica que lista está vacía
             assertThrows(IllegalArgumentException.class, () -> {
-                manager.markAsDone(0);
+                manager.markAsDone(list.get(0));
             });
         });
     }
@@ -80,8 +78,8 @@ public class TaskManagerTest {
         manager.addTask("Título 1", "Tarea 1 (lista)");
         manager.addTask("Título 2", "Tarea 2"); // Se crean dos tareas
         manager.addTask("Título 3", "Tarea 3"); // Se crean dos tareas
-        Task doneTask = manager.getList().get(0);
-        doneTask.markAsDone(); // Marcar una tarea como hecha
+        var doneTask = manager.getList().get(0);
+        manager.markAsDone(doneTask); // Marcar una tarea como hecha
         List<Task> undoneList = manager.getUndoneTasks();
         
         assertThat(doneTask, hasProperty("state", is(true))); // Verificar tarea hecha

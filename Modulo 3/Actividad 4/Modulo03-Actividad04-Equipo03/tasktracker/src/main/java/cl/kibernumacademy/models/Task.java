@@ -1,17 +1,16 @@
 package cl.kibernumacademy.models;
 
 public class Task {
-    /*
     private final int id;
     private String title;
     private String description;
     private boolean state;
-
-    public Task(int id, String title, String description, boolean state) {
+    
+    public Task(int id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.state = state;
+        this.state = false;
     }
 
     public int getId() {
@@ -41,6 +40,4 @@ public class Task {
     public void setState(boolean state) {
         this.state = state;
     }
-
-    */
 }
