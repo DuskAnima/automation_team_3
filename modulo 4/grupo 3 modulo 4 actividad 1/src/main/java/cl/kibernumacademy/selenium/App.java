@@ -1,10 +1,10 @@
-package com.productmanager;
+package cl.kibernumacademy.selenium;
 
 /**
  * Hello world!
  *
  */
-public class ProductManager 
+public class App 
 {
     public static void main( String[] args )
     {
