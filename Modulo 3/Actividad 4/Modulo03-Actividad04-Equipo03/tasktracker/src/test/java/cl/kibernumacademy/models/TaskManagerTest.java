@@ -70,7 +70,7 @@ public class TaskManagerTest {
         assumingThat(list.isEmpty(), () -> { // Verifica que lista está vacía
             assertThrows(IllegalArgumentException.class, () -> {
                 manager.markAsDone(0);
-            }); 
+            });
         });
     }
     
@@ -89,5 +89,4 @@ public class TaskManagerTest {
             assertThat(task, hasProperty("state", is(false)));
         }
     }
-    
 }

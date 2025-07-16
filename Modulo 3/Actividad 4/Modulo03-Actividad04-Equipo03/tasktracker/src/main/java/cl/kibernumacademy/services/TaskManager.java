@@ -1,12 +1,14 @@
 package cl.kibernumacademy.services;
+/* 
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import cl.kibernumacademy.models.Task;
-
+*/
 public class TaskManager {
+/*
     private final List<Task> tasks = new ArrayList<>();
     private int nextId = 1;
 
@@ -50,4 +52,5 @@ public class TaskManager {
     public List<Task> getList() {
         return Collections.unmodifiableList(tasks);
     }
+    */
 }

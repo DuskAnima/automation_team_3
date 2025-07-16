@@ -1,6 +1,7 @@
 package cl.kibernumacademy.models;
 
 public class Task {
+    /*
     private final int id;
     private String title;
     private String description;
@@ -41,4 +42,5 @@ public class Task {
         this.state = state;
     }
 
+    */
 }
