@@ -1,0 +1,276 @@
+{
+  "id": "fc8b8b75-a439-437f-b4e5-e316eb91a3f5",
+  "version": "2.0",
+  "name": "ValidacionesContacto",
+  "url": "https://demoqa.com/text-box",
+  "tests": [{
+    "id": "6261f1b9-69fa-45eb-9792-69cfcab10e38",
+    "name": "Ingreso Nulo",
+    "commands": [{
+      "id": "4985a1a2-3dc4-4674-ac57-15803783b8bd",
+      "comment": "",
+      "command": "open",
+      "target": "https://demoqa.com/text-box",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f5c296f0-a525-47a6-b84f-8c3a4d6e59be",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "817x994",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16302f8f-5001-48ee-a812-e7162bf8013e",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,128)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc575700-bba8-4aba-8a5a-2b83d6423b43",
+      "comment": "",
+      "command": "click",
+      "target": "id=submit",
+      "targets": [
+        ["id=submit", "id"],
+        ["css=#submit", "css:finder"],
+        ["xpath=//button[@id='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='userForm']/div[5]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a87b87d-8946-4b32-8150-b30944b67f0e",
+      "comment": "valida que no exista al no tener dato",
+      "command": "verifyElementNotPresent",
+      "target": "id=id=name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d892587-ef2b-4fb9-bf6d-1458d48bd6e7",
+      "comment": "valida que no exista al no tener dato",
+      "command": "verifyElementNotPresent",
+      "target": "id=id=email",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0777f30e-320c-4fb5-914a-3a1f0a4c490a",
+      "comment": "valida que no exista al no tener dato",
+      "command": "verifyElementNotPresent",
+      "target": "css=#currentAdress.mb-1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01db5eb9-83c2-45e5-b122-14c5654bf524",
+      "comment": "valida que no exista al no tener dato",
+      "command": "verifyElementNotPresent",
+      "target": "css=#permanentAdress.mb-1",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "fb79e6da-c45f-4e6f-9e32-f1f11d90b378",
+    "name": "FormularioContacto",
+    "commands": [{
+      "id": "1109bde4-50eb-45ca-97de-4bda8b6ac4a3",
+      "comment": "",
+      "command": "open",
+      "target": "https://demoqa.com/text-box",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00f97a37-b7f6-46a6-9ecb-51f8245a7458",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "817x994",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0104e36c-2715-46f7-8cf5-501530f5c8bd",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,128)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0289ab84-f180-4c90-a7ae-5396da195fe2",
+      "comment": "",
+      "command": "click",
+      "target": "id=userName",
+      "targets": [
+        ["id=userName", "id"],
+        ["css=#userName", "css:finder"],
+        ["xpath=//input[@id='userName']", "xpath:attributes"],
+        ["xpath=//div[@id='userName-wrapper']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3049e2b-53ff-453b-a011-33cbad935a3c",
+      "comment": "",
+      "command": "type",
+      "target": "id=userName",
+      "targets": [
+        ["id=userName", "id"],
+        ["css=#userName", "css:finder"],
+        ["xpath=//input[@id='userName']", "xpath:attributes"],
+        ["xpath=//div[@id='userName-wrapper']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "grupo3"
+    }, {
+      "id": "b8061caa-f6fa-410f-9bcd-e1d41b94fea5",
+      "comment": "",
+      "command": "click",
+      "target": "id=userEmail",
+      "targets": [
+        ["id=userEmail", "id"],
+        ["css=#userEmail", "css:finder"],
+        ["xpath=//input[@id='userEmail']", "xpath:attributes"],
+        ["xpath=//div[@id='userEmail-wrapper']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "774f1b6a-3428-4fe1-80a3-dc8a2eb02894",
+      "comment": "",
+      "command": "type",
+      "target": "id=userEmail",
+      "targets": [
+        ["id=userEmail", "id"],
+        ["css=#userEmail", "css:finder"],
+        ["xpath=//input[@id='userEmail']", "xpath:attributes"],
+        ["xpath=//div[@id='userEmail-wrapper']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "mail@gmail.com"
+    }, {
+      "id": "5ba0ffb2-a7dd-4c67-9481-9376af37a417",
+      "comment": "",
+      "command": "click",
+      "target": "id=currentAddress",
+      "targets": [
+        ["id=currentAddress", "id"],
+        ["css=#currentAddress", "css:finder"],
+        ["xpath=//textarea[@id='currentAddress']", "xpath:attributes"],
+        ["xpath=//div[@id='currentAddress-wrapper']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "784745d8-d5bf-4dc6-a66c-7b6ac3b01ee1",
+      "comment": "",
+      "command": "type",
+      "target": "id=currentAddress",
+      "targets": [
+        ["id=currentAddress", "id"],
+        ["css=#currentAddress", "css:finder"],
+        ["xpath=//textarea[@id='currentAddress']", "xpath:attributes"],
+        ["xpath=//div[@id='currentAddress-wrapper']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "casa actual"
+    }, {
+      "id": "c5c9ebba-01f1-4281-a710-4dac77060c53",
+      "comment": "",
+      "command": "click",
+      "target": "id=permanentAddress",
+      "targets": [
+        ["id=permanentAddress", "id"],
+        ["css=#permanentAddress", "css:finder"],
+        ["xpath=//textarea[@id='permanentAddress']", "xpath:attributes"],
+        ["xpath=//div[@id='permanentAddress-wrapper']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d59ea269-b294-45b9-986f-f254ac14802e",
+      "comment": "",
+      "command": "type",
+      "target": "id=permanentAddress",
+      "targets": [
+        ["id=permanentAddress", "id"],
+        ["css=#permanentAddress", "css:finder"],
+        ["xpath=//textarea[@id='permanentAddress']", "xpath:attributes"],
+        ["xpath=//div[@id='permanentAddress-wrapper']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/textarea", "xpath:position"]
+      ],
+      "value": "casa permanente"
+    }, {
+      "id": "b2974f77-905a-4337-a0c8-856987a7b1d7",
+      "comment": "",
+      "command": "click",
+      "target": "id=submit",
+      "targets": [
+        ["id=submit", "id"],
+        ["css=#submit", "css:finder"],
+        ["xpath=//button[@id='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='userForm']/div[5]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e2d366c-c936-4968-b3e1-469c88f26778",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=submit",
+      "targets": [
+        ["id=submit", "id"],
+        ["css=#submit", "css:finder"],
+        ["xpath=//button[@id='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='userForm']/div[5]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "64166396-dc3f-4e5e-967a-1d949f1d1375",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=submit",
+      "targets": [
+        ["id=submit", "id"],
+        ["css=#submit", "css:finder"],
+        ["xpath=//button[@id='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='userForm']/div[5]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a91643aa-f0e7-4717-8068-0e4689c0c692",
+      "comment": "Valida que muestre nombre",
+      "command": "assertText",
+      "target": "id=name",
+      "targets": [],
+      "value": "Name:grupo3"
+    }, {
+      "id": "dba04b80-bf2d-43c4-aad7-702de334f311",
+      "comment": "valida que muestre correo",
+      "command": "assertText",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["css=#email", "css:finder"],
+        ["xpath=//p[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='output']/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Email:mail@gmail.com')]", "xpath:innerText"]
+      ],
+      "value": "Email:mail@gmail.com"
+    }]
+  }],
+  "suites": [{
+    "id": "c549cd58-f2be-4ff8-b318-312dde5c5653",
+    "name": "SuiteContacto",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["fb79e6da-c45f-4e6f-9e32-f1f11d90b378", "6261f1b9-69fa-45eb-9792-69cfcab10e38"]
+  }],
+  "urls": ["https://demoqa.com/text-box"],
+  "plugins": []
+}
