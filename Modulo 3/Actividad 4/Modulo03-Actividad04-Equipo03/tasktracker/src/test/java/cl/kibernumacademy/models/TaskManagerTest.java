@@ -67,7 +67,7 @@ public class TaskManagerTest {
         });
         assumingThat(list.isEmpty(), () -> { // Verifica que lista está vacía
             assertThrows(IllegalArgumentException.class, () -> {
-                manager.markAsDone(list.get(0));
+                manager.markAsDone(null);
             });
         });
     }

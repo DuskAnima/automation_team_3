@@ -10,24 +10,23 @@ public class TaskManager {
     private int nextId = 1;
     
     public void addTask(String title, String description) {
-        if(title == null || title.isEmpty()) {return;}
         Task newTask = new Task(nextId++, title, description);
         tasks.add(newTask);
         }
         
 
     public void markAsDone(Task task) {
-        if(task == null || task.getState() ) {
-            throw new IllegalArgumentException();
-        } else {
-            task.setState(true);
-        }
+        task.setState(true);
     } 
 
     public List<Task> getUndoneTasks() {
-        return tasks.stream()
-        .filter(task -> !task.getState())
-        .toList();
+        List<Task> undoneList = new ArrayList<>();
+        for (Task task : tasks){
+            if (task.getState() == false){
+                undoneList.add(task);
+            }
+        }
+        return undoneList;
     }
 
     public List<Task> getList() {
