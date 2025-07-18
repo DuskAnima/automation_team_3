@@ -1,17 +1,17 @@
 package cl.kibernumacademy.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class NotificationSentHistory {
-    private final List<NotificationSent> notifications = new ArrayList<>();
+     private final List<NotificationSent> history = new ArrayList<>();
 
-    public void add(NotificationSent notification) {
-        notifications.add(notification);
+    public void add(NotificationSent notificationSent) {
+        history.add(notificationSent);
     }
 
-    public List<NotificationSent> getNotifications() {
-        return Collections.unmodifiableList(notifications);
+    public List<NotificationSent> getAll() {
+        return history;
     }
 }
+

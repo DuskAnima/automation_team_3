@@ -35,7 +35,7 @@ public class TaskTracker {
         task.setState(newState);
     }
 
-    public void deleteProduct(int id) {
+    public void deleteTask(int id) {
         Task task = getTaskById(id);
         tasks.remove(task);
     }

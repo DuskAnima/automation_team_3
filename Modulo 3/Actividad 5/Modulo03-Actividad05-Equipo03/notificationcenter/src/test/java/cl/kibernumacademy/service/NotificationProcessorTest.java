@@ -2,11 +2,10 @@ package cl.kibernumacademy.service;
 
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
-
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,6 +27,8 @@ public class NotificationProcessorTest {
   @Mock
   private EmailNotification emailNotification;
 
+  @Mock
+  private NotificationSentHistory notificationSentHistory;
 
   @Mock
   private SMSNotification smsNotification;
@@ -38,21 +39,21 @@ public class NotificationProcessorTest {
   @InjectMocks // Inyecta los mocks en la instancia real PaymentProcessor
   private NotificationProcessor notificationProcessor;
 
-  @Mock
-private NotificationSentHistory notificationSentHistory;
+
 
   @BeforeEach
   void setUp() {
-    notificationProcessor = new NotificationProcessor(notificationSentHistory, emailNotification, smsNotification);
+    notificationProcessor = new NotificationProcessor(notificationSentHistory, emailNotification, smsNotification); // Inyecta los Mocks
   }
 
   @Test
   void testProcessEmailNotificationSuccess() {
-    given(emailNotification.sent("rdo@gmail.com", "email", "Hola como estas?")).willReturn(true);
-    boolean result = notificationProcessor.processNotification("rdo@gmail.com", "email", "Hola como estas?");
+    given(emailNotification.sent("rdo@gmail.com", "Email", "Hola como estas?")).willReturn(true);
+    boolean result = notificationProcessor.processNotification("rdo@gmail.com", "Email", "Hola como estas?");
     assertTrue(result); // Verificamos que el resultado sea exitoso
-    verify(emailNotification).sent("rdo@gmail.com", "email", "Hola como estas?");
+    verify(emailNotification).sent("rdo@gmail.com", "Email", "Hola como estas?");
     verify(notificationSentHistory).add(any(NotificationSent.class));
+    
   }
 
 
@@ -87,7 +88,7 @@ private NotificationSentHistory notificationSentHistory;
   void testProcessNotificationFailsForEmptyMessage() {
     IllegalArgumentException exception = org.junit.jupiter.api.Assertions.assertThrows(
         IllegalArgumentException.class,
-        () -> notificationProcessor.processNotification("rdo@gmail.com", "email", "  ") // mensaje vacío
+        () -> notificationProcessor.processNotification("rdo@gmail.com", "Email", "  ") // mensaje vacío
     );
     org.junit.jupiter.api.Assertions.assertEquals(
         "Destinatario o mensaje invalido",

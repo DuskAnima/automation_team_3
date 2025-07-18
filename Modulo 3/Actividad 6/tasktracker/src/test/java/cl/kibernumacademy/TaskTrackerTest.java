@@ -12,7 +12,7 @@ import cl.kibernumacademy.services.TaskTracker;
 public class TaskTrackerTest {
     private TaskTracker tracker; // servicio
     public static int counter;
-    @BeforeClass
+    @BeforeMethod
     void StartSetUp() {
         System.out.println("Inicio de Test Unitario " + ++counter);
         tracker = new TaskTracker(); 
@@ -26,7 +26,7 @@ public class TaskTrackerTest {
 
     @Test (description = "Prueba de agregación de tareas")
     void shouldAddTaskToAList() {
-        tracker.addTask("Comprar", "comprar en el supermercado lacteos", false); // Agrega tarea
+        tracker.addTask("Comprar", "comprar en el supermercado lacteos", true);
         Task task = tracker.getList().get(0); // Obtiene la tarea agregada
         Assert.assertNotNull(task, "La tarea no puede ser nula"); // Verifica no nulidad
         Assert.assertTrue(tracker.getList().contains(task), "La tarea debe estar en la lista");
@@ -34,9 +34,9 @@ public class TaskTrackerTest {
 
     @Test    
     @Parameters({"title", "description", "state"})
-    public void shouldUpdateTask(String title, String description, boolean state) {
-
-         tracker.addTask("Pintar", "Pintar la casa", true);
+    public void shouldUpdateTask(String title, String description, String state) {
+         boolean parsedState = Boolean.parseBoolean(state);
+         tracker.addTask("Pintar", "Pintar la casa", parsedState);
          Task task = tracker.getList().get(0);
          Assert.assertNotNull(task, "La tarea no puede ser nula");
 
@@ -46,8 +46,8 @@ public class TaskTrackerTest {
          tracker.updateDescription(task.getId(), description);
          Assert.assertEquals(task.getDescription(), description, "La descripción no se actualizó correctamente.");
 
-         tracker.updateState(task.getId(), state);
-        Assert.assertEquals(task.getState(), state, "El estado no se actualizó correctamente.");
+         tracker.updateState(task.getId(), parsedState);
+        Assert.assertEquals(task.getState(), parsedState, "El estado no se actualizó correctamente.");
 
          Assert.assertTrue(tracker.getList().contains(task), "La tarea debe estar en la lista");
 }
@@ -58,7 +58,7 @@ public class TaskTrackerTest {
         tracker.addTask("Pintar", "Pintar la casa", true);
 
         int taskId = tracker.getList().get(0).getId();
-        tracker.deleteProduct(taskId);
+        tracker.deleteTask(taskId);
             
     }
 
