@@ -9,4 +9,5 @@
             <class name="cl.kibernumacademy.TaskTrackerTest"/>
         </classes>
     </test>
+
 </suite>
