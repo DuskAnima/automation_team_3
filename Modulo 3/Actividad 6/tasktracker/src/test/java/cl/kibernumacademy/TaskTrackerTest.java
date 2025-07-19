@@ -2,7 +2,7 @@ package cl.kibernumacademy;
 
 import java.util.List;
 
-import javax.print.DocFlavor.STRING;
+//import javax.print.DocFlavor.STRING;
 
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -27,7 +27,7 @@ public class TaskTrackerTest {
 
 
     @Test (description = "Prueba de agregación de tareas")
-    public void shouldAddTaskToAList() {
+    void shouldAddTaskToAList() {
         tracker.addTask("Comprar", "comprar en el supermercado lacteos", true);
         Task task = tracker.getList().get(0); // Obtiene la tarea agregada
         Assert.assertNotNull(task, "La tarea no puede ser nula"); // Verifica no nulidad
@@ -36,7 +36,7 @@ public class TaskTrackerTest {
 
     @Test    (description = "Prueba de actualización de tareas")
     @Parameters({"title", "description", "state"})
-    public  void shouldUpdateTask(String title, String description, String state) {
+    void shouldUpdateTask(String title, String description, String state) {
          boolean parsedState = Boolean.parseBoolean(state);
          tracker.addTask("Pintar", "Pintar la casa", parsedState);
          Task task = tracker.getList().get(0);
@@ -56,7 +56,7 @@ public class TaskTrackerTest {
 
     
     @Test
-    public void shouldDeleteTaskById() {
+    void shouldDeleteTaskById() {
         tracker.addTask("Pintar", "Pintar la casa", true);
 
         int taskId = tracker.getList().get(0).getId();
@@ -65,7 +65,7 @@ public class TaskTrackerTest {
     }
 
     @Test
-    public void  shouldFilterTasks() {
+    void  shouldFilterTasks() {
         SoftAssert softAssert = new SoftAssert();
         List<Task> completed = tracker.filterTasks(true);
         List<Task> pending = tracker.filterTasks(false);
