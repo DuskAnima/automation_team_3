@@ -6,8 +6,6 @@ public class Check {
     private String horario;
 
     public Check (String nombre, String tipo, String horario) {
-      
-
         this.nombre = nombre;
         this.tipo = tipo;
         this.horario = horario;
@@ -17,7 +15,7 @@ public class Check {
         return nombre;
     }
 
-    public String getTipoString() {
+    public String getTipo() {
         return tipo;
     }
 
