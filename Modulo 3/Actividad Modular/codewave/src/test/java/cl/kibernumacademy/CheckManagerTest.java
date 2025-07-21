@@ -35,16 +35,16 @@ public class CheckManagerTest
 
     @Test // Pruebas de creación de reserva
     void shouldCreateCheck() {
-        Check  check = manager.createCheck("Lorem ipsum", "Dolor sit amet"); // Modelo
+        Check  check = manager.createCheck("nombre reserva", "tipo de reserva", "horario de reserva"); // Modelo
         assertThat(check.getNombre()).isEqualTo(1); // La reserva fue creada?
         assertThat(manager.getList()).hasSize(1);  // La reserva fue agregada a la lista?
     }
 
     @Test // Prueba de edición de reserva
     void shouldUpdateCheck() {
-        Check check = manager.createCheck("Lorem ipsum", "Dolor sit amet");  // Modelo 
+        Check check = manager.createCheck("nombre reserva", "tipo de reserva", "horario de reserva");  // Modelo 
         boolean updateTipo = manager.updateTipo(check.getNombre(), "Nuevo Título"); // Se altera tipo
-        boolean updateHorario = manager.updateHorario(check.getNombre(), "Nuevo Párrafo"); // Se altera horario
+        boolean updateHorario = manager.updateHorario(check.getNombre(), "Nuevo Horario"); // Se altera horario
         assertThat(updateTipo).isTrue(); // El tipo fue actualizado
         assertThat(updateHorario).isTrue(); // El Horario fue actualizado
         assertThat(check.getTipo()).isEqualTo("Nuevo Tipo"); // Devuelve tipo
@@ -53,7 +53,7 @@ public class CheckManagerTest
 
     @Test // Prueba de eliminación de reserva
     void shouldDeleteCheck() {
-        Check check = manager.createCheck("Lorem ipsum", "Dolor sit amet"); // Modelo
+        Check check = manager.createCheck("nombre reserva", "tipo de reserva", "horario de reserva"); // Modelo
         boolean removed = manager.deleteCheck(check.getNombre()); // Se elimina reserva  de la lista
         assertThat(removed).isTrue(); // La reserva  fue eliminada? 
         assertThat(manager.getList()).isEmpty(); // La lista está vacía?
