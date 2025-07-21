@@ -14,7 +14,7 @@ public class CheckManager
     }
 
     public List<Check> getList() { // Obtener la lista
-        return Collections.unmodifiableList(checks); // Retorna una lista inmutable
+        return Collections.unmodifiableList(checks); // Retorna una lista 
     }
 
     public boolean updateCheck(String nombre, String newTipo, String newHorario) { // Actualizar  reserva
@@ -41,6 +41,22 @@ public class CheckManager
             return false;
         }
     }
+
+    public boolean updateTipo(String nombre, String newTipo) { // Actualizar horario de la reserva
+            try {   
+                Check check = getCheckByNombre(nombre);  
+                if (newTipo != null) {
+                    check.setTipo(newTipo);
+                }
+                return true;
+            } catch (IllegalArgumentException e) {
+                return false;
+            }
+        }
+
+
+
+
 
     public boolean deleteCheck(String nombre) { // Eliminar reserva
         try {
