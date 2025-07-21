@@ -17,10 +17,10 @@ public class CheckManager
         return Collections.unmodifiableList(checks); // Retorna una lista inmutable
     }
 
-    public boolean updateCheck(String nombre, String tipo, String horario) { // Actualizar  reserva
+    public boolean updateCheck(String nombre, String newTipo, String newHorario) { // Actualizar  reserva
         try {
-            Check Check = getCheckByNombre(nombre); // Invoca la reserva desde el nombre
-            if (newTipo != null) && (newHorario != null){ // Verifica nullidad
+            Check check = getCheckByNombre(nombre); // Invoca la reserva desde el nombre
+            if (newTipo != null && newHorario != null){ // Verifica nullidad
                 check.setTipo(newTipo);
                 check.setHorario(newHorario); 
             }
@@ -32,7 +32,7 @@ public class CheckManager
 
     public boolean updateHorario(String nombre, String newHorario) { // Actualizar horario de la reserva
         try {   
-            Check Check = getCheckByNombre(nombre);  
+            Check check = getCheckByNombre(nombre);  
             if (newHorario != null) {
                 check.setHorario(newHorario);
             }
@@ -44,7 +44,7 @@ public class CheckManager
 
     public boolean deleteCheck(String nombre) { // Eliminar reserva
         try {
-            Check Check = getCheckByNombre(nombre); // Captura tarea desde el nombre
+            Check check = getCheckByNombre(nombre); // Captura tarea desde el nombre
             checks.remove(check); // Elimina la reserva
             return true;
         } catch (IllegalArgumentException e) { // Manejo de error
