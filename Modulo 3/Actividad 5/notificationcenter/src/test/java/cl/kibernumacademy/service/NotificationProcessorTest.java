@@ -43,8 +43,8 @@ private NotificationSentHistory notificationSentHistory;
 
   @BeforeEach
   void setUp() {
-    notificationProcessor = new NotificationProcessor(notificationSentHistory, emailNotification, smsNotification);
-  }
+ notificationProcessor = new NotificationProcessor(notificationSentHistory, emailNotification, smsNotification);
+   }
 
   @Test
   void testProcessEmailNotificationSuccess() {
