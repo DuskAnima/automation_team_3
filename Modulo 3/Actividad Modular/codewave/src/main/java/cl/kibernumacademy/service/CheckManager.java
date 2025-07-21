@@ -20,7 +20,7 @@ public class CheckManager
     public boolean updateCheck(String nombre, String newTipo, String newHorario) { // Actualizar  reserva
         try {
             Check check = getCheckByNombre(nombre); // Invoca la reserva desde el nombre
-            if (newTipo != null && newHorario != null){ // Verifica nullidad
+            if (newTipo != null && newHorario != null){ // Verifica nullidad de datos
                 check.setTipo(newTipo);
                 check.setHorario(newHorario); 
             }
@@ -42,7 +42,7 @@ public class CheckManager
         }
     }
 
-    public boolean updateTipo(String nombre, String newTipo) { // Actualizar horario de la reserva
+    public boolean updateTipo(String nombre, String newTipo) { // Actualizar tipo  de la reserva
             try {   
                 Check check = getCheckByNombre(nombre);  
                 if (newTipo != null) {
@@ -60,7 +60,7 @@ public class CheckManager
 
     public boolean deleteCheck(String nombre) { // Eliminar reserva
         try {
-            Check check = getCheckByNombre(nombre); // Captura tarea desde el nombre
+            Check check = getCheckByNombre(nombre); // Captura reserva  desde el nombre
             checks.remove(check); // Elimina la reserva
             return true;
         } catch (IllegalArgumentException e) { // Manejo de error
