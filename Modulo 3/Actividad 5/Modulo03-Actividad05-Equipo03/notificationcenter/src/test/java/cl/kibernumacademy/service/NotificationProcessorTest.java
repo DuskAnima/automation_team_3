@@ -52,11 +52,8 @@ public class NotificationProcessorTest {
     boolean result = notificationProcessor.processNotification("rdo@gmail.com", "Email", "Hola como estas?");
     assertTrue(result); // Verificamos que el resultado sea exitoso
     verify(emailNotification).sent("rdo@gmail.com", "Email", "Hola como estas?");
-    verify(notificationSentHistory).add(any(NotificationSent.class));
-    
+    verify(notificationSentHistory).add(any(NotificationSent.class)); 
   }
-
-
 
   @Test
   void testProcessSMSNotificationSuccess() {
@@ -65,9 +62,7 @@ public class NotificationProcessorTest {
     assertTrue(result); // Verificamos que el resultado sea exitoso
     verify(smsNotification).sent("28580985", "SMS", "Hola como estas?");
     verify(notificationSentHistory).add(any(NotificationSent.class));
-    
   }
-
 
 @Test
  void testProcessNotificationFailsForNullAddress() {
@@ -98,7 +93,7 @@ public class NotificationProcessorTest {
   }
 
   @Test
- void testProcessNotificationFailsForUnknownChannel() {
+  void testProcessNotificationFailsForUnknownChannel() {
     IllegalArgumentException exception = org.junit.jupiter.api.Assertions.assertThrows(
         IllegalArgumentException.class,
         () -> notificationProcessor.processNotification("rdo@gmail.com", "videollamada", "Hola!")
@@ -109,6 +104,4 @@ public class NotificationProcessorTest {
     );
     verifyNoInteractions(emailNotification, smsNotification, notificationSentHistory);
  }
- 
-
 }
