@@ -8,10 +8,10 @@ import cl.kibernumacademy.model.NotificationSentHistory;
 public class NotificationProcessor {
 
     private final NotificationSentHistory notificationSentHistory;
-    private final EmailNotification emailNotification;
-    private final SMSNotification smsNotification;
+    private final NotificationChannel emailNotification;
+    private final NotificationChannel smsNotification;
 
-    public NotificationProcessor(NotificationSentHistory notificationSentHistory, EmailNotification emailNotification, SMSNotification smsNotification) {
+    public NotificationProcessor(NotificationSentHistory notificationSentHistory, NotificationChannel emailNotification, NotificationChannel smsNotification) {
         this.notificationSentHistory = notificationSentHistory;
         this.emailNotification = emailNotification;
         this.smsNotification = smsNotification;

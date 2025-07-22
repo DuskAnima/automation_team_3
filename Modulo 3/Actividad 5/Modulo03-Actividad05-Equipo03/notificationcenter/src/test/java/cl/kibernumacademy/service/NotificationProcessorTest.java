@@ -25,13 +25,13 @@ public class NotificationProcessorTest {
     
     
   @Mock
-  private EmailNotification emailNotification;
-
+  private NotificationChannel emailNotification;
+  
+  @Mock
+  private NotificationChannel smsNotification;
+  
   @Mock
   private NotificationSentHistory notificationSentHistory;
-
-  @Mock
-  private SMSNotification smsNotification;
 
   @Captor // Permite capturar argumentos pasados a métodos mockeados
   private ArgumentCaptor<NotificationSent> notificationCaptor;

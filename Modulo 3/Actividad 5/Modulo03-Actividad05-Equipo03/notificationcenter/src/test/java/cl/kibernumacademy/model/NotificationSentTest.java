@@ -1,6 +1,6 @@
 package cl.kibernumacademy.model;
 
 
-public class NotificationSent {
+public class NotificationSentTest {
 
 }
