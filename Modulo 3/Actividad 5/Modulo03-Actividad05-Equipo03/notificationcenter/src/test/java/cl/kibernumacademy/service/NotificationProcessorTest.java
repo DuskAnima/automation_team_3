@@ -2,10 +2,10 @@ package cl.kibernumacademy.service;
 
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoInteractions;
+
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,12 +39,22 @@ public class NotificationProcessorTest {
   @InjectMocks // Inyecta los mocks en la instancia real PaymentProcessor
   private NotificationProcessor notificationProcessor;
 
+@BeforeEach
+void setUp() {
+    // Settea configuración para que funcionen los verify
+    lenient().when(emailNotification.getChannelName()).thenReturn("Email");
+    lenient().when(smsNotification.getChannelName()).thenReturn("SMS");
 
+    List<NotificationChannel> channels = List.of(emailNotification, smsNotification);
+    notificationProcessor = new NotificationProcessor(notificationSentHistory, channels);
+}
 
-  @BeforeEach
-  void setUp() {
-    notificationProcessor = new NotificationProcessor(notificationSentHistory, emailNotification, smsNotification); // Inyecta los Mocks
-  }
+/*
+@BeforeEach
+void setUp() { // Se cambia el setup para compatibilizar con el refactor
+  notificationProcessor = new NotificationProcessor(notificationSentHistory, emailNotification, smsNotification); // Inyecta los Mocks
+}
+*/
 
   @Test
   void testProcessEmailNotificationSuccess() {

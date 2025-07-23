@@ -1,42 +1,47 @@
 package cl.kibernumacademy.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import cl.kibernumacademy.model.NotificationSent;
 import cl.kibernumacademy.model.NotificationSentHistory;
 
 public class NotificationProcessor {
-
     private final NotificationSentHistory notificationSentHistory;
-    private final NotificationChannel emailNotification;
-    private final NotificationChannel smsNotification;
+    private final List<NotificationChannel> channels;
 
-    public NotificationProcessor(NotificationSentHistory notificationSentHistory, NotificationChannel emailNotification, NotificationChannel smsNotification) {
+    public NotificationProcessor(NotificationSentHistory notificationSentHistory, List<NotificationChannel> channels) {
         this.notificationSentHistory = notificationSentHistory;
-        this.emailNotification = emailNotification;
-        this.smsNotification = smsNotification;
+        this.channels = channels != null ? channels : List.of();
     }
 
-     public boolean processNotification(String addressee, String channel, String message) {
-        if (message.isBlank() || addressee == null) {
+    public boolean processNotification(String addressee, String channel, String message) {
+        // Validación de inputs
+        if (addressee == null || message == null || message.isBlank()) {
             throw new IllegalArgumentException("Destinatario o mensaje invalido");
         }
-        boolean result;
-        if ("SMS".equalsIgnoreCase(channel)) {
-            result = smsNotification.sent(addressee, channel, message); // Aquí se invoca el mock en los tests
-        } else if ("Email".equalsIgnoreCase(channel)) {
-            result = emailNotification.sent(addressee, channel, message); // Aquí se invoca el mock en los tests
-        } else {
+        
+        // Validación temprana de canal desconocido (sin tocar mocks)
+        if (!"SMS".equalsIgnoreCase(channel) && !"Email".equalsIgnoreCase(channel)) {
             throw new IllegalArgumentException("Unknown channel notification");
         }
+        
+        // Selección del canal usando el nombre (aquí se invocan los mocks solo en éxitos)
+        NotificationChannel selectedChannel = channels.stream()
+            .filter(ch -> ch.getChannelName().equalsIgnoreCase(channel))
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException("Unknown channel notification"));
+
+        boolean result = selectedChannel.sent(addressee, channel, message);
+
         if (result) {
             notificationSentHistory.add(new NotificationSent(addressee, channel, message, LocalDateTime.now()));
         }
+
         return result;
     }
 
     public NotificationSentHistory getNotificationSentHistory() {
         return notificationSentHistory;
     }
-    
 }
