@@ -1,3 +1,5 @@
+Nota: Con el refactor se agregó el archivo de Main.java
+
 package cl.kibernumacademy.service;
 
 import java.time.LocalDateTime;
