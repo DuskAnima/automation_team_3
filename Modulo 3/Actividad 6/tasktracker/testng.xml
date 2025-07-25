@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="TaskTrackerSuite" parallel="tests" thread-count="2">
-    <test name="TaskTrackerTest">
+
+    <test name="AddTaskTest1">
         <parameter name="title" value="Vender"/>
         <parameter name="description" value="Vender el auto"/>
         <classes>
             <class name="cl.kibernumacademy.TaskTrackerTest"/>
         </classes>
     </test>
+
+    <test name="AddTaskTest2">
+        <parameter name="title" value="Comprar"/>
+        <parameter name="description" value="Comprar verduras"/>
+        <classes>
+            <class name="cl.kibernumacademy.TaskTrackerTest"/>
+        </classes>
+    </test>
+
+    <test name="AddTaskTest3">
+        <parameter name="title" value="Limpiar"/>
+        <parameter name="description" value="Limpiar la casa"/>
+        <classes>
+            <class name="cl.kibernumacademy.TaskTrackerTest"/>
+        </classes>
+    </test>
+
 </suite>
