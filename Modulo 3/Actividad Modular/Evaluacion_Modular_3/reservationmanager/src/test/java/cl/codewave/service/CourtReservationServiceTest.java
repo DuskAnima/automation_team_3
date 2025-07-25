@@ -15,7 +15,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -54,7 +56,14 @@ class CourtReservationServiceTest {
         validSlot = new TimeSlot(LocalTime.of(10, 0), LocalTime.of(11, 0));
     }
 
+    @AfterEach
+    void tearDown() {
+        date = null;
+        validSlot = null;
+    }
+
     @Test
+    @DisplayName("Debe guardar una reserva cuando el horario está libre")
     void createReservation_shouldSaveWhenSlotIsFree() {
         given(courtRepository.findByName("Court A")).willReturn(Optional.of(court));
         given(reservationRepository.findByCourtAndDate(court, date)).willReturn(Collections.emptyList());
@@ -67,6 +76,7 @@ class CourtReservationServiceTest {
     }
 
     @Test
+    @DisplayName("Debe lanzar excepción cuando el horario ya está ocupado")
     void createReservation_shouldThrowWhenSlotIsOccupied() {
         given(courtRepository.findByName("Court A")).willReturn(Optional.of(court));
         TimeSlot overlapping = new TimeSlot(LocalTime.of(10, 30), LocalTime.of(11, 30));
@@ -81,18 +91,7 @@ class CourtReservationServiceTest {
     }
 
     @Test
-    void createReservation_shouldThrowWhenCourtNotFound() {
-        given(courtRepository.findByName("Unknown")).willReturn(Optional.empty());
-
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
-            service.createReservation("Unknown", date, validSlot)
-        );
-
-        assertThat(ex.getMessage(), containsString("No se encontró"));
-        verify(reservationRepository, never()).save(any());
-    }
-
-    @Test
+    @DisplayName("Debe modificar la reserva si el nuevo horario está disponible")
     void modifyReservation_shouldUpdateIfSlotIsAvailable() {
         TimeSlot newSlot = new TimeSlot(LocalTime.of(13, 0), LocalTime.of(14, 0));
         Reservation existing = new CourtReservation("abc", court, date, validSlot);
@@ -107,35 +106,7 @@ class CourtReservationServiceTest {
     }
 
     @Test
-    void modifyReservation_shouldThrowIfSlotOverlaps() {
-        TimeSlot newSlot = new TimeSlot(LocalTime.of(10, 0), LocalTime.of(11, 0));
-        Reservation existing = new CourtReservation("123", court, date, newSlot);
-        Reservation conflicting = new CourtReservation("456", court, date, newSlot);
-
-        given(reservationRepository.findById("123")).willReturn(Optional.of(existing));
-        given(reservationRepository.findByCourtAndDate(court, date)).willReturn(List.of(existing, conflicting));
-
-        assertThrows(IllegalStateException.class, () ->
-            service.modifyReservation("123", date, newSlot)
-        );
-
-        verify(reservationRepository, never()).delete(any());
-        verify(reservationRepository, never()).save(any());
-    }
-
-    @Test
-    void modifyReservation_shouldThrowIfReservationNotFound() {
-        given(reservationRepository.findById("999")).willReturn(Optional.empty());
-
-        assertThrows(IllegalArgumentException.class, () ->
-            service.modifyReservation("999", date, validSlot)
-        );
-
-        verify(reservationRepository, never()).delete(any());
-        verify(reservationRepository, never()).save(any());
-    }
-
-    @Test
+    @DisplayName("Debe cancelar la reserva correctamente")
     void cancelReservation_shouldDeleteReservation() {
         service.cancelReservation("xyz");
 
@@ -143,8 +114,9 @@ class CourtReservationServiceTest {
     }
 
     @Test
+    @DisplayName("Debe contar correctamente las reservas por fecha")
     void countReservationsByDate_shouldReturnCorrectCount() {
-        List<Reservation> mockReservations = Arrays.asList(mock(Reservation.class), mock(Reservation.class));
+        List<Reservation> mockReservations = Arrays.asList(mock(Reservation.class), mock(Reservation.class)); // Se crea una lista de dos reservas falsas
         given(reservationRepository.findByDate(date)).willReturn(mockReservations);
 
         int count = service.countReservationsByDate(date);
@@ -163,6 +135,7 @@ class CourtReservationServiceTest {
 
     @ParameterizedTest
     @MethodSource("overlappingSlotCases")
+    @DisplayName("Debe fallar al crear una reserva si se superponen los horarios")
     void createReservation_shouldFailWithOverlappingSlots(TimeSlot existingSlot, TimeSlot newSlot) {
         given(courtRepository.findByName("Court B")).willReturn(Optional.of(court));
         Reservation existing = new CourtReservation("existing", court, date, existingSlot);
@@ -176,6 +149,7 @@ class CourtReservationServiceTest {
     }
 
     @Test
+    @DisplayName("Debe permitir crear reserva si otras reservas no se superponen")
     void createReservation_shouldSucceedWhenOtherReservationsDoNotOverlap() {
         given(courtRepository.findByName("Court A")).willReturn(Optional.of(court));
 
@@ -189,6 +163,50 @@ class CourtReservationServiceTest {
         verify(reservationRepository).save(any(Reservation.class));
         verify(reservationRepository).findByCourtAndDate(court, date);
         verify(courtRepository).findByName("Court A");
+    }
+
+    @Test
+    @DisplayName("Debe lanzar excepción al modificar si el nuevo horario se superpone con una reserva existente")
+    void modifyReservation_shouldThrowIfSlotOverlaps() {
+        TimeSlot newSlot = new TimeSlot(LocalTime.of(10, 0), LocalTime.of(11, 0));
+        Reservation existing = new CourtReservation("123", court, date, newSlot);
+        Reservation conflicting = new CourtReservation("456", court, date, newSlot);
+
+        given(reservationRepository.findById("123")).willReturn(Optional.of(existing));
+        given(reservationRepository.findByCourtAndDate(court, date)).willReturn(List.of(existing, conflicting));
+
+        assertThrows(IllegalStateException.class, () ->
+            service.modifyReservation("123", date, newSlot)
+        );
+
+        verify(reservationRepository, never()).delete(any());
+        verify(reservationRepository, never()).save(any());
+    }
+
+    @Test
+    @DisplayName("Debe lanzar excepción si la reserva a modificar no existe")
+    void modifyReservation_shouldThrowIfReservationNotFound() {
+        given(reservationRepository.findById("999")).willReturn(Optional.empty());
+
+        assertThrows(IllegalArgumentException.class, () ->
+            service.modifyReservation("999", date, validSlot)
+        );
+
+        verify(reservationRepository, never()).delete(any());
+        verify(reservationRepository, never()).save(any());
+    }
+
+    @Test
+    @DisplayName("Debe lanzar excepción si no se encuentra la cancha")
+    void createReservation_shouldThrowWhenCourtNotFound() {
+        given(courtRepository.findByName("Unknown")).willReturn(Optional.empty());
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            service.createReservation("Unknown", date, validSlot)
+        );
+
+        assertThat(ex.getMessage(), containsString("No se encontró"));
+        verify(reservationRepository, never()).save(any());
     }
 
 }
