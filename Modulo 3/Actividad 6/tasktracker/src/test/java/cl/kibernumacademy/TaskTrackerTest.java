@@ -1,81 +1,113 @@
 package cl.kibernumacademy;
 
 import java.util.List;
-
-//import javax.print.DocFlavor.STRING;
-
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import org.testng.annotations.*;
 
-import cl.kibernumacademy.models.Task;
 import cl.kibernumacademy.services.TaskTracker;
+import cl.kibernumacademy.models.Task;
 
 public class TaskTrackerTest {
-    private TaskTracker tracker; // servicio
-    public static int counter;
-    @BeforeMethod
-    void StartSetUp() {
-        System.out.println("Inicio de Test Unitario " + ++counter);
-        tracker = new TaskTracker(); 
+    private TaskTracker tracker;
+
+    @BeforeClass
+    public void setUpClass() {
+        tracker = new TaskTracker();
     }
 
     @AfterClass
-    void tearDown() {
-        System.out.println("Fin del Test Unitario");
+    public void tearDownClass() {
+        tracker = null;
     }
 
+    @BeforeMethod
+    public void clearTasks() {
+        tracker.getList().clear();
+    }
 
-    @Test (description = "Prueba de agregación de tareas")
-    void shouldAddTaskToAList() {
-        tracker.addTask("Comprar", "comprar en el supermercado lacteos", true);
-        Task task = tracker.getList().get(0); // Obtiene la tarea agregada
-        Assert.assertNotNull(task, "La tarea no puede ser nula"); // Verifica no nulidad
-        Assert.assertTrue(tracker.getList().contains(task), "La tarea debe estar en la lista");
-}
+    @Test
+    @Parameters({"title", "description"})
+    public void testAddTask(String title, String description) {
+        // Verifica que inicie sin tareas
+        Assert.assertTrue(tracker.getList().isEmpty(), "La lista debe iniciar vacía");
 
-    @Test    (description = "Prueba de actualización de tareas")
-    @Parameters({"title", "description", "state"})
-    void shouldUpdateTask(String title, String description, String state) {
-         boolean parsedState = Boolean.parseBoolean(state);
-         tracker.addTask("Pintar", "Pintar la casa", parsedState);
-         Task task = tracker.getList().get(0);
-         Assert.assertNotNull(task, "La tarea no puede ser nula");
+        // Agrega una nueva tarea
+        tracker.addTask(title, description);
+        List<Task> tasks = tracker.getList();
+        Task task = tasks.get(0);
 
-         tracker.updateTitle(task.getId(), title);
-         Assert.assertEquals(task.getTitle(), title, "El título no se actualizó correctamente.");
+        // Validaciones con SoftAssert
+        SoftAssert soft = new SoftAssert();
+        soft.assertNotNull(task, "La tarea no debe ser nula");
+        soft.assertEquals(tasks.size(), 1, "Debe haber exactamente una tarea");
+        soft.assertEquals(task.getTitle(), title, "El título debe coincidir");
+        soft.assertEquals(task.getDescription(), description, "La descripción debe coincidir");
+        soft.assertEquals(task.getState(), Task.State.ACTIVE, "Estado inicial debe ser ACTIVE");
+        soft.assertAll();
+    }
 
-         tracker.updateDescription(task.getId(), description);
-         Assert.assertEquals(task.getDescription(), description, "La descripción no se actualizó correctamente.");
+    @Test
+    @Parameters({"title", "description"})
+    public void testMarkTaskDone(String title, String description) {
+        // Agrega y marca tarea como completada
+        tracker.addTask(title, description);
+        Task task = tracker.getList().get(0);
 
-         tracker.updateState(task.getId(), parsedState);
-        Assert.assertEquals(task.getState(), parsedState, "El estado no se actualizó correctamente.");
-
-         Assert.assertTrue(tracker.getList().contains(task), "La tarea debe estar en la lista");
-}
-
+        tracker.markAsDone(task);
+        Assert.assertEquals(task.getState(), Task.State.INACTIVE,
+                "Estado debe ser INACTIVE después de marcar como hecha");
+    }
     
-    @Test
-    void shouldDeleteTaskById() {
-        tracker.addTask("Pintar", "Pintar la casa", true);
 
-        int taskId = tracker.getList().get(0).getId();
-        tracker.deleteTask(taskId);
-            
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testMarkTaskDoneInvalid() {
+        // Al pasar null, debe lanzar IllegalArgumentException
+        tracker.markAsDone(null);
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testMarkAlreadyDoneTask() {
+        tracker.addTask("Tarea", "desc");
+        Task task = tracker.getList().get(0);
+        tracker.markAsDone(task); // la marca como INACTIVE
+
+        // Segundo intento debe fallar
+        tracker.markAsDone(task);
     }
 
     @Test
-    void  shouldFilterTasks() {
-        SoftAssert softAssert = new SoftAssert();
-        List<Task> completed = tracker.filterTasks(true);
-        List<Task> pending = tracker.filterTasks(false);
+    public void testAddTaskWithNullOrEmptyTitle() {
+        tracker.addTask(null, "desc");
+        tracker.addTask("", "desc");
 
-        for (Task task : completed) {
-            softAssert.assertTrue(task.getState(), "Tarea marcada como completada no lo está.");
+        Assert.assertTrue(tracker.getList().isEmpty(), "No se debe agregar ninguna tarea si el título es inválido");
+    }
+
+    @Test
+    public void testGetUndoneTasksFiltering() {
+        // Agrega varias tareas y marca la primera como hecha
+        tracker.addTask("T1", "Desc1");
+        tracker.addTask("T2", "Desc2");
+        tracker.addTask("T3", "Desc3");
+        Task done = tracker.getList().get(0);
+        tracker.markAsDone(done);
+
+        // Obtiene solo las tareas pendientes
+        List<Task> undone = tracker.getUndoneTasks();
+
+        SoftAssert soft = new SoftAssert();
+        // Verifica que todas las tareas filtradas estén activas
+        for (Task t : undone) {
+            soft.assertEquals(t.getState(), Task.State.ACTIVE,
+                    "Todas las tareas retornadas deben estar en estado ACTIVE");
         }
-        for (Task task : pending) {
-            softAssert.assertFalse(task.getState(), "Tarea pendiente aparece como completada.");
-        }
-        softAssert.assertAll();
+        // Verifica conteo de tareas pendientes
+        soft.assertEquals(undone.size(), 2, "Deben quedar 2 tareas pendientes");
+        soft.assertAll();
     }
 }

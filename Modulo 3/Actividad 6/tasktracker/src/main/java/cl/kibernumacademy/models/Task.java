@@ -4,13 +4,17 @@ public class Task {
     private final int id;
     private String title;
     private String description;
-    private boolean state;
+    private State state;
+    
+    public enum State {
+        ACTIVE, INACTIVE
+    }
 
-    public Task(int id, String title, String description, boolean state) {
+    public Task(int id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.state = state;
+        this.state = State.ACTIVE;
     }
 
     public int getId() {
@@ -33,11 +37,11 @@ public class Task {
         this.description = description;
     }
 
-    public boolean getState() {
+    public State getState() {
         return state;
     }
 
-    public void setState(boolean state) {
+    public void setState(State state) {
         this.state = state;
     }
 
