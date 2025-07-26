@@ -28,7 +28,3 @@ Y hay una reserva para esa cancha el día 2025-07-30 de 10:00 a 11:00
 Cuando el usuario intenta reservar la cancha "Cancha 1" para el mismo día y horario
 Entonces el sistema rechaza la reserva
 Y muestra un mensaje que indica que el horario ya está reservado
-
-Actividad 6: Comparación entre frameworks de testing
-
-........

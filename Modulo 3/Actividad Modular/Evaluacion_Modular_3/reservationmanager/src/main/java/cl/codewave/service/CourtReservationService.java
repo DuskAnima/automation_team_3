@@ -16,11 +16,11 @@ import cl.codewave.model.TimeSlot;
  
 // Este proyecto posee principios SOLID porque se puede observar bajo acoplamiento, ya que las clases no dependen de 
 // implementaciones concretas, sino de interfaces. Esto permite que las clases puedan ser fácilmente reemplazadas o modificadas 
-// sin afectar al resto.
-// Gracias a este enfoque, las responsabilidades están bien separadas, lo que facilita el mantenimiento y la extensibilidad del código.
-// Por otro lado, podemos ver el uso de YAGNI (You Aren't Gonna Need It) debido a la abstención de implementar una in memory database
+// sin afectar al resto. Gracias a este enfoque, las responsabilidades están bien separadas, lo que facilita el mantenimiento
+// y la extensibilidad del código.
+// Por otro lado, podemos ver el uso de YAGNI (You Aren't Gonna Need It) debido a la abstención de implementar una "in-memory database"
 // debido a que no era parte de los requerimientos iniciales del proyecto y no era necesario para el funcionamiento básico del sistema, 
-// pero a la vez se crearon sus respectivas interfaces con el fin de establecer extensibilidad y poder definir los mocks necesarios 
+// pero a la vez se crearon las respectivas interfaces con el fin de establecer extensibilidad y poder definir los mocks necesarios 
 // para las pruebas unitarias.
 
 public class CourtReservationService implements ReservationService {
