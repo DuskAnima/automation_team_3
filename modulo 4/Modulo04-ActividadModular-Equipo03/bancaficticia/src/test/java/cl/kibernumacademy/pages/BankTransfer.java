@@ -44,10 +44,20 @@ public class BankTransfer {
         driver.findElement(motiveField).sendKeys(motive);
     }
 
+    public boolean isTransferButtonEnabled() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(transferButton)).isEnabled();  
+    }   
+
     public void clickTransferButton() {
         wait.until(ExpectedConditions.elementToBeClickable(transferButton));
         driver.findElement(transferButton).click();
     }   
+
+    public int getTransferAmount() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(amountField));
+        String amountText = driver.findElement(amountField).getAttribute("value");
+        return Integer.parseInt(amountText);
+    }
 
     public boolean isTransferSuccessful() {
         try {
@@ -71,11 +81,7 @@ public class BankTransfer {
     }
 
     public boolean isCancelTransferSuccessful() {
-        try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).isDisplayed();
     }
  
 

@@ -27,9 +27,16 @@ public class CheckBalance {
         return driver.findElement(balanceAmount).getText();
     }
 
-     public String balanceMount() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(balanceAmount)).isDisplayed();
-        return driver.findElement(balanceAmount).getText();
+    public boolean isBalanceVisible() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(balanceAmount)).isDisplayed();
+    }
+
+
+     public int getBalanceAmount() {
+         wait.until(ExpectedConditions.visibilityOfElementLocated(balanceAmount));
+         String balanceText = driver.findElement(balanceAmount).getText();
+         String numeric = balanceText.replaceAll("[^0-9]", "");
+         return Integer.parseInt(numeric);
     }
 
     public void clickBackMenu() {
@@ -38,10 +45,6 @@ public class CheckBalance {
     }
 
     public boolean isBackMenuVisible() {
-        try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).isDisplayed();
     }
 }

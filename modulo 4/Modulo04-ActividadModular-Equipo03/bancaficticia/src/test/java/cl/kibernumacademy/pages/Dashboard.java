@@ -38,6 +38,18 @@ public class Dashboard {
         driver.findElement(logOut).click();
     }
 
+    public boolean isBankTransferButtonVisible() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(bankTransferBankButton)).isDisplayed();  
+    }   
+
+    public boolean isCheckBalanceButtonVisible() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(bankCheckBalanceButton)).isDisplayed();    
+    }   
+
+    public boolean isLogOutButtonVisible() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(logOut)).isDisplayed();
+    }   
+
    public boolean isLogoutSuccessful() {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(login));
