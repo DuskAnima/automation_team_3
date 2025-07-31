@@ -1,4 +1,4 @@
-package cl.kibernumacademy;
+package cl.kibernumacademy.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -34,9 +34,16 @@ public class FormularioTest {
     
     @BeforeEach
     void setUpTest() {
-        driver = new ChromeDriver();
+        /* //Versión para Brave
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe");
+        driver = new ChromeDriver(options);
+        */
+
+        // Versión normal
+        driver = new ChromeDriver();  
         driver.get(URL);
-        // 🔥 Elimina iframes de publicidad
+
         ((JavascriptExecutor) driver).executeScript(
         "document.querySelectorAll('iframe').forEach(el => el.remove());"
          );
@@ -44,16 +51,13 @@ public class FormularioTest {
          wait = new WebDriverWait(driver, Duration.ofSeconds(10));
          webFormDemoQa = new WebFormDemoQa(driver);
 
-        // Asegúrate de que el botón Submit sea visible
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("submit")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
     }
 
     @AfterEach
     void tearDown() {
-        if(driver != null) {
-            driver.quit();
-        }
+        if(driver != null) driver.quit();
     }
 
     @Test
@@ -86,6 +90,4 @@ public class FormularioTest {
         webFormDemoQa.selectCity(city);
 
     }
-
-
 }

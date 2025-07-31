@@ -24,25 +24,6 @@
             <version>4.21.0</version>
         </dependency>
     <dependency>
-<<<<<<< HEAD:Modulo 3/Actividad 5/Modulo03-Actividad05-Equipo03/notificationcenter/pom.xml
-      <groupId>org.junit.jupiter</groupId> 
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.8.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency> 
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>4.11.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-junit-jupiter</artifactId>
-      <version>4.11.0</version>
-      <scope>test</scope>
-    </dependency>
-=======
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.10.2</version>
@@ -53,7 +34,6 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.8.0</version>
         </dependency>
->>>>>>> c8974b36f1af33a78129b92fb057b3bf2d068486:modulo 4/grupo 3 modulo 4 actividad 4/formulario-registro/pom.xml
   </dependencies>
 
   <build>
