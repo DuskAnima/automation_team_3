@@ -14,7 +14,6 @@ public class CheckBalance {
     
     private By balanceAmount = By.id("balance-info");
     private By backMenu = By.id("back-menu");
-    private By userName = By.id("user-name");
     
 
     public CheckBalance(WebDriver driver) {
@@ -45,6 +44,7 @@ public class CheckBalance {
     }
 
     public boolean isBackMenuVisible() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(backMenu)).isDisplayed();
     }
+
 }

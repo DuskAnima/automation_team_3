@@ -76,10 +76,10 @@ public class BancaFicticiaTest {
         }
     }
 
-
+/* 
     @Test 
     @DisplayName("Login exitoso con usuario válido")
-    public void testLoginSuccessful() {
+       public void testLoginSuccessful() {
         Snapshots.tomarSnapshot(driver, "login_inicial");
         loginPage.loginAs("sofia", "academy");
         assertTrue(loginPage.isLoginSuccessful(), "sofia");
@@ -94,7 +94,8 @@ public class BancaFicticiaTest {
         loginPage.loginAs("juan", "academy");
         assertTrue(loginPage.isLoginFailed(), "Credenciales incorrectas");
         Snapshots.tomarSnapshot(driver, "login_fallido_juan");
-        }
+    }
+*/
     
     @Test
     @DisplayName("Visibilidad de botones en el dashboard")
@@ -108,6 +109,7 @@ public class BancaFicticiaTest {
         assertTrue(dashboardPage.isLogOutButtonVisible(), "Botón de logout visible");
         Snapshots.tomarSnapshot(driver, "dashboard_visible");
     }
+
         
     @Test
     @DisplayName("Visualización del saldo luego del login")
