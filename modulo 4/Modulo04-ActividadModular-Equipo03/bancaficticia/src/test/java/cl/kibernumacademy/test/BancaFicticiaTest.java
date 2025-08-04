@@ -23,7 +23,7 @@ public class BancaFicticiaTest {
 
     @BeforeAll
     void setUpClass() {
-        WebDriverManager.chromedriver();
+        WebDriverManager.chromedriver().setup();
     }
     
     @BeforeEach
