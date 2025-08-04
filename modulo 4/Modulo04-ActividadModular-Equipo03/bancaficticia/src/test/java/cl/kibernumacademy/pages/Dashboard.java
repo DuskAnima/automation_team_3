@@ -20,7 +20,7 @@ public class Dashboard {
 
     public Dashboard(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     public void clickBankTransfer() {
@@ -38,22 +38,9 @@ public class Dashboard {
         driver.findElement(logOut).click();
     }
 
-    public boolean isBankTransferButtonVisible() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(bankTransferBankButton)).isDisplayed();  
-    }   
-
-    public boolean isCheckBalanceButtonVisible() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(bankCheckBalanceButton)).isDisplayed();    
-    }   
-
-    public boolean isLogOutButtonVisible() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(logOut)).isDisplayed();
-    }   
-
    public boolean isLogoutSuccessful() {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(login));
-            return true;
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(login)).isDisplayed();
         } catch (Exception e) {
             return false;
         }

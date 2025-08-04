@@ -13,17 +13,12 @@ public class CheckBalance {
 
     
     private By balanceAmount = By.id("balance-info");
-    private By backMenu = By.id("back-menu");
+    private By userName = By.id("user-name");
     
 
     public CheckBalance(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
-
-    public String getBalance() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(balanceAmount));
-        return driver.findElement(balanceAmount).getText();
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     public boolean isBalanceVisible() {
@@ -38,13 +33,7 @@ public class CheckBalance {
          return Integer.parseInt(numeric);
     }
 
-    public void clickBackMenu() {
-        wait.until(ExpectedConditions.elementToBeClickable(backMenu));
-        driver.findElement(backMenu).click();
-    }
-
     public boolean isBackMenuVisible() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(backMenu)).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).isDisplayed();
     }
-
 }

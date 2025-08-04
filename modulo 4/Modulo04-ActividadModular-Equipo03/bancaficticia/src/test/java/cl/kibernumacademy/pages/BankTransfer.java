@@ -17,13 +17,10 @@ public class BankTransfer {
     private By transferButton = By.xpath("//*[@id=\"transfer-form\"]/button[1]");
     private By transferSuccessMessage = By.className("alert-success");
     private By transferFailedMessage = By.className("alert-warning");
-    private By cancelTransfer = By.id("cancel-transfer");
-    private By userName = By.id("user-name");
-
 
     public BankTransfer(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     public void enterDestinyAccount(String destinyAccount) {
@@ -44,20 +41,10 @@ public class BankTransfer {
         driver.findElement(motiveField).sendKeys(motive);
     }
 
-    public boolean isTransferButtonEnabled() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(transferButton)).isEnabled();  
-    }   
-
     public void clickTransferButton() {
         wait.until(ExpectedConditions.elementToBeClickable(transferButton));
         driver.findElement(transferButton).click();
     }   
-
-    public int getTransferAmount() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(amountField));
-        String amountText = driver.findElement(amountField).getAttribute("value");
-        return Integer.parseInt(amountText);
-    }
 
     public boolean isTransferSuccessful() {
         try {
@@ -74,16 +61,5 @@ public class BankTransfer {
             return false;
         }
     }
-
-    public void clickCancelTransfer() {
-        wait.until(ExpectedConditions.elementToBeClickable(cancelTransfer));
-        driver.findElement(cancelTransfer).click();
-    }
-
-    public boolean isCancelTransferSuccessful() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).isDisplayed();
-    }
- 
-
 }
 

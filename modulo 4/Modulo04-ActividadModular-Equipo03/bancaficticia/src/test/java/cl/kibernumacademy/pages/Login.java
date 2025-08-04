@@ -20,7 +20,7 @@ public class Login {
 
     public Login(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     public void enterUsername(String username) {
@@ -43,23 +43,24 @@ public class Login {
     
     public void loginAs(String username, String password) {
         enterUsername(username);
-         enterPassword(password);
-         clickLoginButton();
+        enterPassword(password);
+        clickLoginButton();
     }
 
     public boolean isLoginSuccessful() {
-         try {
-             return wait.until(ExpectedConditions.visibilityOfElementLocated(loginSuccessMessage)).isDisplayed();
+        try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(loginSuccessMessage)).isDisplayed();
         } catch (Exception e) {
             return false;
         }
-}
+    }
+    
     public boolean isLoginFailed() {
         try {
              return wait.until(ExpectedConditions.visibilityOfElementLocated(loginFailedMessage)).isDisplayed();
         } catch (Exception e) {
              return false;
-         }
+        }
     }
 
 }
