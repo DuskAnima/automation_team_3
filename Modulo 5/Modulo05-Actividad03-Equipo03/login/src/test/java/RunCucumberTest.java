@@ -1,4 +1,4 @@
-package cl.kibernumacademy;
+
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
@@ -12,7 +12,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features") // Indicar la ruta de los archivos con extensiones .feature
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "cl.kibernumacademy.steps") // Indicar donde estan los steps definitions
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "steps") // Indicar donde estan los steps definitions
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty,summary,json:target/cucumber-reports.json")
 public class RunCucumberTest {
   

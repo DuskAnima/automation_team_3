@@ -1,11 +1,43 @@
-package cl.kibernumacademy.pages;
+package pages;
+
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.SnapshotUtil;
 
 public class LoginPage {
-    private WebDriver driver;
+
+  // Setup
+  protected static WebDriver driver;
+  public static WebDriverWait wait;
+
+  public static void initDriver() {
+    if (driver != null) driver.quit();
+    WebDriverManager.chromedriver().setup();
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.addArguments("--headless");
+    driver = new ChromeDriver(chromeOptions);
+    wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+  }
+  
+  public void navigateToLogin() {
+    driver.get("https://admin-login-selenium.netlify.app/");
+  }
+  
+  public static void closeBrowser() {
+    if (driver != null) {
+      driver.quit();
+      driver = null;
+      wait = null;
+    }
+  }
     
   private By usernameField = By.id("username");
   private By passwordField = By.id("password");
@@ -13,9 +45,6 @@ public class LoginPage {
   private By loginButton = By.cssSelector("button[type='submit']");
   private By welcomeMessage = By.className("alert");
 
-  public LoginPage(WebDriver driver) {
-    this.driver = driver;
-  }
 
   public void enterUsername(String username) {
     driver.findElement(usernameField).sendKeys(username);
@@ -42,5 +71,9 @@ public class LoginPage {
     enterUsername(username);
     enterPassword(password);
     clickLoginButton();
+  }
+
+  public void tomarSnapshot(String nombre) {
+    SnapshotUtil.takeASnapshot(nombre, driver);
   }
 }
