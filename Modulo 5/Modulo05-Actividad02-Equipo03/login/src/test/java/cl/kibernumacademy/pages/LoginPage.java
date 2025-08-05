@@ -20,7 +20,7 @@ public class LoginPage {
 
   public static void initDriver() {
     if (driver != null) driver.quit();
-    WebDriverManager.chromedriver().setup();;
+    WebDriverManager.chromedriver().setup();
     ChromeOptions chromeOptions = new ChromeOptions();
     chromeOptions.addArguments("--headless");
     driver = new ChromeDriver(chromeOptions);
