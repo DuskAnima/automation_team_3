@@ -7,5 +7,8 @@ Scenario: Login exitoso
     Then accede a su cuenta bancaria
 
 
-
+Scenario: Login inválido
+    Given que el cliente accede a página del login
+    When ingresa credenciales inválidas
+    Then se muestra mensaje de error de acceso
 
