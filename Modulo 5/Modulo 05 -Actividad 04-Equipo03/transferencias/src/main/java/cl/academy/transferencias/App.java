@@ -1,9 +1,5 @@
-package cl.academy;
+package cl.academy.transferencias;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
