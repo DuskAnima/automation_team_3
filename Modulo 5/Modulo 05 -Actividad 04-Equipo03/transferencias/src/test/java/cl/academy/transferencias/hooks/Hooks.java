@@ -28,7 +28,7 @@ public class Hooks {
 
 @Before
   public void setUp() {
-    WebDriverManager.chromedriver().setup();
+   
     WebDriver driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     driver.manage().window().maximize();
@@ -46,7 +46,7 @@ public class Hooks {
       byte[] shot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
       scenario.attach(shot, "image/png", scenario.getName());
     }
-    driver.quit(); 
+     DriverHolder.get().quit();
     DriverHolder.remove();  
   }
     

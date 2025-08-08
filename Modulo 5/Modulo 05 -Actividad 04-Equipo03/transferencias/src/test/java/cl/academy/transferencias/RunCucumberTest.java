@@ -11,10 +11,8 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value="cl.academy.transferencias.steps, cl.academy.transferencias.hooks")
-@ConfigurationParameter(
-  key = PLUGIN_PROPERTY_NAME,
-  value = "pretty, html:target/cucumber-report.html"
-)
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-report.html")
+
 public class RunCucumberTest {
     
 }
