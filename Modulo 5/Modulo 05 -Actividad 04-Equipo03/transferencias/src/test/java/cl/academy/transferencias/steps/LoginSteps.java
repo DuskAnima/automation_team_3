@@ -12,7 +12,7 @@ public class LoginSteps {
 
 
     //Login ok
-  @Given("que cliente accede a página del login")
+  @Given("que el cliente accede a página del login")
   public void  que_el_cliente_accede_a_página_del_login() {
     loginPage = new LoginPage();
     loginPage.abrir();
