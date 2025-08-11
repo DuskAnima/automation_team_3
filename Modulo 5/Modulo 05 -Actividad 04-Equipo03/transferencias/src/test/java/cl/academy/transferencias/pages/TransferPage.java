@@ -44,8 +44,8 @@ public class TransferPage {
   // Localizadores de transferencia
   private By amountField = By.id("monto");
   private By accountNumberField = By.id("cuenta");
-  private By buttonTransfer = By.xpath("button[@type='submit' and contains(normalize-space(), 'Enviar transferencia')]");
-  private By resultMessage = By.id("resultados-transferencia");
+  private By buttonTransfer = By.xpath("//button[@type='submit' and contains(., 'Enviar transferencia')]");
+  private By resultMessage = By.id("resultado-transferencia");
 
   // Localizadores de datos de usuario
   private By nameField = getUserDataFieldsXpath("nombre");

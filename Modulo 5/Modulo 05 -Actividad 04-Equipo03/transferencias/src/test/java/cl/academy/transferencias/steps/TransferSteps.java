@@ -20,7 +20,7 @@ public class TransferSteps {
 
   @After
   public void tearDown() {
-    //TransferPage.closeBrowser();
+    TransferPage.closeBrowser();
   }
  
   @Given("que el usuario ha iniciado sesión")
