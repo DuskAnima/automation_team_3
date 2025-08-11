@@ -6,4 +6,3 @@ Feature: Formulario de datos de Carla
     | apellido | Soto         |
     | email    | carla@qa.com |
     | edad     | 35           |
-    Then los datos ingresados deben imprimirse correctamente

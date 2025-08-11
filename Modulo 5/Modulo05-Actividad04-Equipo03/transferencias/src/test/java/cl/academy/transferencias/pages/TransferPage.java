@@ -101,7 +101,7 @@ public class TransferPage {
 
   // Buscar elementos de la tabla de datos de usuario bajo un patrón xpath
   private By getUserDataFieldsXpath(String tag) { 
-    return By.xpath("td[contains(normalize-space(), '" + tag + "')]/following-sibling::td[1]/input");
+    return By.xpath("//td[contains(normalize-space(), '" + tag + "')]/following-sibling::td[1]/input");
   } 
 
 }
