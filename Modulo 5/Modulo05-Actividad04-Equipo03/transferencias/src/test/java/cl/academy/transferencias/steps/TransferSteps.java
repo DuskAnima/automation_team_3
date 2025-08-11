@@ -33,11 +33,14 @@ public class TransferSteps {
     transferPage.enterAmount(monto);
     transferPage.enterAccountNumber(cuenta);
     transferPage.clickButtonTransfer();
+    System.out.println("Monto: " + monto);
+    System.out.println("Cuenta: " + cuenta);
   }
 
   @Then("debería ver el mensaje {string}")
   public void deberia_ver_el_mensaje(String expectedMessage) {
     String webMessage = transferPage.getResultMessage();
+    System.out.println("Mensaje: " + expectedMessage);
     Assertions.assertTrue(webMessage.contains(expectedMessage), "El mensaje: '"+ webMessage +"' no coincide con el resultado esperado: '" + expectedMessage + "'.");
   }
 }
