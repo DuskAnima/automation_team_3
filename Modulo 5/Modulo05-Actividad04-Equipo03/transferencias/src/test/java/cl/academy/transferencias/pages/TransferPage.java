@@ -6,7 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,13 +18,17 @@ public class TransferPage {
 
   public static void initDriver() {
     if (driver != null) driver.quit();
+
+    // Configuración para Firefox
     WebDriverManager.firefoxdriver().setup();
     driver = new FirefoxDriver();
+
+    // Configuración para Chrome
     /* 
     WebDriverManager.chromedriver().setup();
-    ChromeOptions chromeOptions = new ChromeOptions();
-    driver = new ChromeDriver(chromeOptions);
+    driver = new ChromeDriver();
     */
+    
     wait = new WebDriverWait(driver, Duration.ofSeconds(4));
   }
   
@@ -78,9 +81,17 @@ public class TransferPage {
     driver.findElement(nameField).sendKeys(name);
   }
 
-  public void enterLasname(String lastname) {
+  public String getNameValue() {
+    return driver.findElement(nameField).getAttribute("value");
+  }
+
+  public void enterLastname(String lastname) {
     driver.findElement(lastnameField).clear();
     driver.findElement(lastnameField).sendKeys(lastname);
+  }
+
+  public String getLastnameValue() {
+    return driver.findElement(lastnameField).getAttribute("value");
   }
 
   public void enterEmail(String email) {
@@ -88,9 +99,17 @@ public class TransferPage {
     driver.findElement(emailField).sendKeys(email);
   } 
 
+  public String getEmailValue() {
+    return driver.findElement(emailField).getAttribute("value");
+  }
+
   public void enterAge(String age) {
     driver.findElement(ageField).clear();
     driver.findElement(ageField).sendKeys(age);
+  }
+
+  public String getAgeValue() {
+    return driver.findElement(ageField).getAttribute("value");
   }
 
   public void clickPrintData() {
@@ -103,7 +122,6 @@ public class TransferPage {
   private By getUserDataFieldsXpath(String tag) { 
     return By.xpath("//td[contains(normalize-space(), '" + tag + "')]/following-sibling::td[1]/input");
   } 
-
 }
 
 

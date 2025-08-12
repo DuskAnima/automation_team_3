@@ -22,7 +22,7 @@ public class TransferSteps {
   public void tearDown() {
     TransferPage.closeBrowser();
   }
- 
+
   @Given("que el usuario ha iniciado sesión")
   public void que_el_usuario_ha_iniciado_sesion_() {
     transferPage.navigateToBank();
@@ -41,6 +41,6 @@ public class TransferSteps {
   public void deberia_ver_el_mensaje(String expectedMessage) {
     String webMessage = transferPage.getResultMessage();
     System.out.println("Mensaje: " + expectedMessage);
-    Assertions.assertTrue(webMessage.contains(expectedMessage), "El mensaje: '"+ webMessage +"' no coincide con el resultado esperado: '" + expectedMessage + "'.");
+    Assertions.assertTrue(webMessage.contains(expectedMessage), "El mensaje: '" + webMessage + "' no coincide con el resultado esperado: '" + expectedMessage + "'.");
   }
 }
