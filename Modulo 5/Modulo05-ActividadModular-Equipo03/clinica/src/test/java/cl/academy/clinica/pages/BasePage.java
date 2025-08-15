@@ -1,37 +1,24 @@
 package cl.academy.clinica.pages;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import cl.academy.clinica.hooks.DriverHolder;
 
 public class BasePage {
-  protected static WebDriver driver;
-  private static WebDriverWait wait;
+  protected WebDriver driver;
+  protected WebDriverWait wait;
 
-  public static void initDriver() {
-    if (driver != null) driver.quit();
-    WebDriverManager.firefoxdriver().setup();
-    driver = new FirefoxDriver();
-    wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+  public BasePage() {
+    this.driver = DriverHolder.getDriver();
+    this.wait = DriverHolder.getWait();
   }
-
-  public static void navigateTo(String url) {
+  
+  public void navigateTo(String url) {
     driver.get(url);
-  }
-
-  public static void closeBrowser() {
-    if (driver != null) {
-      driver.quit();
-      driver = null;
-      wait = null;
-    }
   }
 
   protected WebElement find(String type, String locator) {
@@ -70,7 +57,6 @@ public class BasePage {
   }
 
   public void clickElement(String type, String locator) {
-    find(type, locator).click();
-  }
-
+      wait.until(ExpectedConditions.elementToBeClickable(find(type, locator))).click();
+    }
 }
