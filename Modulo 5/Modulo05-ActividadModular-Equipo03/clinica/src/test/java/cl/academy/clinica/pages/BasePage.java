@@ -51,12 +51,19 @@ public class BasePage {
     return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
   }
 
-  public void writte(String type, String locator, String textToWritte) {
-    find(type, locator).clear(); // Limpia campo de texto
-    find(type, locator).sendKeys(textToWritte); // Escribe el texto declarado
+  public void write(String type, String locator, String textToWrite) {
+    WebElement element = find(type, locator);
+    element.clear();
+    element.sendKeys(textToWrite);
+  }
+
+  public String getElementText(String type, String locator) {
+    WebElement element = find(type, locator);
+    return element.getText().trim();
   }
 
   public void clickElement(String type, String locator) {
-      wait.until(ExpectedConditions.elementToBeClickable(find(type, locator))).click();
-    }
+    WebElement element = find(type, locator);
+    wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+  }
 }
