@@ -16,21 +16,21 @@ public class Hooks {
     DriverHolder.initDriver();
   }
 
-@After 
-public void tearDown(Scenario scenario) {
+  @After 
+  public void tearDown(Scenario scenario) {
     WebDriver driver = DriverHolder.getDriver();
     
-    if(scenario.isFailed() && driver != null) {
-        try {
-            byte[] shot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(shot, "image/png", scenario.getName());
-        } catch (Exception e) {
-            System.err.println("Error tomando screenshot: " + e.getMessage());
-        }
+    if(scenario.isFailed()) {
+      try {
+        byte[] shot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(shot, "image/png", scenario.getName());
+      } catch (Exception e) {
+        System.err.println("Error tomando screenshot: " + e.getMessage());
+      }
     }
     
     if (driver != null) {
         DriverHolder.quitDriver();
     }
-}
+  }
 }
