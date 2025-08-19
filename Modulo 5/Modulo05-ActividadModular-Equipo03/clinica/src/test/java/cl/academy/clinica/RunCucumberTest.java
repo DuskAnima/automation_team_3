@@ -11,10 +11,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "cl.academy.clinica.steps, cl.academy.clinica.hooks")
-@ConfigurationParameter(
-  key = PLUGIN_PROPERTY_NAME,
-  value = "pretty, html:target/cucumber-report.html"
-)
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-report.html")
 public class RunCucumberTest {
     
 }

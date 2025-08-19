@@ -3,6 +3,7 @@ package cl.academy.clinica.hooks;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -15,14 +16,21 @@ public class Hooks {
     DriverHolder.initDriver();
   }
 
-  @After 
-  public void tearDown(Scenario scenario) {
-    if(scenario.isFailed()) {
-      var driver = DriverHolder.getDriver();
-      byte[] shot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-      scenario.attach(shot, "image/png", scenario.getName());
+@After 
+public void tearDown(Scenario scenario) {
+    WebDriver driver = DriverHolder.getDriver();
+    
+    if(scenario.isFailed() && driver != null) {
+        try {
+            byte[] shot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(shot, "image/png", scenario.getName());
+        } catch (Exception e) {
+            System.err.println("Error tomando screenshot: " + e.getMessage());
+        }
     }
-
-    DriverHolder.quitDriver();
-  }
+    
+    if (driver != null) {
+        DriverHolder.quitDriver();
+    }
+}
 }

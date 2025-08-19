@@ -57,13 +57,21 @@ public class BasePage {
     element.sendKeys(textToWrite);
   }
 
+  public WebElement getElement(String type, String locator) {
+    return find(type, locator);
+  } 
+
   public String getElementText(String type, String locator) {
     WebElement element = find(type, locator);
-    return element.getText().trim();
+    return element.getText();
   }
 
   public void clickElement(String type, String locator) {
     WebElement element = find(type, locator);
     wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+  }
+
+  public String getCurrentUrl() {
+    return driver.getCurrentUrl();
   }
 }
