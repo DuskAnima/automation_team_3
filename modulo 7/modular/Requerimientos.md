@@ -15,19 +15,22 @@ Restricciones de valores:
 - fromPort ∈ {Paris, Philadelphia, Boston, Portland, San Diego, Mexico City, São Paolo}
 - toPort ∈ {Buenos Aires, Rome, London, Berlin, New York, Dublin, Cairo}
 - cardType ∈ {visa, amex, dinersclub}
+
+
+
 Requisitos del Test Plan (mínimos para aprobar)
 1) Thread Groups:
-- TG – Smoke: 10 usuarios, ramp-up 10 s, loop 1.
+(OK)- TG – Smoke: 10 usuarios, ramp-up 10 s, loop 1. 
 - TG – Load: 50 usuarios, ramp-up 30 s, loop 2.
 2) Configuración global:
-- HTTP Request Defaults: Protocol=https, Server Name=blazedemo.com.
-- HTTP Cookie Manager y HTTP Cache Manager.
-- CSV Data Set Config apuntando al CSV entregado (ignorar encabezado).
+(OK)- HTTP Request Defaults: Protocol=https, Server Name=blazedemo.com.
+(OK)- HTTP Cookie Manager y HTTP Cache Manager.
+(OK)- CSV Data Set Config apuntando al CSV entregado (ignorar encabezado).
 3) Transacciones (usar Transaction Controllers):
-- 1. Home → 1 sampler GET /.
-- 2. Buscar Vuelo → 1 sampler POST /reserve.php con parámetros fromPort=${fromPort}, toPort=${toPort}.
+(OK)- 1. Home → 1 sampler GET /.
+(OK)- 2. Buscar Vuelo → 1 sampler POST /reserve.php con parámetros fromPort=${fromPort}, toPort=${toPort}.
 - 3. Seleccionar Vuelo → 1 sampler POST /purchase.php que envíe solo valores correlacionados desde la respuesta de reserve.php (no hardcodear).
-- 4. Completar Compra → 1 sampler POST /confirmation.php con parámetros desde CSV (inputName, address, city, state, zipCode, cardType, creditCardNumber, creditCardMonth, creditCardYear, nameOnCard).
+(OK)- 4. Completar Compra → 1 sampler POST /confirmation.php con parámetros desde CSV (inputName, address, city, state, zipCode, cardType, creditCardNumber, creditCardMonth, creditCardYear, nameOnCard).
 Opcional: marcar Remember me. Añadir un sufijo único a nameOnCard (UUID) para evitar colisiones.
 4) Correlación (obligatoria):
 - En la respuesta HTML de reserve.php extraer cinco valores: flight, price, airline, fromPort (hidden), toPort (hidden).
@@ -41,7 +44,9 @@ Opcional: marcar Remember me. Añadir un sufijo único a nameOnCard (UUID) para 
 - Enviar datos por Parameters (no Body Data, ni multipart).
 - Follow Redirects: ON, Redirect Automatically: OFF.
 - No duplicar listeners pesados en pruebas de carga.
-- No modificar el CSV.
+(OK)- No modificar el CSV.
+
+
 Criterios de aceptación
 - Funcional: flujo completo sin errores; assertions en verde.
 - Correlación: en POST /purchase.php → Request Body se ven valores reales (no ${variable} ni %24%7B…%7D).
