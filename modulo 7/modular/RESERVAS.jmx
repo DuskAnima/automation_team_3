@@ -121,19 +121,20 @@
               </collectionProp>
             </elementProp>
           </HTTPSamplerProxy>
-          <hashTree/>
-          <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="Extracción de valor &quot;flight&quot;">
-            <stringProp name="HtmlExtractor.refname">flight</stringProp>
-            <stringProp name="HtmlExtractor.expr">form[action*=&apos;purchase&apos;] input[name=flight]</stringProp>
-            <stringProp name="HtmlExtractor.attribute">value</stringProp>
-            <stringProp name="HtmlExtractor.default">NOT_FOUND_toPort</stringProp>
-            <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
-            <stringProp name="HtmlExtractor.match_number">1</stringProp>
-            <stringProp name="HtmlExtractor.extractor_impl">JSOUP</stringProp>
-            <stringProp name="Sample.scope">all</stringProp>
-            <stringProp name="Scope.variable">flight</stringProp>
-          </HtmlExtractor>
-          <hashTree/>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname"></stringProp>
+              <stringProp name="RegexExtractor.regex">(?s)&lt;form[^&gt;]+action=&quot;purchase\.php&quot;.*?name=&quot;flight&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;price&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;airline&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;fromPort&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;toPort&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot; </stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <stringProp name="Sample.scope">variable</stringProp>
+              <stringProp name="Scope.variable"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Seleccionar Vuelo">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
