@@ -122,6 +122,18 @@
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree/>
+          <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="Extracción de valor &quot;flight&quot;">
+            <stringProp name="HtmlExtractor.refname">flight</stringProp>
+            <stringProp name="HtmlExtractor.expr">form[action*=&apos;purchase&apos;] input[name=flight]</stringProp>
+            <stringProp name="HtmlExtractor.attribute">value</stringProp>
+            <stringProp name="HtmlExtractor.default">NOT_FOUND_toPort</stringProp>
+            <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            <stringProp name="HtmlExtractor.match_number">1</stringProp>
+            <stringProp name="HtmlExtractor.extractor_impl">JSOUP</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">flight</stringProp>
+          </HtmlExtractor>
+          <hashTree/>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Seleccionar Vuelo">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
