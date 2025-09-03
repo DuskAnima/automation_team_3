@@ -24,13 +24,13 @@
       </CookieManager>
       <hashTree/>
       <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager">
-        <boolProp name="clearEachIteration">false</boolProp>
+        <boolProp name="clearEachIteration">true</boolProp>
         <boolProp name="useExpires">true</boolProp>
         <boolProp name="CacheManager.controlledByThread">false</boolProp>
       </CacheManager>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <intProp name="ThreadGroup.num_threads">10</intProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -78,7 +78,8 @@
         </ResultCollector>
         <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Home">
-          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Home">
@@ -93,6 +94,7 @@
           <hashTree/>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Buscar Vuelo">
+          <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -122,7 +124,7 @@
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname"></stringProp>
               <stringProp name="RegexExtractor.regex">(?s)&lt;form[^&gt;]+action=&quot;purchase\.php&quot;.*?name=&quot;flight&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;price&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;airline&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;fromPort&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot;.*? name=&quot;toPort&quot;[^&gt;]+value=&quot;([^&quot;]+)&quot; </stringProp>
@@ -134,30 +136,78 @@
               <stringProp name="Scope.variable"></stringProp>
             </RegexExtractor>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="extraer variables" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname"></stringProp>
+              <stringProp name="RegexExtractor.regex">(?s)&lt;form[^&gt;]*action=&quot;purchase\.php&quot;[^&gt;]*&gt;.*? name=&quot;flight&quot;[^&gt;]*value=&quot;([^&quot;]+)&quot;.*? name=&quot;price&quot;[^&gt;]*value=&quot;([^&quot;]+)&quot;.*? name=&quot;airline&quot;[^&gt;]*value=&quot;([^&quot;]+)&quot;.*? name=&quot;fromPort&quot;[^&gt;]*value=&quot;([^&quot;]+)&quot;.*? name=&quot;toPort&quot;[^&gt;]*value=&quot;([^&quot;]+)&quot;.*?&lt;/form&gt; </stringProp>
+              <stringProp name="RegexExtractor.template"></stringProp>
+              <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Seleccionar Vuelo">
+          <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Envía datos del pasajero">
-            <stringProp name="HTTPSampler.path">/confirmation.php</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="datos de compra" enabled="true">
+            <stringProp name="HTTPSampler.path">/purchase.php</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
             <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flight" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${flight}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">flight</stringProp>
+                </elementProp>
+                <elementProp name="price" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${price}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">price</stringProp>
+                </elementProp>
+                <elementProp name="airline" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${airline}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">airline</stringProp>
+                </elementProp>
+                <elementProp name="fromPort" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${fromPortHidden}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">fromPort</stringProp>
+                </elementProp>
+                <elementProp name="toPort" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${toPortHidden}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">toPort</stringProp>
+                </elementProp>
+              </collectionProp>
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Completar Compra">
+          <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Seleccionar vuelo">
-            <stringProp name="HTTPSampler.path">/purchase.php</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Envía datos del pasajero" enabled="true">
+            <stringProp name="HTTPSampler.path">/confirmation.php</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -239,17 +289,22 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
+        <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer">
+          <stringProp name="ConstantTimer.delay">400</stringProp>
+          <stringProp name="RandomTimer.range">1200</stringProp>
+        </GaussianRandomTimer>
+        <hashTree/>
       </hashTree>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
         <stringProp name="delimiter">,</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
         <stringProp name="filename">C:/Users/homs/Downloads/blaze_users_fixed.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
         <stringProp name="shareMode">shareMode.all</stringProp>
         <boolProp name="stopThread">false</boolProp>
-        <stringProp name="variableNames"></stringProp>
+        <stringProp name="variableNames">inputName,address,city,state,zipCode,cardType,creditCardNumber,creditCardMonth,creditCardYear,nameOnCard,fromPort,toPort</stringProp>
       </CSVDataSet>
       <hashTree/>
     </hashTree>
