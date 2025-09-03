@@ -140,7 +140,7 @@
               <stringProp name="HtmlExtractor.refname">price</stringProp>
               <stringProp name="HtmlExtractor.expr">input[name=&apos;price&apos;]</stringProp>
               <stringProp name="HtmlExtractor.attribute">value</stringProp>
-              <stringProp name="HtmlExtractor.default"></stringProp>
+              <stringProp name="HtmlExtractor.default">NOT_FOUND</stringProp>
               <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
               <stringProp name="HtmlExtractor.match_number">1</stringProp>
               <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
@@ -150,7 +150,7 @@
               <stringProp name="HtmlExtractor.refname">airline</stringProp>
               <stringProp name="HtmlExtractor.expr">input[name=&apos;airline&apos;]</stringProp>
               <stringProp name="HtmlExtractor.attribute">value</stringProp>
-              <stringProp name="HtmlExtractor.default"></stringProp>
+              <stringProp name="HtmlExtractor.default">NOT_FOUND</stringProp>
               <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
               <stringProp name="HtmlExtractor.match_number">1</stringProp>
               <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
@@ -160,7 +160,7 @@
               <stringProp name="HtmlExtractor.refname">fromPort</stringProp>
               <stringProp name="HtmlExtractor.expr">input[name=&apos;fromPort&apos;]</stringProp>
               <stringProp name="HtmlExtractor.attribute">value</stringProp>
-              <stringProp name="HtmlExtractor.default"></stringProp>
+              <stringProp name="HtmlExtractor.default">NOT_FOUND</stringProp>
               <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
               <stringProp name="HtmlExtractor.match_number">1</stringProp>
               <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
@@ -170,7 +170,7 @@
               <stringProp name="HtmlExtractor.refname">toPort</stringProp>
               <stringProp name="HtmlExtractor.expr">input[name=&apos;toPort&apos;]</stringProp>
               <stringProp name="HtmlExtractor.attribute">value</stringProp>
-              <stringProp name="HtmlExtractor.default"></stringProp>
+              <stringProp name="HtmlExtractor.default">NOT_FOUND</stringProp>
               <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
               <stringProp name="HtmlExtractor.match_number">1</stringProp>
               <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
@@ -324,27 +324,28 @@
               </collectionProp>
             </elementProp>
           </HTTPSamplerProxy>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="retorrna gracias">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1092415328">Thank you for your purchase</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="retorna código">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="49586">200</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">8</intProp>
-          </ResponseAssertion>
-          <hashTree/>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="retorrna gracias">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1092415328">Thank you for your purchase</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="retorna código">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
         </hashTree>
         <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer">
           <stringProp name="ConstantTimer.delay">400</stringProp>
