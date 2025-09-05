@@ -1,91 +1,991 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1756866727943,906,Home,429,"Number of samples in transaction : 1, number of failing samples : 1",Thread Group 1-2,,false,,212,116,2,2,null,0,0,164
-1756866728487,362,GET Home,429,Too Many Requests,Thread Group 1-2,text,false,,212,116,2,2,https://blazedemo.com/,362,0,164
-1756866726956,2492,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,4757,116,3,3,null,0,0,438
-1756866727778,1670,GET Home,200,OK,Thread Group 1-1,text,true,,4757,116,3,3,https://blazedemo.com/,1668,0,438
-1756866728939,1042,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-3,,true,,4757,116,4,4,null,0,0,167
-1756866729255,726,GET Home,200,OK,Thread Group 1-3,text,true,,4757,116,4,4,https://blazedemo.com/,724,0,167
-1756866728850,269,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-2,,true,,7357,243,4,4,null,0,1315,0
-1756866730110,269,Buscar Vuelo,200,OK,Thread Group 1-2,text,true,,7357,243,4,4,https://blazedemo.com/reserve.php,267,0,0
-1756866729982,314,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-3,,true,,7381,246,4,4,null,0,596,0
-1756866730574,314,Buscar Vuelo,200,OK,Thread Group 1-3,text,true,,7381,246,4,4,https://blazedemo.com/reserve.php,307,0,0
-1756866729450,1250,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,7357,243,5,5,null,0,853,0
-1756866730301,1250,Buscar Vuelo,200,OK,Thread Group 1-1,text,true,,7357,243,5,5,https://blazedemo.com/reserve.php,1245,0,0
-1756866730892,265,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-3,,true,,6715,321,5,5,null,0,696,0
-1756866731588,265,Seleccionar,200,OK,Thread Group 1-3,text,true,,6715,321,5,5,https://blazedemo.com/purchase.php,259,0,0
-1756866730434,589,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-2,,true,,6715,321,6,6,null,0,1086,0
-1756866731520,589,Seleccionar,200,OK,Thread Group 1-2,text,true,,6715,321,6,6,https://blazedemo.com/purchase.php,586,0,0
-1756866729938,2920,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-4,,true,,4757,116,6,6,null,0,0,165
-1756866731787,1071,GET Home,200,OK,Thread Group 1-4,text,true,,4757,116,6,6,https://blazedemo.com/,1071,0,165
-1756866731853,875,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-3,,true,,5780,492,7,7,null,0,489,0
-1756866732341,875,Completar compra,200,OK,Thread Group 1-3,text,true,,5780,492,7,7,https://blazedemo.com/confirmation.php,871,0,0
-1756866731937,1406,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-6,,true,,4757,116,7,7,null,0,0,162
-1756866732884,459,GET Home,200,OK,Thread Group 1-6,text,true,,4757,116,7,7,https://blazedemo.com/,458,0,162
-1756866733423,2,Debug Sampler,200,OK,Thread Group 1-3,text,true,,566,0,7,7,null,0,0,0
-1756866732937,653,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-7,,true,,4757,116,6,6,null,0,0,166
-1756866733148,442,GET Home,200,OK,Thread Group 1-7,text,true,,4757,116,6,6,https://blazedemo.com/,441,0,166
-1756866732859,507,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-4,,true,,7405,249,6,6,null,0,234,0
-1756866733091,507,Buscar Vuelo,200,OK,Thread Group 1-4,text,true,,7405,249,6,6,https://blazedemo.com/reserve.php,500,0,0
-1756866730938,2901,Home,429,"Number of samples in transaction : 1, number of failing samples : 1",Thread Group 1-5,,false,,212,116,6,6,null,0,0,176
-1756866733482,357,GET Home,429,Too Many Requests,Thread Group 1-5,text,false,,212,116,6,6,https://blazedemo.com/,357,0,176
-1756866732109,2452,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-2,,true,,5780,481,7,7,null,0,226,0
-1756866732334,2452,Completar compra,200,OK,Thread Group 1-2,text,true,,5780,481,7,7,https://blazedemo.com/confirmation.php,2449,0,0
-1756866733840,339,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-5,,true,,7349,242,8,8,null,0,954,0
-1756866734792,339,Buscar Vuelo,200,OK,Thread Group 1-5,text,true,,7349,242,8,8,https://blazedemo.com/reserve.php,335,0,0
-1756866733936,1464,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-8,,true,,4757,116,8,8,null,0,0,171
-1756866734141,1259,GET Home,200,OK,Thread Group 1-8,text,true,,4757,116,8,8,https://blazedemo.com/,1256,0,171
-1756866733600,363,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-4,,true,,6715,321,8,8,null,0,1695,0
-1756866735295,363,Seleccionar,200,OK,Thread Group 1-4,text,true,,6715,321,8,8,https://blazedemo.com/purchase.php,360,0,0
-1756866733590,436,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-7,,true,,7373,245,8,8,null,0,1646,0
-1756866735235,436,Buscar Vuelo,200,OK,Thread Group 1-7,text,true,,7373,245,8,8,https://blazedemo.com/reserve.php,432,0,0
-1756866735765,0,Debug Sampler,200,OK,Thread Group 1-2,text,true,,551,0,8,8,null,0,0,0
-1756866733343,331,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-6,,true,,7341,241,8,8,null,0,2287,0
-1756866735628,331,Buscar Vuelo,200,OK,Thread Group 1-6,text,true,,7341,241,8,8,https://blazedemo.com/reserve.php,326,0,0
-1756866734935,1640,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-9,,true,,4757,116,8,8,null,0,0,167
-1756866735567,1008,GET Home,200,OK,Thread Group 1-9,text,true,,4757,116,8,8,https://blazedemo.com/,1008,0,167
-1756866735658,714,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-4,,true,,5780,481,8,8,null,0,610,0
-1756866736268,714,Completar compra,200,OK,Thread Group 1-4,text,true,,5780,481,8,8,https://blazedemo.com/confirmation.php,708,0,0
-1756866737117,0,Debug Sampler,200,OK,Thread Group 1-4,text,true,,558,0,8,8,null,0,0,0
-1756866731553,5429,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,6715,321,7,7,null,0,380,0
-1756866731933,5429,Seleccionar,200,OK,Thread Group 1-1,text,true,,6715,321,7,7,https://blazedemo.com/purchase.php,5426,0,0
-1756866735401,502,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-8,,true,,7317,238,7,7,null,0,1573,0
-1756866736973,502,Buscar Vuelo,200,OK,Thread Group 1-8,text,true,,7317,238,7,7,https://blazedemo.com/reserve.php,500,0,0
-1756866735673,726,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-7,,true,,6715,321,7,7,null,0,1228,0
-1756866736901,726,Seleccionar,200,OK,Thread Group 1-7,text,true,,6715,321,7,7,https://blazedemo.com/purchase.php,726,0,0
-1756866736576,482,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-9,,true,,7349,242,7,7,null,0,655,0
-1756866737230,482,Buscar Vuelo,200,OK,Thread Group 1-9,text,true,,7349,242,7,7,https://blazedemo.com/reserve.php,475,0,0
-1756866737362,485,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-1,,true,,5780,498,7,7,null,0,24,0
-1756866737385,485,Completar compra,200,OK,Thread Group 1-1,text,true,,5780,498,7,7,https://blazedemo.com/confirmation.php,485,0,0
-1756866735133,2205,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-5,,true,,6715,321,7,7,null,0,695,0
-1756866735828,2205,Seleccionar,200,OK,Thread Group 1-5,text,true,,6715,321,7,7,https://blazedemo.com/purchase.php,2205,0,0
-1756866737627,574,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-7,,true,,5780,466,7,7,null,0,214,0
-1756866737840,574,Completar compra,200,OK,Thread Group 1-7,text,true,,5780,466,7,7,https://blazedemo.com/confirmation.php,569,0,0
-1756866738434,0,Debug Sampler,200,OK,Thread Group 1-7,text,true,,559,0,7,7,null,0,0,0
-1756866735961,439,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-6,,true,,6715,321,6,6,null,0,2057,0
-1756866738018,439,Seleccionar,200,OK,Thread Group 1-6,text,true,,6715,321,6,6,https://blazedemo.com/purchase.php,437,0,0
-1756866738994,0,Debug Sampler,200,OK,Thread Group 1-1,text,true,,569,0,6,6,null,0,0,0
-1756866737476,1037,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-8,,true,,6715,321,5,5,null,0,533,0
-1756866738009,1037,Seleccionar,200,OK,Thread Group 1-8,text,true,,6715,321,5,5,https://blazedemo.com/purchase.php,1033,0,0
-1756866738457,477,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-6,,true,,5780,506,5,5,null,0,228,0
-1756866738684,477,Completar compra,200,OK,Thread Group 1-6,text,true,,5780,506,5,5,https://blazedemo.com/confirmation.php,473,0,0
-1756866739474,0,Debug Sampler,200,OK,Thread Group 1-6,text,true,,555,0,5,5,null,0,0,0
-1756866735935,3551,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-10,,true,,4757,116,4,4,null,0,0,162
-1756866737283,2203,GET Home,200,OK,Thread Group 1-10,text,true,,4757,116,4,4,https://blazedemo.com/,2201,0,162
-1756866739046,284,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-8,,true,,5780,529,4,4,null,0,273,0
-1756866739318,284,Completar compra,200,OK,Thread Group 1-8,text,true,,5780,529,4,4,https://blazedemo.com/confirmation.php,281,0,0
-1756866739651,0,Debug Sampler,200,OK,Thread Group 1-8,text,true,,555,0,4,4,null,0,0,0
-1756866737713,306,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-9,,true,,6715,321,3,3,null,0,1984,0
-1756866739697,306,Seleccionar,200,OK,Thread Group 1-9,text,true,,6715,321,3,3,https://blazedemo.com/purchase.php,290,0,0
-1756866738033,1100,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-5,,true,,5780,475,3,3,null,0,1074,0
-1756866739107,1100,Completar compra,200,OK,Thread Group 1-5,text,true,,5780,475,3,3,https://blazedemo.com/confirmation.php,1085,0,0
-1756866739487,302,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-10,,true,,7405,257,3,3,null,0,1776,0
-1756866741261,302,Buscar Vuelo,200,OK,Thread Group 1-10,text,true,,7405,257,3,3,https://blazedemo.com/reserve.php,299,0,0
-1756866740004,546,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-9,,true,,5780,507,3,3,null,0,1177,0
-1756866741181,546,Completar compra,200,OK,Thread Group 1-9,text,true,,5780,507,3,3,https://blazedemo.com/confirmation.php,545,0,0
-1756866742271,0,Debug Sampler,200,OK,Thread Group 1-9,text,true,,567,0,3,3,null,0,0,0
-1756866741565,300,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-10,,true,,6715,321,2,2,null,0,926,0
-1756866742491,300,Seleccionar,200,OK,Thread Group 1-10,text,true,,6715,321,2,2,https://blazedemo.com/purchase.php,299,0,0
-1756866742792,279,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group 1-10,,true,,5780,488,2,2,null,0,721,0
-1756866743513,279,Completar compra,200,OK,Thread Group 1-10,text,true,,5780,488,2,2,https://blazedemo.com/confirmation.php,274,0,0
-1756866743811,0,Debug Sampler,200,OK,Thread Group 1-5,text,true,,565,0,2,2,null,0,0,0
-1756866745198,0,Debug Sampler,200,OK,Thread Group 1-10,text,true,,564,0,1,1,null,0,0,0
+1757092406974,1554,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,4757,116,3,5,null,0,0,500
+1757092407727,801,GET Home,200,OK,Thread Group  - LOAD 2-1,text,true,,4757,116,3,5,https://blazedemo.com/,801,0,500
+1757092406974,1642,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-1,,true,,4757,116,2,5,null,0,0,304
+1757092407953,663,GET Home,200,OK,Thread Group - SMOKE 1-1,text,true,,4757,116,2,5,https://blazedemo.com/,663,0,304
+1757092408138,702,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,4757,116,4,6,null,0,0,172
+1757092408375,465,GET Home,200,OK,Thread Group  - LOAD 2-3,text,true,,4757,116,4,6,https://blazedemo.com/,463,0,172
+1757092408617,347,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-1,,true,,7357,243,3,8,null,0,515,0
+1757092409075,347,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-1,text,true,,7357,243,3,8,https://blazedemo.com/reserve.php,341,0,0
+1757092407940,1571,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-2,,true,,4757,116,3,8,null,0,0,165
+1757092408539,298,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,7357,243,5,8,null,0,674,0
+1757092409037,474,GET Home,200,OK,Thread Group - SMOKE 1-2,text,true,,4757,116,3,8,https://blazedemo.com/,472,0,165
+1757092409210,298,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-1,text,true,,7357,243,5,8,https://blazedemo.com/reserve.php,291,0,0
+1757092407543,2046,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,4757,116,5,8,null,0,0,218
+1757092409049,540,GET Home,200,OK,Thread Group  - LOAD 2-2,text,true,,4757,116,5,8,https://blazedemo.com/,537,0,218
+1757092408938,737,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-3,,true,,4757,116,3,8,null,0,0,225
+1757092409152,523,GET Home,200,OK,Thread Group - SMOKE 1-3,text,true,,4757,116,3,8,https://blazedemo.com/,522,0,225
+1757092409336,587,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,4757,116,5,8,null,0,0,167
+1757092409482,441,GET Home,200,OK,Thread Group  - LOAD 2-5,text,true,,4757,116,5,8,https://blazedemo.com/,440,0,167
+1757092408738,1495,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,4757,116,6,10,null,0,0,218
+1757092409673,560,GET Home,200,OK,Thread Group  - LOAD 2-4,text,true,,4757,116,6,10,https://blazedemo.com/,557,0,218
+1757092409479,337,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-1,,true,,6715,321,4,11,null,0,727,0
+1757092410206,337,Seleccionar,200,OK,Thread Group - SMOKE 1-1,text,true,,6715,321,4,11,https://blazedemo.com/purchase.php,331,0,0
+1757092409511,297,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,6715,321,7,11,null,0,825,0
+1757092410336,297,Seleccionar,200,OK,Thread Group  - LOAD 2-1,text,true,,6715,321,7,11,https://blazedemo.com/purchase.php,277,0,0
+1757092409924,304,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,7317,238,7,11,null,0,451,0
+1757092410372,304,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-5,text,true,,7317,238,7,11,https://blazedemo.com/reserve.php,297,0,0
+1757092410679,310,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,6715,321,8,13,null,0,296,0
+1757092410975,310,Seleccionar,200,OK,Thread Group  - LOAD 2-5,text,true,,6715,321,8,13,https://blazedemo.com/purchase.php,306,0,0
+1757092409936,1515,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-4,,true,,4757,116,5,13,null,0,0,226
+1757092410920,531,GET Home,200,OK,Thread Group - SMOKE 1-4,text,true,,4757,116,5,13,https://blazedemo.com/,528,0,226
+1757092410233,364,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,7341,241,8,13,null,0,876,0
+1757092411106,364,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-4,text,true,,7341,241,8,13,https://blazedemo.com/reserve.php,353,0,0
+1757092409589,318,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,7381,246,8,13,null,0,1573,0
+1757092411160,318,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-2,text,true,,7381,246,8,13,https://blazedemo.com/reserve.php,310,0,0
+1757092410633,281,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,5780,481,8,13,null,0,703,0
+1757092411335,281,Completar compra,200,OK,Thread Group  - LOAD 2-1,text,true,,5780,481,8,13,https://blazedemo.com/confirmation.php,277,0,0
+1757092409511,324,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-2,,true,,7405,249,5,14,null,0,1900,0
+1757092411409,324,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-2,text,true,,7405,249,5,14,https://blazedemo.com/reserve.php,318,0,0
+1757092408841,328,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,7349,242,9,14,null,0,2569,0
+1757092411409,328,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-3,text,true,,7349,242,9,14,https://blazedemo.com/reserve.php,324,0,0
+1757092411132,918,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,4757,116,9,15,null,0,0,166
+1757092411617,433,GET Home,200,OK,Thread Group  - LOAD 2-8,text,true,,4757,116,9,15,https://blazedemo.com/,432,0,166
+1757092409675,361,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-3,,true,,7373,245,6,15,null,0,2046,0
+1757092411720,361,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-3,text,true,,7373,245,6,15,https://blazedemo.com/reserve.php,353,0,0
+1757092410535,1743,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,4757,116,9,15,null,0,0,225
+1757092411714,564,GET Home,200,OK,Thread Group  - LOAD 2-7,text,true,,4757,116,9,15,https://blazedemo.com/,561,0,225
+1757092411480,389,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,6715,321,10,16,null,0,479,0
+1757092411957,389,Seleccionar,200,OK,Thread Group  - LOAD 2-2,text,true,,6715,321,10,16,https://blazedemo.com/purchase.php,384,0,0
+1757092410543,350,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-1,,true,,5780,498,6,16,null,0,1569,0
+1757092412111,350,Completar compra,200,OK,Thread Group - SMOKE 1-1,text,true,,5780,498,6,16,https://blazedemo.com/confirmation.php,346,0,0
+1757092409935,2546,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,4757,116,10,16,null,0,0,166
+1757092412035,445,GET Home,200,OK,Thread Group  - LOAD 2-6,text,true,,4757,116,10,16,https://blazedemo.com/,444,0,166
+1757092412081,341,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-3,,true,,6715,321,6,16,null,0,118,0
+1757092412199,341,Seleccionar,200,OK,Thread Group - SMOKE 1-3,text,true,,6715,321,6,16,https://blazedemo.com/purchase.php,335,0,0
+1757092412597,5,Debug Sampler,200,OK,Thread Group - SMOKE 1-1,text,true,,585,0,6,16,null,0,0,0
+1757092410935,1679,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-5,,true,,4757,116,5,15,null,0,0,175
+1757092412169,444,GET Home,200,OK,Thread Group - SMOKE 1-5,text,true,,4757,116,5,15,https://blazedemo.com/,444,0,175
+1757092412278,328,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,7389,255,10,15,null,0,80,0
+1757092412357,328,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-7,text,true,,7389,255,10,15,https://blazedemo.com/reserve.php,317,0,0
+1757092412347,322,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,5780,492,11,17,null,0,619,0
+1757092412965,322,Completar compra,200,OK,Thread Group  - LOAD 2-2,text,true,,5780,492,11,17,https://blazedemo.com/confirmation.php,317,0,0
+1757092411735,265,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-2,,true,,6715,321,6,17,null,0,1302,0
+1757092413036,265,Seleccionar,200,OK,Thread Group - SMOKE 1-2,text,true,,6715,321,6,17,https://blazedemo.com/purchase.php,264,0,0
+1757092411731,1599,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,4757,116,11,17,null,0,0,211
+1757092412813,516,GET Home,200,OK,Thread Group  - LOAD 2-9,text,true,,4757,116,11,17,https://blazedemo.com/,515,0,211
+1757092411452,362,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-4,,true,,7405,257,6,17,null,0,1545,0
+1757092412995,362,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-4,text,true,,7405,257,6,17,https://blazedemo.com/reserve.php,354,0,0
+1757092412540,349,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-3,,true,,5780,466,6,17,null,0,485,0
+1757092413025,349,Completar compra,200,OK,Thread Group - SMOKE 1-3,text,true,,5780,466,6,17,https://blazedemo.com/confirmation.php,342,0,0
+1757092413428,0,Debug Sampler,200,OK,Thread Group - SMOKE 1-3,text,true,,575,0,6,17,null,0,0,0
+1757092413445,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-1,text,true,,568,0,11,16,null,0,0,0
+1757092412933,594,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-7,,true,,4757,116,5,16,null,0,0,172
+1757092413087,440,GET Home,200,OK,Thread Group - SMOKE 1-7,text,true,,4757,116,5,16,https://blazedemo.com/,438,0,172
+1757092411473,338,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,6715,321,12,17,null,0,1807,0
+1757092413279,338,Seleccionar,200,OK,Thread Group  - LOAD 2-4,text,true,,6715,321,12,17,https://blazedemo.com/purchase.php,333,0,0
+1757092413330,300,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,7341,241,12,17,null,0,6,0
+1757092413335,300,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-9,text,true,,7341,241,12,17,https://blazedemo.com/reserve.php,290,0,0
+1757092411934,1729,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-6,,true,,4757,116,5,17,null,0,0,218
+1757092413112,551,GET Home,200,OK,Thread Group - SMOKE 1-6,text,true,,4757,116,5,17,https://blazedemo.com/,548,0,218
+1757092412480,298,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,7349,242,12,17,null,0,1073,0
+1757092413552,298,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-6,text,true,,7349,242,12,17,https://blazedemo.com/reserve.php,292,0,0
+1757092412614,356,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-5,,true,,7349,242,5,17,null,0,941,0
+1757092413554,356,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-5,text,true,,7349,242,5,17,https://blazedemo.com/reserve.php,351,0,0
+1757092412930,989,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,4757,116,12,17,null,0,0,167
+1757092413389,530,GET Home,200,OK,Thread Group  - LOAD 2-11,text,true,,4757,116,12,17,https://blazedemo.com/,530,0,167
+1757092411286,294,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,5780,529,12,18,null,0,2425,0
+1757092413710,294,Completar compra,200,OK,Thread Group  - LOAD 2-5,text,true,,5780,529,12,18,https://blazedemo.com/confirmation.php,291,0,0
+1757092413531,515,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,4757,116,12,18,null,0,0,175
+1757092413614,432,GET Home,200,OK,Thread Group  - LOAD 2-12,text,true,,4757,116,12,18,https://blazedemo.com/,432,0,175
+1757092414260,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-5,text,true,,571,0,13,19,null,0,0,0
+1757092411738,278,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,6715,321,13,19,null,0,2431,0
+1757092414167,278,Seleccionar,200,OK,Thread Group  - LOAD 2-3,text,true,,6715,321,13,19,https://blazedemo.com/purchase.php,274,0,0
+1757092413528,305,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-7,,true,,7365,244,6,19,null,0,615,0
+1757092414142,305,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-7,text,true,,7365,244,6,19,https://blazedemo.com/reserve.php,299,0,0
+1757092413302,297,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-2,,true,,5780,481,6,19,null,0,947,0
+1757092414249,297,Completar compra,200,OK,Thread Group - SMOKE 1-2,text,true,,5780,481,6,19,https://blazedemo.com/confirmation.php,293,0,0
+1757092414588,1,Debug Sampler,200,OK,Thread Group - SMOKE 1-2,text,true,,574,0,6,19,null,0,0,0
+1757092412049,269,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,7437,253,14,19,null,0,2418,0
+1757092414466,269,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-8,text,true,,7437,253,14,19,https://blazedemo.com/reserve.php,264,0,0
+1757092412686,328,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,6715,321,14,19,null,0,1734,0
+1757092414420,328,Seleccionar,200,OK,Thread Group  - LOAD 2-7,text,true,,6715,321,14,19,https://blazedemo.com/purchase.php,325,0,0
+1757092414046,301,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,7437,253,14,19,null,0,416,0
+1757092414461,301,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-12,text,true,,7437,253,14,19,https://blazedemo.com/reserve.php,297,0,0
+1757092413920,264,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,7361,243,14,19,null,0,636,0
+1757092414555,264,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-11,text,true,,7361,243,14,19,https://blazedemo.com/reserve.php,259,0,0
+1757092413851,355,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,6715,321,14,19,null,0,678,0
+1757092414529,355,Seleccionar,200,OK,Thread Group  - LOAD 2-6,text,true,,6715,321,14,19,https://blazedemo.com/purchase.php,350,0,0
+1757092414446,269,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,5780,475,14,20,null,0,280,0
+1757092414726,269,Completar compra,200,OK,Thread Group  - LOAD 2-3,text,true,,5780,475,14,20,https://blazedemo.com/confirmation.php,265,0,0
+1757092412334,2673,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,4757,116,14,20,null,0,0,212
+1757092414480,527,GET Home,200,OK,Thread Group  - LOAD 2-10,text,true,,4757,116,14,20,https://blazedemo.com/,525,0,212
+1757092413663,343,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-6,,true,,7389,255,6,20,null,0,1046,0
+1757092414708,343,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-6,text,true,,7389,255,6,20,https://blazedemo.com/reserve.php,335,0,0
+1757092413933,1179,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-8,,true,,4757,116,6,20,null,0,0,169
+1757092414693,419,GET Home,200,OK,Thread Group - SMOKE 1-8,text,true,,4757,116,6,20,https://blazedemo.com/,419,0,169
+1757092415137,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-2,text,true,,582,0,14,20,null,0,0,0
+1757092413617,347,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,5780,506,15,21,null,0,1520,0
+1757092415137,347,Completar compra,200,OK,Thread Group  - LOAD 2-4,text,true,,5780,506,15,21,https://blazedemo.com/confirmation.php,340,0,0
+1757092414885,274,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,5780,507,15,21,null,0,543,0
+1757092415428,274,Completar compra,200,OK,Thread Group  - LOAD 2-6,text,true,,5780,507,15,21,https://blazedemo.com/confirmation.php,271,0,0
+1757092413445,2289,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,4757,116,15,21,null,0,0,0
+1757092415452,282,GET Home,200,OK,Thread Group  - LOAD 2-1,text,true,,4757,116,15,21,https://blazedemo.com/,279,0,0
+1757092414730,1040,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,4757,116,15,21,null,0,0,214
+1757092415233,537,GET Home,200,OK,Thread Group  - LOAD 2-14,text,true,,4757,116,15,21,https://blazedemo.com/,534,0,214
+1757092413358,333,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-4,,true,,6715,321,6,21,null,0,2135,0
+1757092415493,333,Seleccionar,200,OK,Thread Group - SMOKE 1-4,text,true,,6715,321,6,21,https://blazedemo.com/purchase.php,328,0,0
+1757092414129,1826,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,4757,116,16,23,null,0,0,167
+1757092415502,453,GET Home,200,OK,Thread Group  - LOAD 2-13,text,true,,4757,116,16,23,https://blazedemo.com/,451,0,167
+1757092413636,339,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,6715,321,16,23,null,0,2052,0
+1757092415688,339,Seleccionar,200,OK,Thread Group  - LOAD 2-9,text,true,,6715,321,16,23,https://blazedemo.com/purchase.php,334,0,0
+1757092414820,373,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,6715,321,16,23,null,0,1026,0
+1757092415846,373,Seleccionar,200,OK,Thread Group  - LOAD 2-11,text,true,,6715,321,16,23,https://blazedemo.com/purchase.php,369,0,0
+1757092414934,1297,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-9,,true,,4757,116,7,23,null,0,0,211
+1757092415740,491,GET Home,200,OK,Thread Group - SMOKE 1-9,text,true,,4757,116,7,23,https://blazedemo.com/,490,0,211
+1757092415328,913,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,4757,116,16,23,null,0,0,172
+1757092415775,466,GET Home,200,OK,Thread Group  - LOAD 2-15,text,true,,4757,116,16,23,https://blazedemo.com/,464,0,172
+1757092416300,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-3,text,true,,580,0,16,23,null,0,0,0
+1757092414736,285,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,6715,321,16,23,null,0,1293,0
+1757092416029,285,Seleccionar,200,OK,Thread Group  - LOAD 2-8,text,true,,6715,321,16,23,https://blazedemo.com/purchase.php,281,0,0
+1757092415826,384,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-4,,true,,5780,488,7,23,null,0,108,0
+1757092415934,384,Completar compra,200,OK,Thread Group - SMOKE 1-4,text,true,,5780,488,7,23,https://blazedemo.com/confirmation.php,380,0,0
+1757092415770,344,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,7357,243,16,23,null,0,248,0
+1757092416017,344,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-14,text,true,,7357,243,16,23,https://blazedemo.com/reserve.php,337,0,0
+1757092415008,340,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,7373,245,16,23,null,0,1062,0
+1757092416069,340,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-10,text,true,,7373,245,16,23,https://blazedemo.com/reserve.php,332,0,0
+1757092414449,331,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-7,,true,,6715,321,7,23,null,0,1634,0
+1757092416083,331,Seleccionar,200,OK,Thread Group - SMOKE 1-7,text,true,,6715,321,7,23,https://blazedemo.com/purchase.php,329,0,0
+1757092413911,314,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-5,,true,,6715,321,7,23,null,0,2200,0
+1757092416111,314,Seleccionar,200,OK,Thread Group - SMOKE 1-5,text,true,,6715,321,7,23,https://blazedemo.com/purchase.php,312,0,0
+1757092414260,2296,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,4757,116,17,24,null,0,0,0
+1757092416266,290,GET Home,200,OK,Thread Group  - LOAD 2-5,text,true,,4757,116,17,24,https://blazedemo.com/,287,0,0
+1757092415932,755,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-10,,true,,4757,116,7,24,null,0,0,225
+1757092416124,563,GET Home,200,OK,Thread Group - SMOKE 1-10,text,true,,4757,116,7,24,https://blazedemo.com/,560,0,225
+1757092416241,291,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,7381,246,17,24,null,0,182,0
+1757092416422,291,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-15,text,true,,7381,246,17,24,https://blazedemo.com/reserve.php,284,0,0
+1757092416314,388,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,5780,463,17,24,null,0,19,0
+1757092416333,388,Completar compra,200,OK,Thread Group  - LOAD 2-8,text,true,,5780,463,17,24,https://blazedemo.com/confirmation.php,384,0,0
+1757092415956,270,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,7389,255,17,24,null,0,609,0
+1757092416564,270,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-13,text,true,,7389,255,17,24,https://blazedemo.com/reserve.php,263,0,0
+1757092416027,445,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,5780,518,17,24,null,0,365,0
+1757092416392,445,Completar compra,200,OK,Thread Group  - LOAD 2-9,text,true,,5780,518,17,24,https://blazedemo.com/confirmation.php,441,0,0
+1757092416867,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-9,text,true,,573,0,17,24,null,0,0,0
+1757092415112,299,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-8,,true,,7349,242,7,24,null,0,1515,0
+1757092416627,299,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-8,text,true,,7349,242,7,24,https://blazedemo.com/reserve.php,295,0,0
+1757092417179,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-4,text,true,,571,0,18,25,null,0,0,0
+1757092417200,0,Debug Sampler,200,OK,Thread Group - SMOKE 1-4,text,true,,579,0,7,25,null,0,0,0
+1757092415053,329,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-6,,true,,6715,321,6,24,null,0,1852,0
+1757092416906,329,Seleccionar,200,OK,Thread Group - SMOKE 1-6,text,true,,6715,321,6,24,https://blazedemo.com/purchase.php,323,0,0
+1757092416688,560,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-10,,true,,7389,247,6,24,null,0,16,0
+1757092416703,560,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-10,text,true,,7389,247,6,24,https://blazedemo.com/reserve.php,553,0,0
+1757092417337,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-8,text,true,,580,0,18,24,null,0,0,0
+1757092416301,1037,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,4757,116,18,24,null,0,0,0
+1757092417039,300,GET Home,200,OK,Thread Group  - LOAD 2-3,text,true,,4757,116,18,24,https://blazedemo.com/,294,0,0
+1757092416220,322,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,5780,479,18,24,null,0,797,0
+1757092417018,322,Completar compra,200,OK,Thread Group  - LOAD 2-11,text,true,,5780,479,18,24,https://blazedemo.com/confirmation.php,321,0,0
+1757092416414,292,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-7,,true,,5780,474,6,24,null,0,711,0
+1757092417126,292,Completar compra,200,OK,Thread Group - SMOKE 1-7,text,true,,5780,474,6,24,https://blazedemo.com/confirmation.php,288,0,0
+1757092416557,287,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,7333,240,18,24,null,0,603,0
+1757092417160,287,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-5,text,true,,7333,240,18,24,https://blazedemo.com/reserve.php,281,0,0
+1757092416362,326,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,6715,321,18,24,null,0,788,0
+1757092417151,326,Seleccionar,200,OK,Thread Group  - LOAD 2-14,text,true,,6715,321,18,24,https://blazedemo.com/purchase.php,320,0,0
+1757092416232,307,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-9,,true,,7325,239,6,24,null,0,952,0
+1757092417184,307,Buscar Vuelo,200,OK,Thread Group - SMOKE 1-9,text,true,,7325,239,6,24,https://blazedemo.com/reserve.php,297,0,0
+1757092415138,2373,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,4757,116,18,24,null,0,0,0
+1757092417159,353,GET Home,200,OK,Thread Group  - LOAD 2-2,text,true,,4757,116,18,24,https://blazedemo.com/,348,0,0
+1757092416527,1010,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,4757,116,18,24,null,0,0,216
+1757092416976,562,GET Home,200,OK,Thread Group  - LOAD 2-17,text,true,,4757,116,18,24,https://blazedemo.com/,561,0,216
+1757092414763,278,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,6715,321,18,24,null,0,2541,0
+1757092417304,278,Seleccionar,200,OK,Thread Group  - LOAD 2-12,text,true,,6715,321,18,24,https://blazedemo.com/purchase.php,275,0,0
+1757092416714,638,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,6715,321,18,24,null,0,335,0
+1757092417049,638,Seleccionar,200,OK,Thread Group  - LOAD 2-15,text,true,,6715,321,18,24,https://blazedemo.com/purchase.php,634,0,0
+1757092417700,0,Debug Sampler,200,OK,Thread Group - SMOKE 1-7,text,true,,582,0,6,24,null,0,0,0
+1757092416868,867,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,4757,116,19,24,null,0,0,0
+1757092417292,444,GET Home,200,OK,Thread Group  - LOAD 2-9,text,true,,4757,116,19,24,https://blazedemo.com/,440,0,0
+1757092417265,334,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-10,,true,,6715,321,5,24,null,0,206,0
+1757092417471,334,Seleccionar,200,OK,Thread Group - SMOKE 1-10,text,true,,6715,321,5,24,https://blazedemo.com/purchase.php,327,0,0
+1757092417538,358,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,7333,240,19,24,null,0,1,0
+1757092417538,358,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-17,text,true,,7333,240,19,24,https://blazedemo.com/reserve.php,348,0,0
+1757092417916,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-6,text,true,,583,0,19,24,null,0,0,0
+1757092416928,268,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-8,,true,,6715,321,5,24,null,0,736,0
+1757092417664,268,Seleccionar,200,OK,Thread Group - SMOKE 1-8,text,true,,6715,321,5,24,https://blazedemo.com/purchase.php,262,0,0
+1757092416410,336,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,6715,321,19,24,null,0,1218,0
+1757092417629,336,Seleccionar,200,OK,Thread Group  - LOAD 2-10,text,true,,6715,321,19,24,https://blazedemo.com/purchase.php,332,0,0
+1757092414748,355,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,5780,472,19,24,null,0,2897,0
+1757092417646,355,Completar compra,200,OK,Thread Group  - LOAD 2-7,text,true,,5780,472,19,24,https://blazedemo.com/confirmation.php,351,0,0
+1757092418170,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-11,text,true,,567,0,19,24,null,0,0,0
+1757092416835,339,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,6715,321,19,24,null,0,1009,0
+1757092417845,339,Seleccionar,200,OK,Thread Group  - LOAD 2-13,text,true,,6715,321,19,24,https://blazedemo.com/purchase.php,333,0,0
+1757092417478,341,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,5780,473,19,24,null,0,380,0
+1757092417858,341,Completar compra,200,OK,Thread Group  - LOAD 2-14,text,true,,5780,473,19,24,https://blazedemo.com/confirmation.php,334,0,0
+1757092418226,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-7,text,true,,581,0,19,24,null,0,0,0
+1757092417727,577,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,4757,116,19,24,null,0,0,218
+1757092417781,523,GET Home,200,OK,Thread Group  - LOAD 2-19,text,true,,4757,116,19,24,https://blazedemo.com/,521,0,218
+1757092417492,319,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-9,,true,,6715,321,5,25,null,0,568,0
+1757092418060,319,Seleccionar,200,OK,Thread Group - SMOKE 1-9,text,true,,6715,321,5,25,https://blazedemo.com/purchase.php,313,0,0
+1757092417688,290,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,5780,466,20,25,null,0,493,0
+1757092418181,290,Completar compra,200,OK,Thread Group  - LOAD 2-15,text,true,,5780,466,20,25,https://blazedemo.com/confirmation.php,286,0,0
+1757092417180,1297,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,4757,116,20,25,null,0,0,0
+1757092418145,332,GET Home,200,OK,Thread Group  - LOAD 2-4,text,true,,4757,116,20,25,https://blazedemo.com/,328,0,0
+1757092417448,278,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,6715,321,20,25,null,0,869,0
+1757092418317,278,Seleccionar,200,OK,Thread Group  - LOAD 2-5,text,true,,6715,321,20,25,https://blazedemo.com/purchase.php,269,0,0
+1757092416425,328,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-5,,true,,5780,494,5,25,null,0,1844,0
+1757092418269,328,Completar compra,200,OK,Thread Group - SMOKE 1-5,text,true,,5780,494,5,25,https://blazedemo.com/confirmation.php,326,0,0
+1757092417235,336,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-6,,true,,5780,498,5,25,null,0,1065,0
+1757092418300,336,Completar compra,200,OK,Thread Group - SMOKE 1-6,text,true,,5780,498,5,25,https://blazedemo.com/confirmation.php,329,0,0
+1757092418226,520,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,4757,116,20,25,null,0,0,0
+1757092418383,363,GET Home,200,OK,Thread Group  - LOAD 2-7,text,true,,4757,116,20,25,https://blazedemo.com/,357,0,0
+1757092415734,262,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,7381,246,20,25,null,0,2818,0
+1757092418552,262,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-1,text,true,,7381,246,20,25,https://blazedemo.com/reserve.php,257,0,0
+1757092417737,329,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,7325,239,20,25,null,0,774,0
+1757092418511,329,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-9,text,true,,7325,239,20,25,https://blazedemo.com/reserve.php,322,0,0
+1757092418184,307,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,5780,528,20,25,null,0,401,0
+1757092418584,307,Completar compra,200,OK,Thread Group  - LOAD 2-13,text,true,,5780,528,20,25,https://blazedemo.com/confirmation.php,303,0,0
+1757092417932,276,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-8,,true,,5780,493,5,25,null,0,688,0
+1757092418620,276,Completar compra,200,OK,Thread Group - SMOKE 1-8,text,true,,5780,493,5,25,https://blazedemo.com/confirmation.php,271,0,0
+1757092417338,1595,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,4757,116,21,26,null,0,0,0
+1757092418656,277,GET Home,200,OK,Thread Group  - LOAD 2-8,text,true,,4757,116,21,26,https://blazedemo.com/,274,0,0
+1757092417128,2018,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,4757,116,21,26,null,0,0,221
+1757092418614,532,GET Home,200,OK,Thread Group  - LOAD 2-18,text,true,,4757,116,21,26,https://blazedemo.com/,532,0,221
+1757092418304,341,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,7389,247,21,26,null,0,542,0
+1757092418845,341,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-19,text,true,,7389,247,21,26,https://blazedemo.com/reserve.php,333,0,0
+1757092418840,336,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,6715,321,21,26,null,0,32,0
+1757092418872,336,Seleccionar,200,OK,Thread Group  - LOAD 2-9,text,true,,6715,321,21,26,https://blazedemo.com/purchase.php,324,0,0
+1757092417965,312,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,5780,459,21,26,null,0,943,0
+1757092418908,312,Completar compra,200,OK,Thread Group  - LOAD 2-10,text,true,,5780,459,21,26,https://blazedemo.com/confirmation.php,305,0,0
+1757092418379,311,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-9,,true,,5780,477,5,26,null,0,542,0
+1757092418921,311,Completar compra,200,OK,Thread Group - SMOKE 1-9,text,true,,5780,477,5,26,https://blazedemo.com/confirmation.php,305,0,0
+1757092419294,1,Debug Sampler,200,OK,Thread Group - SMOKE 1-6,text,true,,587,0,5,26,null,0,0,0
+1757092418327,1039,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,4757,116,21,25,null,0,0,175
+1757092418866,500,GET Home,200,OK,Thread Group  - LOAD 2-20,text,true,,4757,116,21,25,https://blazedemo.com/,497,0,175
+1757092419461,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-15,text,true,,577,0,21,25,null,0,0,0
+1757092418934,297,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,7389,247,21,25,null,0,251,0
+1757092419184,297,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-8,text,true,,7389,247,21,25,https://blazedemo.com/reserve.php,290,0,0
+1757092417512,325,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,7437,261,22,26,null,0,1723,0
+1757092419234,325,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-2,text,true,,7437,261,22,26,https://blazedemo.com/reserve.php,316,0,0
+1757092419574,1,Debug Sampler,200,OK,Thread Group - SMOKE 1-9,text,true,,570,0,4,26,null,0,0,0
+1757092418171,1419,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,4757,116,22,25,null,0,0,0
+1757092419299,291,GET Home,200,OK,Thread Group  - LOAD 2-11,text,true,,4757,116,22,25,https://blazedemo.com/,288,0,0
+1757092419677,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-14,text,true,,581,0,22,25,null,0,0,0
+1757092419146,340,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,7349,242,22,25,null,0,203,0
+1757092419348,340,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-18,text,true,,7349,242,22,25,https://blazedemo.com/reserve.php,330,0,0
+1757092418595,332,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-5,,true,,5780,461,22,25,null,0,767,0
+1757092419362,332,Completar compra,200,OK,Thread Group  - LOAD 2-5,text,true,,5780,461,22,25,https://blazedemo.com/confirmation.php,326,0,0
+1757092417916,1835,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,4757,116,22,25,null,0,0,0
+1757092419487,264,GET Home,200,OK,Thread Group  - LOAD 2-6,text,true,,4757,116,22,25,https://blazedemo.com/,263,0,0
+1757092419775,0,Debug Sampler,200,OK,Thread Group - SMOKE 1-5,text,true,,580,0,3,25,null,0,0,0
+1757092417897,304,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,6715,321,22,24,null,0,1590,0
+1757092419487,304,Seleccionar,200,OK,Thread Group  - LOAD 2-17,text,true,,6715,321,22,24,https://blazedemo.com/purchase.php,299,0,0
+1757092419208,303,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-9,,true,,5780,461,22,24,null,0,338,0
+1757092419546,303,Completar compra,200,OK,Thread Group  - LOAD 2-9,text,true,,5780,461,22,24,https://blazedemo.com/confirmation.php,296,0,0
+1757092417339,276,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,7333,240,22,24,null,0,2252,0
+1757092419590,276,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-3,text,true,,7333,240,22,24,https://blazedemo.com/reserve.php,272,0,0
+1757092419935,0,Debug Sampler,200,OK,Thread Group - SMOKE 1-8,text,true,,579,0,2,24,null,0,0,0
+1757092418747,341,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,7381,254,22,23,null,0,874,0
+1757092419621,341,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-7,text,true,,7381,254,22,23,https://blazedemo.com/reserve.php,332,0,0
+1757092415929,4055,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,4757,116,22,23,null,0,0,914
+1757092418723,1262,GET Home,200,OK,Thread Group  - LOAD 2-16,text,true,,4757,116,22,23,https://blazedemo.com/,1261,0,914
+1757092419366,298,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,7357,243,22,23,null,0,460,0
+1757092419826,298,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-20,text,true,,7357,243,22,23,https://blazedemo.com/reserve.php,293,0,0
+1757092417805,338,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group - SMOKE 1-10,,true,,5780,495,1,24,null,0,2190,0
+1757092419995,338,Completar compra,200,OK,Thread Group - SMOKE 1-10,text,true,,5780,495,1,24,https://blazedemo.com/confirmation.php,334,0,0
+1757092420343,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-10,text,true,,569,0,23,24,null,0,0,0
+1757092418815,298,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,6715,321,23,24,null,0,1366,0
+1757092420181,298,Seleccionar,200,OK,Thread Group  - LOAD 2-1,text,true,,6715,321,23,24,https://blazedemo.com/purchase.php,295,0,0
+1757092420129,500,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,4757,116,23,24,null,0,0,169
+1757092420206,423,GET Home,200,OK,Thread Group  - LOAD 2-23,text,true,,4757,116,23,24,https://blazedemo.com/,420,0,169
+1757092420124,292,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,6715,321,23,24,null,0,309,0
+1757092420432,292,Seleccionar,200,OK,Thread Group  - LOAD 2-20,text,true,,6715,321,23,24,https://blazedemo.com/purchase.php,288,0,0
+1757092418928,1811,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,4757,116,24,25,null,0,0,163
+1757092420260,479,GET Home,200,OK,Thread Group  - LOAD 2-21,text,true,,4757,116,24,25,https://blazedemo.com/,479,0,163
+1757092419751,311,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,7357,243,24,25,null,0,694,0
+1757092420445,311,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-6,text,true,,7357,243,24,25,https://blazedemo.com/reserve.php,304,0,0
+1757092420343,428,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,4757,116,24,25,null,0,0,0
+1757092420451,320,GET Home,200,OK,Thread Group  - LOAD 2-10,text,true,,4757,116,24,25,https://blazedemo.com/,315,0,0
+1757092420778,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-13,text,true,,578,0,24,25,null,0,0,0
+1757092417583,295,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,5780,483,24,25,null,0,2974,0
+1757092420557,295,Completar compra,200,OK,Thread Group  - LOAD 2-12,text,true,,5780,483,24,25,https://blazedemo.com/confirmation.php,292,0,0
+1757092420866,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-5,text,true,,565,0,24,25,null,0,0,0
+1757092419560,340,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,6715,321,23,24,null,0,974,0
+1757092420534,340,Seleccionar,200,OK,Thread Group  - LOAD 2-2,text,true,,6715,321,23,24,https://blazedemo.com/purchase.php,333,0,0
+1757092420974,0,Debug Sampler,200,OK,Thread Group - SMOKE 1-10,text,true,,587,0,1,24,null,0,0,0
+1757092419867,346,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,6715,321,23,23,null,0,797,0
+1757092420664,346,Seleccionar,200,OK,Thread Group  - LOAD 2-3,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,341,0,0
+1757092419590,307,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,7437,253,23,23,null,0,1138,0
+1757092420727,307,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-11,text,true,,7437,253,23,23,https://blazedemo.com/reserve.php,302,0,0
+1757092419689,334,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,6715,321,23,23,null,0,1061,0
+1757092420750,334,Seleccionar,200,OK,Thread Group  - LOAD 2-18,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,329,0,0
+1757092420756,295,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,6715,321,23,23,null,0,211,0
+1757092420967,295,Seleccionar,200,OK,Thread Group  - LOAD 2-6,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,292,0,0
+1757092421265,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-9,text,true,,564,0,23,23,null,0,0,0
+1757092420479,285,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-1,,true,,5780,513,22,22,null,0,529,0
+1757092421008,285,Completar compra,200,OK,Thread Group  - LOAD 2-1,text,true,,5780,513,22,22,https://blazedemo.com/confirmation.php,280,0,0
+1757092420629,292,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,7381,254,22,22,null,0,400,0
+1757092421028,292,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-23,text,true,,7381,254,22,22,https://blazedemo.com/reserve.php,285,0,0
+1757092420771,350,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,7373,245,23,23,null,0,225,0
+1757092420995,350,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-10,text,true,,7373,245,23,23,https://blazedemo.com/reserve.php,342,0,0
+1757092420726,629,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,4757,116,23,23,null,0,0,161
+1757092420820,535,GET Home,200,OK,Thread Group  - LOAD 2-24,text,true,,4757,116,23,23,https://blazedemo.com/,533,0,161
+1757092419677,1752,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,4757,116,23,23,null,0,0,0
+1757092421085,344,GET Home,200,OK,Thread Group  - LOAD 2-14,text,true,,4757,116,23,23,https://blazedemo.com/,341,0,0
+1757092419461,2119,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,4757,116,23,23,null,0,0,0
+1757092421294,286,GET Home,200,OK,Thread Group  - LOAD 2-15,text,true,,4757,116,23,23,https://blazedemo.com/,284,0,0
+1757092421602,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-1,text,true,,583,0,23,23,null,0,0,0
+1757092419985,329,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,7381,246,22,22,null,0,1337,0
+1757092421322,329,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-16,text,true,,7381,246,22,22,https://blazedemo.com/reserve.php,321,0,0
+1757092421035,316,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,6715,321,22,22,null,0,313,0
+1757092421347,316,Seleccionar,200,OK,Thread Group  - LOAD 2-11,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,313,0,0
+1757092420740,291,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,7389,247,22,22,null,0,633,0
+1757092421373,291,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-21,text,true,,7389,247,22,22,https://blazedemo.com/reserve.php,283,0,0
+1757092419528,2183,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,4757,116,22,22,null,0,0,212
+1757092421173,538,GET Home,200,OK,Thread Group  - LOAD 2-22,text,true,,4757,116,22,22,https://blazedemo.com/,538,0,212
+1757092419482,269,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,6715,321,22,22,null,0,2051,0
+1757092421533,269,Seleccionar,200,OK,Thread Group  - LOAD 2-8,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,265,0,0
+1757092419791,335,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,5780,473,22,22,null,0,1735,0
+1757092421526,335,Completar compra,200,OK,Thread Group  - LOAD 2-17,text,true,,5780,473,22,22,https://blazedemo.com/confirmation.php,334,0,0
+1757092418477,315,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,7437,261,23,23,null,0,3269,0
+1757092421745,315,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-4,text,true,,7437,261,23,23,https://blazedemo.com/reserve.php,306,0,0
+1757092419962,360,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,6715,321,23,23,null,0,1906,0
+1757092421868,360,Seleccionar,200,OK,Thread Group  - LOAD 2-7,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,343,0,0
+1757092421084,324,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,5780,488,23,23,null,0,870,0
+1757092421954,324,Completar compra,200,OK,Thread Group  - LOAD 2-18,text,true,,5780,488,23,23,https://blazedemo.com/confirmation.php,319,0,0
+1757092421664,313,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-11,,true,,5780,481,23,23,null,0,319,0
+1757092421983,313,Completar compra,200,OK,Thread Group  - LOAD 2-11,text,true,,5780,481,23,23,https://blazedemo.com/confirmation.php,309,0,0
+1757092420778,1552,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,4757,116,23,23,null,0,0,0
+1757092422029,301,GET Home,200,OK,Thread Group  - LOAD 2-13,text,true,,4757,116,23,23,https://blazedemo.com/,299,0,0
+1757092422386,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-11,text,true,,589,0,23,23,null,0,0,0
+1757092420725,261,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,5780,473,23,23,null,0,1401,0
+1757092422125,261,Completar compra,200,OK,Thread Group  - LOAD 2-20,text,true,,5780,473,23,23,https://blazedemo.com/confirmation.php,259,0,0
+1757092421664,310,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,6715,321,22,22,null,0,417,0
+1757092422081,310,Seleccionar,200,OK,Thread Group  - LOAD 2-21,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,305,0,0
+1757092422428,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-18,text,true,,575,0,22,22,null,0,0,0
+1757092421356,287,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,7333,240,22,22,null,0,845,0
+1757092422200,287,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-24,text,true,,7333,240,22,22,https://blazedemo.com/reserve.php,281,0,0
+1757092419187,338,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,6715,321,23,23,null,0,3088,0
+1757092422274,338,Seleccionar,200,OK,Thread Group  - LOAD 2-19,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,333,0,0
+1757092422623,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-12,text,true,,581,0,23,23,null,0,0,0
+1757092421712,391,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,7381,246,23,23,null,0,693,0
+1757092422405,391,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-22,text,true,,7381,246,23,23,https://blazedemo.com/reserve.php,381,0,0
+1757092422228,331,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-7,,true,,5780,520,23,23,null,0,285,0
+1757092422513,331,Completar compra,200,OK,Thread Group  - LOAD 2-7,text,true,,5780,520,23,23,https://blazedemo.com/confirmation.php,325,0,0
+1757092421321,279,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,6715,321,23,23,null,0,1452,0
+1757092422773,279,Seleccionar,200,OK,Thread Group  - LOAD 2-23,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,277,0,0
+1757092422613,342,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,5780,466,23,23,null,0,162,0
+1757092422774,342,Completar compra,200,OK,Thread Group  - LOAD 2-19,text,true,,5780,466,23,23,https://blazedemo.com/confirmation.php,336,0,0
+1757092421651,323,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,6715,321,24,24,null,0,1188,0
+1757092422839,323,Seleccionar,200,OK,Thread Group  - LOAD 2-16,text,true,,6715,321,24,24,https://blazedemo.com/purchase.php,316,0,0
+1757092423168,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-17,text,true,,578,0,24,24,null,0,0,0
+1757092422331,295,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,7381,246,24,24,null,0,586,0
+1757092422916,295,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-13,text,true,,7381,246,24,24,https://blazedemo.com/reserve.php,287,0,0
+1757092423214,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-7,text,true,,588,0,24,24,null,0,0,0
+1757092421262,309,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-6,,true,,5780,462,23,23,null,0,1648,0
+1757092422910,309,Completar compra,200,OK,Thread Group  - LOAD 2-6,text,true,,5780,462,23,23,https://blazedemo.com/confirmation.php,307,0,0
+1757092422061,357,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,6715,321,23,23,null,0,808,0
+1757092422869,357,Seleccionar,200,OK,Thread Group  - LOAD 2-4,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,350,0,0
+1757092421429,353,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,7381,246,23,23,null,0,1464,0
+1757092422893,353,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-14,text,true,,7381,246,23,23,https://blazedemo.com/reserve.php,343,0,0
+1757092422528,733,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,4757,116,23,23,null,0,0,161
+1757092422803,458,GET Home,200,OK,Thread Group  - LOAD 2-27,text,true,,4757,116,23,23,https://blazedemo.com/,457,0,161
+1757092421010,274,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-3,,true,,5780,494,23,23,null,0,2023,0
+1757092423033,274,Completar compra,200,OK,Thread Group  - LOAD 2-3,text,true,,5780,494,23,23,https://blazedemo.com/confirmation.php,271,0,0
+1757092421927,1404,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,4757,116,23,23,null,0,0,213
+1757092422798,533,GET Home,200,OK,Thread Group  - LOAD 2-26,text,true,,4757,116,23,23,https://blazedemo.com/,533,0,213
+1757092421346,338,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,6715,321,23,23,null,0,1698,0
+1757092423044,338,Seleccionar,200,OK,Thread Group  - LOAD 2-10,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,327,0,0
+1757092421580,308,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,7333,240,23,23,null,0,1544,0
+1757092423123,308,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-15,text,true,,7333,240,23,23,https://blazedemo.com/reserve.php,303,0,0
+1757092422488,307,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,6715,321,23,23,null,0,699,0
+1757092423187,307,Seleccionar,200,OK,Thread Group  - LOAD 2-24,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,301,0,0
+1757092420874,359,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-2,,true,,5780,496,23,23,null,0,2326,0
+1757092423200,359,Completar compra,200,OK,Thread Group  - LOAD 2-2,text,true,,5780,496,23,23,https://blazedemo.com/confirmation.php,353,0,0
+1757092423168,423,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,4757,116,23,23,null,0,0,0
+1757092423264,327,GET Home,200,OK,Thread Group  - LOAD 2-17,text,true,,4757,116,23,23,https://blazedemo.com/,323,0,0
+1757092423162,326,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,5780,487,23,23,null,0,129,0
+1757092423291,326,Completar compra,200,OK,Thread Group  - LOAD 2-16,text,true,,5780,487,23,23,https://blazedemo.com/confirmation.php,321,0,0
+1757092421327,2385,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,4757,116,23,23,null,0,0,220
+1757092423163,549,GET Home,200,OK,Thread Group  - LOAD 2-25,text,true,,4757,116,23,23,https://blazedemo.com/,544,0,220
+1757092423212,268,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,6715,321,24,24,null,0,273,0
+1757092423485,268,Seleccionar,200,OK,Thread Group  - LOAD 2-13,text,true,,6715,321,24,24,https://blazedemo.com/purchase.php,264,0,0
+1757092423789,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-2,text,true,,591,0,24,24,null,0,0,0
+1757092423814,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-19,text,true,,578,0,23,23,null,0,0,0
+1757092423246,356,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,6715,321,23,23,null,0,258,0
+1757092423504,356,Seleccionar,200,OK,Thread Group  - LOAD 2-14,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,349,0,0
+1757092423382,312,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-10,,true,,5780,470,23,23,null,0,193,0
+1757092423575,312,Completar compra,200,OK,Thread Group  - LOAD 2-10,text,true,,5780,470,23,23,https://blazedemo.com/confirmation.php,306,0,0
+1757092423331,333,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,7389,255,23,23,null,0,354,0
+1757092423684,333,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-26,text,true,,7389,255,23,23,https://blazedemo.com/reserve.php,324,0,0
+1757092421802,305,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-8,,true,,5780,477,23,23,null,0,1961,0
+1757092423763,305,Completar compra,200,OK,Thread Group  - LOAD 2-8,text,true,,5780,477,23,23,https://blazedemo.com/confirmation.php,302,0,0
+1757092423754,283,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-13,,true,,5780,466,23,23,null,0,49,0
+1757092423802,283,Completar compra,200,OK,Thread Group  - LOAD 2-13,text,true,,5780,466,23,23,https://blazedemo.com/confirmation.php,279,0,0
+1757092424098,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-6,text,true,,569,0,23,23,null,0,0,0
+1757092424136,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-16,text,true,,578,0,22,22,null,0,0,0
+1757092423432,335,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,6715,321,22,22,null,0,370,0
+1757092423802,335,Seleccionar,200,OK,Thread Group  - LOAD 2-15,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,331,0,0
+1757092423261,322,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,7349,242,22,22,null,0,557,0
+1757092423818,322,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-27,text,true,,7349,242,22,22,https://blazedemo.com/reserve.php,319,0,0
+1757092424167,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-13,text,true,,577,0,22,22,null,0,0,0
+1757092424195,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-8,text,true,,588,0,21,21,null,0,0,0
+1757092424237,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-20,text,true,,581,0,20,20,null,0,0,0
+1757092422624,1643,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,4757,116,20,20,null,0,0,0
+1757092424003,264,GET Home,200,OK,Thread Group  - LOAD 2-12,text,true,,4757,116,20,20,https://blazedemo.com/,261,0,0
+1757092422391,290,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,5780,473,20,20,null,0,1601,0
+1757092423992,290,Completar compra,200,OK,Thread Group  - LOAD 2-21,text,true,,5780,473,20,20,https://blazedemo.com/confirmation.php,287,0,0
+1757092423494,270,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,5780,471,20,20,null,0,552,0
+1757092424046,270,Completar compra,200,OK,Thread Group  - LOAD 2-24,text,true,,5780,471,20,20,https://blazedemo.com/confirmation.php,266,0,0
+1757092424572,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-3,text,true,,577,0,21,21,null,0,0,0
+1757092424137,361,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-15,,true,,5780,505,20,20,null,0,75,0
+1757092424212,361,Completar compra,200,OK,Thread Group  - LOAD 2-15,text,true,,5780,505,20,20,https://blazedemo.com/confirmation.php,354,0,0
+1757092423712,351,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,7341,241,20,20,null,0,513,0
+1757092424225,351,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-25,text,true,,7341,241,20,20,https://blazedemo.com/reserve.php,348,0,0
+1757092423052,302,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,5780,523,20,20,null,0,1337,0
+1757092424389,302,Completar compra,200,OK,Thread Group  - LOAD 2-23,text,true,,5780,523,20,20,https://blazedemo.com/confirmation.php,298,0,0
+1757092423123,1613,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,4757,116,20,20,null,0,0,217
+1757092424193,543,GET Home,200,OK,Thread Group  - LOAD 2-28,text,true,,4757,116,20,20,https://blazedemo.com/,540,0,217
+1757092424772,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-23,text,true,,582,0,20,20,null,0,0,0
+1757092424267,269,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,7405,249,20,20,null,0,264,0
+1757092423591,327,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,7325,239,20,20,null,0,882,0
+1757092424530,269,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-12,text,true,,7405,249,20,20,https://blazedemo.com/reserve.php,263,0,0
+1757092424472,327,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-17,text,true,,7325,239,20,20,https://blazedemo.com/reserve.php,316,0,0
+1757092422796,392,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,6715,321,20,20,null,0,1732,0
+1757092424528,392,Seleccionar,200,OK,Thread Group  - LOAD 2-22,text,true,,6715,321,20,20,https://blazedemo.com/purchase.php,386,0,0
+1757092424933,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-15,text,true,,570,0,21,21,null,0,0,0
+1757092423860,345,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-14,,true,,5780,480,20,20,null,0,775,0
+1757092424635,345,Completar compra,200,OK,Thread Group  - LOAD 2-14,text,true,,5780,480,20,20,https://blazedemo.com/confirmation.php,340,0,0
+1757092425069,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-24,text,true,,576,0,20,20,null,0,0,0
+1757092425074,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-10,text,true,,580,0,20,20,null,0,0,0
+1757092422428,2653,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,4757,116,19,19,null,0,0,0
+1757092424764,317,GET Home,200,OK,Thread Group  - LOAD 2-18,text,true,,4757,116,19,19,https://blazedemo.com/,313,0,0
+1757092423814,1359,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,4757,116,19,19,null,0,0,0
+1757092424868,305,GET Home,200,OK,Thread Group  - LOAD 2-19,text,true,,4757,116,19,19,https://blazedemo.com/,300,0,0
+1757092424018,322,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,6715,321,19,19,null,0,837,0
+1757092424855,322,Seleccionar,200,OK,Thread Group  - LOAD 2-26,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,315,0,0
+1757092424800,321,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,6715,321,19,19,null,0,215,0
+1757092425015,321,Seleccionar,200,OK,Thread Group  - LOAD 2-17,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,315,0,0
+1757092424140,295,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,6715,321,19,19,null,0,952,0
+1757092425092,295,Seleccionar,200,OK,Thread Group  - LOAD 2-27,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,293,0,0
+1757092423226,344,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-4,,true,,5780,486,19,19,null,0,1818,0
+1757092425044,344,Completar compra,200,OK,Thread Group  - LOAD 2-4,text,true,,5780,486,19,19,https://blazedemo.com/confirmation.php,341,0,0
+1757092424736,321,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,7341,241,19,19,null,0,360,0
+1757092425095,321,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-28,text,true,,7341,241,19,19,https://blazedemo.com/reserve.php,315,0,0
+1757092424576,315,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,6715,321,19,19,null,0,618,0
+1757092425194,315,Seleccionar,200,OK,Thread Group  - LOAD 2-25,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,309,0,0
+1757092424237,1276,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,4757,116,19,19,null,0,0,0
+1757092425173,340,GET Home,200,OK,Thread Group  - LOAD 2-20,text,true,,4757,116,19,19,https://blazedemo.com/,339,0,0
+1757092424321,1280,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,4757,116,20,20,null,0,0,218
+1757092424952,649,GET Home,200,OK,Thread Group  - LOAD 2-30,text,true,,4757,116,20,20,https://blazedemo.com/,649,0,218
+1757092424921,801,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,4757,116,20,20,null,0,0,212
+1757092425197,525,GET Home,200,OK,Thread Group  - LOAD 2-31,text,true,,4757,116,20,20,https://blazedemo.com/,525,0,212
+1757092425785,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-21,text,true,,585,0,20,20,null,0,0,0
+1757092425070,852,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,4757,116,20,20,null,0,0,0
+1757092425634,288,GET Home,200,OK,Thread Group  - LOAD 2-24,text,true,,4757,116,20,20,https://blazedemo.com/,285,0,0
+1757092425177,332,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,5780,526,20,20,null,0,447,0
+1757092425624,332,Completar compra,200,OK,Thread Group  - LOAD 2-26,text,true,,5780,526,20,20,https://blazedemo.com/confirmation.php,326,0,0
+1757092424773,1351,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,4757,116,21,21,null,0,0,0
+1757092425839,285,GET Home,200,OK,Thread Group  - LOAD 2-23,text,true,,4757,116,21,21,https://blazedemo.com/,284,0,0
+1757092425786,452,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,4757,116,21,21,null,0,0,0
+1757092425960,278,GET Home,200,OK,Thread Group  - LOAD 2-21,text,true,,4757,116,21,21,https://blazedemo.com/,276,0,0
+1757092425922,259,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,7381,246,21,21,null,0,84,0
+1757092426005,259,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-24,text,true,,7381,246,21,21,https://blazedemo.com/reserve.php,255,0,0
+1757092426268,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-4,text,true,,581,0,21,21,null,0,0,0
+1757092425336,332,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-17,,true,,5780,473,20,20,null,0,677,0
+1757092426013,332,Completar compra,200,OK,Thread Group  - LOAD 2-17,text,true,,5780,473,20,20,https://blazedemo.com/confirmation.php,326,0,0
+1757092426397,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-26,text,true,,585,0,20,20,null,0,0,0
+1757092426537,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-14,text,true,,571,0,20,20,null,0,0,0
+1757092425417,358,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,6715,321,19,19,null,0,789,0
+1757092426206,358,Seleccionar,200,OK,Thread Group  - LOAD 2-28,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,353,0,0
+1757092424136,2456,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,4757,116,19,19,null,0,0,0
+1757092426267,325,GET Home,200,OK,Thread Group  - LOAD 2-16,text,true,,4757,116,19,19,https://blazedemo.com/,322,0,0
+1757092423723,2921,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,4757,116,19,19,null,0,0,212
+1757092426050,594,GET Home,200,OK,Thread Group  - LOAD 2-29,text,true,,4757,116,19,19,https://blazedemo.com/,592,0,212
+1757092425602,305,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,7357,243,19,19,null,0,796,0
+1757092426397,305,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-30,text,true,,7357,243,19,19,https://blazedemo.com/reserve.php,299,0,0
+1757092425081,329,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,7429,252,20,20,null,0,1354,0
+1757092426435,329,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-18,text,true,,7429,252,20,20,https://blazedemo.com/reserve.php,322,0,0
+1757092425509,321,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,5780,481,20,20,null,0,1238,0
+1757092426747,321,Completar compra,200,OK,Thread Group  - LOAD 2-25,text,true,,5780,481,20,20,https://blazedemo.com/confirmation.php,316,0,0
+1757092426119,1010,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,4757,116,20,20,null,0,0,173
+1757092426620,509,GET Home,200,OK,Thread Group  - LOAD 2-33,text,true,,4757,116,20,20,https://blazedemo.com/,506,0,173
+1757092425173,307,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,7381,246,20,20,null,0,1744,0
+1757092426916,307,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-19,text,true,,7381,246,20,20,https://blazedemo.com/reserve.php,298,0,0
+1757092427261,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-17,text,true,,577,0,20,20,null,0,0,0
+1757092426703,314,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,6715,321,20,20,null,0,438,0
+1757092427140,314,Seleccionar,200,OK,Thread Group  - LOAD 2-30,text,true,,6715,321,20,20,https://blazedemo.com/purchase.php,305,0,0
+1757092426265,270,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,6715,321,20,20,null,0,1035,0
+1757092427299,270,Seleccionar,200,OK,Thread Group  - LOAD 2-24,text,true,,6715,321,20,20,https://blazedemo.com/purchase.php,259,0,0
+1757092425521,2178,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,4757,116,20,20,null,0,0,214
+1757092427137,561,GET Home,200,OK,Thread Group  - LOAD 2-32,text,true,,4757,116,20,20,https://blazedemo.com/,558,0,214
+1757092424800,288,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,6715,321,20,20,null,0,2809,0
+1757092427608,288,Seleccionar,200,OK,Thread Group  - LOAD 2-12,text,true,,6715,321,20,20,https://blazedemo.com/purchase.php,285,0,0
+1757092426720,1264,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,4757,116,21,21,null,0,0,164
+1757092427561,422,GET Home,200,OK,Thread Group  - LOAD 2-34,text,true,,4757,116,21,21,https://blazedemo.com/,419,0,164
+1757092426124,314,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,7357,243,21,21,null,0,1566,0
+1757092427688,314,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-23,text,true,,7357,243,21,21,https://blazedemo.com/reserve.php,308,0,0
+1757092424920,338,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,5780,496,21,21,null,0,2784,0
+1757092427703,338,Completar compra,200,OK,Thread Group  - LOAD 2-22,text,true,,5780,496,21,21,https://blazedemo.com/confirmation.php,334,0,0
+1757092426564,372,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,5780,483,21,21,null,0,1237,0
+1757092427799,372,Completar compra,200,OK,Thread Group  - LOAD 2-28,text,true,,5780,483,21,21,https://blazedemo.com/confirmation.php,368,0,0
+1757092427896,263,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-12,,true,,5780,506,21,21,null,0,124,0
+1757092428020,263,Completar compra,200,OK,Thread Group  - LOAD 2-12,text,true,,5780,506,21,21,https://blazedemo.com/confirmation.php,259,0,0
+1757092425514,283,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,7373,245,21,21,null,0,2543,0
+1757092428055,283,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-20,text,true,,7373,245,21,21,https://blazedemo.com/reserve.php,278,0,0
+1757092427317,1027,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,4757,116,21,21,null,0,0,162
+1757092427904,440,GET Home,200,OK,Thread Group  - LOAD 2-35,text,true,,4757,116,21,21,https://blazedemo.com/,434,0,162
+1757092427983,299,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,7317,238,21,21,null,0,67,0
+1757092428049,299,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-34,text,true,,7317,238,21,21,https://blazedemo.com/reserve.php,295,0,0
+1757092428387,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-22,text,true,,587,0,21,21,null,0,0,0
+1757092428401,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-25,text,true,,577,0,21,21,null,0,0,0
+1757092426592,322,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,7405,249,21,21,null,0,1602,0
+1757092428193,322,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-16,text,true,,7405,249,21,21,https://blazedemo.com/reserve.php,314,0,0
+1757092425387,279,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,5780,467,22,22,null,0,2902,0
+1757092428288,279,Completar compra,200,OK,Thread Group  - LOAD 2-27,text,true,,5780,467,22,22,https://blazedemo.com/confirmation.php,276,0,0
+1757092426239,288,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,7349,242,22,22,null,0,2068,0
+1757092428306,288,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-21,text,true,,7349,242,22,22,https://blazedemo.com/reserve.php,286,0,0
+1757092428647,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-12,text,true,,580,0,22,22,null,0,0,0
+1757092428003,284,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,6715,321,21,21,null,0,401,0
+1757092428404,284,Seleccionar,200,OK,Thread Group  - LOAD 2-23,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,280,0,0
+1757092427223,328,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,6715,321,21,21,null,0,1172,0
+1757092428395,328,Seleccionar,200,OK,Thread Group  - LOAD 2-19,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,323,0,0
+1757092427569,281,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-24,,true,,5780,492,21,21,null,0,1053,0
+1757092428622,281,Completar compra,200,OK,Thread Group  - LOAD 2-24,text,true,,5780,492,21,21,https://blazedemo.com/confirmation.php,275,0,0
+1757092427128,263,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,7341,241,21,21,null,0,1529,0
+1757092428656,263,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-33,text,true,,7341,241,21,21,https://blazedemo.com/reserve.php,260,0,0
+1757092428401,548,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,4757,116,21,21,null,0,0,0
+1757092428604,345,GET Home,200,OK,Thread Group  - LOAD 2-25,text,true,,4757,116,21,21,https://blazedemo.com/,341,0,0
+1757092426645,340,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,7389,255,21,21,null,0,1990,0
+1757092428634,340,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-29,text,true,,7389,255,21,21,https://blazedemo.com/reserve.php,332,0,0
+1757092428723,341,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-19,,true,,5780,466,22,22,null,0,65,0
+1757092428788,341,Completar compra,200,OK,Thread Group  - LOAD 2-19,text,true,,5780,466,22,22,https://blazedemo.com/confirmation.php,335,0,0
+1757092428349,297,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,6715,321,22,22,null,0,669,0
+1757092429018,297,Seleccionar,200,OK,Thread Group  - LOAD 2-34,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,288,0,0
+1757092427917,1399,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,4757,116,22,22,null,0,0,170
+1757092428861,455,GET Home,200,OK,Thread Group  - LOAD 2-36,text,true,,4757,116,22,22,https://blazedemo.com/,454,0,170
+1757092429337,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-19,text,true,,577,0,22,22,null,0,0,0
+1757092426764,322,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,6715,321,21,21,null,0,2315,0
+1757092429078,322,Seleccionar,200,OK,Thread Group  - LOAD 2-18,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,316,0,0
+1757092426397,3024,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,4757,116,21,21,null,0,0,0
+1757092429060,360,GET Home,200,OK,Thread Group  - LOAD 2-26,text,true,,4757,116,21,21,https://blazedemo.com/,355,0,0
+1757092428594,334,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,6715,321,21,21,null,0,567,0
+1757092429161,334,Seleccionar,200,OK,Thread Group  - LOAD 2-21,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,330,0,0
+1757092425722,344,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,7357,243,21,21,null,0,3503,0
+1757092429223,344,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-31,text,true,,7357,243,21,21,https://blazedemo.com/reserve.php,337,0,0
+1757092428388,1234,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,4757,116,21,21,null,0,0,0
+1757092429271,351,GET Home,200,OK,Thread Group  - LOAD 2-22,text,true,,4757,116,21,21,https://blazedemo.com/,347,0,0
+1757092429623,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-28,text,true,,579,0,21,21,null,0,0,0
+1757092428688,301,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-23,,true,,5780,498,21,21,null,0,658,0
+1757092429346,301,Completar compra,200,OK,Thread Group  - LOAD 2-23,text,true,,5780,498,21,21,https://blazedemo.com/confirmation.php,299,0,0
+1757092428974,332,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,6715,321,21,21,null,0,372,0
+1757092429346,332,Seleccionar,200,OK,Thread Group  - LOAD 2-29,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,325,0,0
+1757092428515,347,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,6715,321,22,22,null,0,860,0
+1757092429375,347,Seleccionar,200,OK,Thread Group  - LOAD 2-16,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,340,0,0
+1757092429115,660,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,4757,116,22,22,null,0,0,167
+1757092429360,415,GET Home,200,OK,Thread Group  - LOAD 2-38,text,true,,4757,116,22,22,https://blazedemo.com/,415,0,167
+1757092429495,280,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-21,,true,,5780,475,22,22,null,0,93,0
+1757092429588,280,Completar compra,200,OK,Thread Group  - LOAD 2-21,text,true,,5780,475,22,22,https://blazedemo.com/confirmation.php,276,0,0
+1757092429420,309,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,7373,245,22,22,null,0,208,0
+1757092429628,309,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-26,text,true,,7373,245,22,22,https://blazedemo.com/reserve.php,299,0,0
+1757092427454,316,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,5780,482,22,22,null,0,2203,0
+1757092429657,316,Completar compra,200,OK,Thread Group  - LOAD 2-30,text,true,,5780,482,22,22,https://blazedemo.com/confirmation.php,310,0,0
+1757092430183,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-24,text,true,,583,0,22,22,null,0,0,0
+1757092427699,406,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,7405,249,21,21,null,0,2093,0
+1757092429791,406,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-32,text,true,,7405,249,21,21,https://blazedemo.com/reserve.php,400,0,0
+1757092428344,295,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,7349,242,21,21,null,0,1603,0
+1757092429947,295,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-35,text,true,,7349,242,21,21,https://blazedemo.com/reserve.php,290,0,0
+1757092430363,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-27,text,true,,574,0,22,22,null,0,0,0
+1757092429568,320,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,6715,321,22,22,null,0,570,0
+1757092430138,320,Seleccionar,200,OK,Thread Group  - LOAD 2-31,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,312,0,0
+1757092428516,2084,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,4757,116,22,22,null,0,0,166
+1757092430170,430,GET Home,200,OK,Thread Group  - LOAD 2-37,text,true,,4757,116,22,22,https://blazedemo.com/,429,0,166
+1757092428920,286,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,6715,321,22,22,null,0,1450,0
+1757092430370,286,Seleccionar,200,OK,Thread Group  - LOAD 2-33,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,284,0,0
+1757092428339,447,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,6715,321,22,22,null,0,1912,0
+1757092430251,447,Seleccionar,200,OK,Thread Group  - LOAD 2-20,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,447,0,0
+1757092429316,276,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,7405,257,22,22,null,0,1107,0
+1757092430422,276,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-36,text,true,,7405,257,22,22,https://blazedemo.com/reserve.php,273,0,0
+1757092429722,323,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-16,,true,,5780,486,22,22,null,0,667,0
+1757092430389,323,Completar compra,200,OK,Thread Group  - LOAD 2-16,text,true,,5780,486,22,22,https://blazedemo.com/confirmation.php,320,0,0
+1757092430721,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-21,text,true,,582,0,22,22,null,0,0,0
+1757092429622,431,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,7389,255,21,21,null,0,779,0
+1757092430397,431,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-22,text,true,,7389,255,21,21,https://blazedemo.com/reserve.php,424,0,0
+1757092429678,430,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,5780,474,21,21,null,0,743,0
+1757092430421,430,Completar compra,200,OK,Thread Group  - LOAD 2-29,text,true,,5780,474,21,21,https://blazedemo.com/confirmation.php,424,0,0
+1757092430242,289,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,6715,321,21,21,null,0,328,0
+1757092430570,289,Seleccionar,200,OK,Thread Group  - LOAD 2-35,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,284,0,0
+1757092429623,1241,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,4757,116,21,21,null,0,0,0
+1757092430462,402,GET Home,200,OK,Thread Group  - LOAD 2-28,text,true,,4757,116,21,21,https://blazedemo.com/,397,0,0
+1757092429775,323,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,7341,241,22,22,null,0,1012,0
+1757092430786,323,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-38,text,true,,7341,241,22,22,https://blazedemo.com/reserve.php,319,0,0
+1757092431212,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-16,text,true,,590,0,22,22,null,0,0,0
+1757092430656,302,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,5780,506,21,21,null,0,385,0
+1757092431041,302,Completar compra,200,OK,Thread Group  - LOAD 2-33,text,true,,5780,506,21,21,https://blazedemo.com/confirmation.php,283,0,0
+1757092431416,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-23,text,true,,586,0,21,21,null,0,0,0
+1757092430699,269,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,6715,321,20,20,null,0,489,0
+1757092431188,269,Seleccionar,200,OK,Thread Group  - LOAD 2-36,text,true,,6715,321,20,20,https://blazedemo.com/purchase.php,265,0,0
+1757092430198,413,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,6715,321,21,21,null,0,964,0
+1757092431162,413,Seleccionar,200,OK,Thread Group  - LOAD 2-32,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,406,0,0
+1757092430458,388,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,5780,481,21,21,null,0,776,0
+1757092431234,388,Completar compra,200,OK,Thread Group  - LOAD 2-31,text,true,,5780,481,21,21,https://blazedemo.com/confirmation.php,382,0,0
+1757092429714,1961,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,4757,116,21,21,null,0,0,217
+1757092431035,640,GET Home,200,OK,Thread Group  - LOAD 2-39,text,true,,4757,116,21,21,https://blazedemo.com/,638,0,217
+1757092431110,320,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,6715,321,21,21,null,0,307,0
+1757092431416,320,Seleccionar,200,OK,Thread Group  - LOAD 2-38,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,319,0,0
+1757092428949,319,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,7349,242,21,21,null,0,2524,0
+1757092431473,319,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-25,text,true,,7349,242,21,21,https://blazedemo.com/reserve.php,310,0,0
+1757092429937,328,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,6715,321,21,21,null,0,1565,0
+1757092431502,328,Seleccionar,200,OK,Thread Group  - LOAD 2-26,text,true,,6715,321,21,21,https://blazedemo.com/purchase.php,321,0,0
+1757092431934,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-31,text,true,,569,0,21,21,null,0,0,0
+1757092429400,376,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-18,,true,,5780,490,21,21,null,0,2194,0
+1757092431594,376,Completar compra,200,OK,Thread Group  - LOAD 2-18,text,true,,5780,490,21,21,https://blazedemo.com/confirmation.php,372,0,0
+1757092429315,299,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,5780,529,21,21,null,0,2399,0
+1757092431713,299,Completar compra,200,OK,Thread Group  - LOAD 2-34,text,true,,5780,529,21,21,https://blazedemo.com/confirmation.php,299,0,0
+1757092430363,1677,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,4757,116,21,21,null,0,0,0
+1757092431743,297,GET Home,200,OK,Thread Group  - LOAD 2-27,text,true,,4757,116,21,21,https://blazedemo.com/,294,0,0
+1757092432048,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-29,text,true,,584,0,21,21,null,0,0,0
+1757092430698,434,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-20,,true,,5780,463,22,22,null,0,1206,0
+1757092431904,434,Completar compra,200,OK,Thread Group  - LOAD 2-20,text,true,,5780,463,22,22,https://blazedemo.com/confirmation.php,431,0,0
+1757092431792,340,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,6715,321,22,22,null,0,308,0
+1757092432100,340,Seleccionar,200,OK,Thread Group  - LOAD 2-25,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,333,0,0
+1757092430859,383,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,5780,507,22,22,null,0,1268,0
+1757092432127,383,Completar compra,200,OK,Thread Group  - LOAD 2-35,text,true,,5780,507,22,22,https://blazedemo.com/confirmation.php,383,0,0
+1757092431675,316,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,7373,245,22,22,null,0,566,0
+1757092432241,316,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-39,text,true,,7373,245,22,22,https://blazedemo.com/reserve.php,305,0,0
+1757092431737,265,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,5780,518,22,22,null,0,564,0
+1757092432301,265,Completar compra,200,OK,Thread Group  - LOAD 2-38,text,true,,5780,518,22,22,https://blazedemo.com/confirmation.php,265,0,0
+1757092432638,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-30,text,true,,570,0,22,22,null,0,0,0
+1757092431934,708,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,4757,116,22,22,null,0,0,0
+1757092432340,302,GET Home,200,OK,Thread Group  - LOAD 2-31,text,true,,4757,116,22,22,https://blazedemo.com/,297,0,0
+1757092430601,270,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,7437,253,22,22,null,0,1799,0
+1757092432400,270,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-37,text,true,,7437,253,22,22,https://blazedemo.com/reserve.php,266,0,0
+1757092432722,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-34,text,true,,572,0,23,23,null,0,0,0
+1757092432440,306,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-25,,true,,5780,494,23,23,null,0,148,0
+1757092432588,306,Completar compra,200,OK,Thread Group  - LOAD 2-25,text,true,,5780,494,23,23,https://blazedemo.com/confirmation.php,301,0,0
+1757092430832,337,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,6715,321,23,23,null,0,1754,0
+1757092432586,337,Seleccionar,200,OK,Thread Group  - LOAD 2-22,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,335,0,0
+1757092432048,906,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,4757,116,23,23,null,0,0,0
+1757092432633,321,GET Home,200,OK,Thread Group  - LOAD 2-29,text,true,,4757,116,23,23,https://blazedemo.com/,318,0,0
+1757092430315,2651,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,4757,116,23,23,null,0,0,161
+1757092432500,466,GET Home,200,OK,Thread Group  - LOAD 2-40,text,true,,4757,116,23,23,https://blazedemo.com/,465,0,161
+1757092431830,333,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-26,,true,,5780,466,23,23,null,0,824,0
+1757092432654,333,Completar compra,200,OK,Thread Group  - LOAD 2-26,text,true,,5780,466,23,23,https://blazedemo.com/confirmation.php,327,0,0
+1757092431575,357,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,5780,481,23,23,null,0,1068,0
+1757092432643,357,Completar compra,200,OK,Thread Group  - LOAD 2-32,text,true,,5780,481,23,23,https://blazedemo.com/confirmation.php,353,0,0
+1757092433024,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-35,text,true,,584,0,23,23,null,0,0,0
+1757092433051,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-20,text,true,,573,0,23,23,null,0,0,0
+1757092433071,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-38,text,true,,574,0,22,22,null,0,0,0
+1757092433133,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-25,text,true,,581,0,22,22,null,0,0,0
+1757092432638,584,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,4757,116,21,21,null,0,0,0
+1757092432898,324,GET Home,200,OK,Thread Group  - LOAD 2-30,text,true,,4757,116,21,21,https://blazedemo.com/,319,0,0
+1757092433522,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-26,text,true,,575,0,22,22,null,0,0,0
+1757092433538,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-32,text,true,,575,0,21,21,null,0,0,0
+1757092433071,531,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,4757,116,21,21,null,0,0,0
+1757092433313,289,GET Home,200,OK,Thread Group  - LOAD 2-38,text,true,,4757,116,21,21,https://blazedemo.com/,286,0,0
+1757092430864,332,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,7389,255,21,21,null,0,2419,0
+1757092433282,332,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-28,text,true,,7389,255,21,21,https://blazedemo.com/reserve.php,323,0,0
+1757092432954,370,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,7389,255,21,21,null,0,316,0
+1757092433270,370,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-29,text,true,,7389,255,21,21,https://blazedemo.com/reserve.php,360,0,0
+1757092431513,2162,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,4757,116,21,21,null,0,0,168
+1757092433213,462,GET Home,200,OK,Thread Group  - LOAD 2-42,text,true,,4757,116,21,21,https://blazedemo.com/,459,0,168
+1757092432722,1097,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,4757,116,21,21,null,0,0,0
+1757092433542,277,GET Home,200,OK,Thread Group  - LOAD 2-34,text,true,,4757,116,21,21,https://blazedemo.com/,273,0,0
+1757092432966,319,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,7357,243,21,21,null,0,542,0
+1757092433507,319,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-40,text,true,,7357,243,21,21,https://blazedemo.com/reserve.php,313,0,0
+1757092430912,2935,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,4757,116,21,21,null,0,0,218
+1757092433289,558,GET Home,200,OK,Thread Group  - LOAD 2-41,text,true,,4757,116,21,21,https://blazedemo.com/,558,0,218
+1757092433874,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-33,text,true,,571,0,21,21,null,0,0,0
+1757092432642,359,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,7349,242,22,22,null,0,1031,0
+1757092433672,359,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-31,text,true,,7349,242,22,22,https://blazedemo.com/reserve.php,349,0,0
+1757092433603,271,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,7381,246,22,22,null,0,287,0
+1757092433890,271,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-38,text,true,,7381,246,22,22,https://blazedemo.com/reserve.php,265,0,0
+1757092433222,307,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,7357,243,22,22,null,0,637,0
+1757092433858,307,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-30,text,true,,7357,243,22,22,https://blazedemo.com/reserve.php,301,0,0
+1757092433025,1242,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,4757,116,22,22,null,0,0,0
+1757092433971,296,GET Home,200,OK,Thread Group  - LOAD 2-35,text,true,,4757,116,22,22,https://blazedemo.com/,293,0,0
+1757092431457,280,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,5780,488,22,22,null,0,2649,0
+1757092434105,280,Completar compra,200,OK,Thread Group  - LOAD 2-36,text,true,,5780,488,22,22,https://blazedemo.com/confirmation.php,277,0,0
+1757092434032,314,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,6715,321,22,22,null,0,153,0
+1757092434185,314,Seleccionar,200,OK,Thread Group  - LOAD 2-31,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,305,0,0
+1757092433311,1228,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,4757,116,23,23,null,0,0,165
+1757092434024,515,GET Home,200,OK,Thread Group  - LOAD 2-45,text,true,,4757,116,23,23,https://blazedemo.com/,513,0,165
+1757092433911,699,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,4757,116,23,23,null,0,0,208
+1757092433996,614,GET Home,200,OK,Thread Group  - LOAD 2-46,text,true,,4757,116,23,23,https://blazedemo.com/,614,0,208
+1757092433675,291,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,7437,253,23,23,null,0,761,0
+1757092434435,291,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-42,text,true,,7437,253,23,23,https://blazedemo.com/reserve.php,284,0,0
+1757092434730,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-18,text,true,,587,0,23,23,null,0,0,0
+1757092432040,326,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,7365,244,22,22,null,0,2393,0
+1757092434433,326,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-27,text,true,,7365,244,22,22,https://blazedemo.com/reserve.php,323,0,0
+1757092432923,361,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-22,,true,,5780,472,22,22,null,0,1566,0
+1757092434489,361,Completar compra,200,OK,Thread Group  - LOAD 2-22,text,true,,5780,472,22,22,https://blazedemo.com/confirmation.php,357,0,0
+1757092434161,266,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,6715,321,22,22,null,0,503,0
+1757092434664,266,Seleccionar,200,OK,Thread Group  - LOAD 2-38,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,261,0,0
+1757092433827,273,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,6715,321,22,22,null,0,903,0
+1757092434730,273,Seleccionar,200,OK,Thread Group  - LOAD 2-40,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,268,0,0
+1757092434499,296,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-31,,true,,5780,493,22,22,null,0,293,0
+1757092434792,296,Completar compra,200,OK,Thread Group  - LOAD 2-31,text,true,,5780,493,22,22,https://blazedemo.com/confirmation.php,290,0,0
+1757092434727,327,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,6715,321,23,23,null,0,104,0
+1757092434831,327,Seleccionar,200,OK,Thread Group  - LOAD 2-42,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,323,0,0
+1757092435198,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-36,text,true,,580,0,23,23,null,0,0,0
+1757092433874,1373,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,4757,116,23,23,null,0,0,0
+1757092434961,286,GET Home,200,OK,Thread Group  - LOAD 2-33,text,true,,4757,116,23,23,https://blazedemo.com/,285,0,0
+1757092432557,327,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,6715,321,23,23,null,0,2375,0
+1757092434931,327,Seleccionar,200,OK,Thread Group  - LOAD 2-39,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,323,0,0
+1757092433539,1734,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,4757,116,23,23,null,0,0,0
+1757092434950,323,GET Home,200,OK,Thread Group  - LOAD 2-32,text,true,,4757,116,23,23,https://blazedemo.com/,320,0,0
+1757092435273,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-22,text,true,,582,0,23,23,null,0,0,0
+1757092433819,287,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,7437,261,22,22,null,0,1250,0
+1757092435068,287,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-34,text,true,,7437,261,22,22,https://blazedemo.com/reserve.php,285,0,0
+1757092434759,286,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,6715,321,22,22,null,0,313,0
+1757092435072,286,Seleccionar,200,OK,Thread Group  - LOAD 2-27,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,281,0,0
+1757092434930,326,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-38,,true,,5780,487,22,22,null,0,176,0
+1757092435106,326,Completar compra,200,OK,Thread Group  - LOAD 2-38,text,true,,5780,487,22,22,https://blazedemo.com/confirmation.php,323,0,0
+1757092435003,296,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,5780,479,22,22,null,0,192,0
+1757092435195,296,Completar compra,200,OK,Thread Group  - LOAD 2-40,text,true,,5780,479,22,22,https://blazedemo.com/confirmation.php,291,0,0
+1757092434539,264,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,7389,247,22,22,null,0,690,0
+1757092435228,264,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-45,text,true,,7389,247,22,22,https://blazedemo.com/reserve.php,261,0,0
+1757092432710,2826,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,4757,116,22,22,null,0,0,161
+1757092435049,487,GET Home,200,OK,Thread Group  - LOAD 2-44,text,true,,4757,116,22,22,https://blazedemo.com/,485,0,161
+1757092432670,270,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,6715,321,22,22,null,0,2608,0
+1757092435278,270,Seleccionar,200,OK,Thread Group  - LOAD 2-37,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,266,0,0
+1757092435109,507,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,4757,116,22,22,null,0,0,173
+1757092435177,439,GET Home,200,OK,Thread Group  - LOAD 2-48,text,true,,4757,116,22,22,https://blazedemo.com/,437,0,173
+1757092434611,316,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,7325,239,22,22,null,0,734,0
+1757092435344,316,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-46,text,true,,7325,239,22,22,https://blazedemo.com/reserve.php,310,0,0
+1757092435356,298,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,6715,321,23,23,null,0,180,0
+1757092435535,298,Seleccionar,200,OK,Thread Group  - LOAD 2-34,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,292,0,0
+1757092433640,340,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,6715,321,23,23,null,0,1857,0
+1757092435497,340,Seleccionar,200,OK,Thread Group  - LOAD 2-29,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,336,0,0
+1757092434166,378,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,6715,321,23,23,null,0,1317,0
+1757092435483,378,Seleccionar,200,OK,Thread Group  - LOAD 2-30,text,true,,6715,321,23,23,https://blazedemo.com/purchase.php,372,0,0
+1757092436045,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-31,text,true,,580,0,23,23,null,0,0,0
+1757092435358,447,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-27,,true,,5780,474,22,22,null,0,310,0
+1757092435667,447,Completar compra,200,OK,Thread Group  - LOAD 2-27,text,true,,5780,474,22,22,https://blazedemo.com/confirmation.php,443,0,0
+1757092433847,325,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,7381,246,22,22,null,0,2036,0
+1757092435882,325,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-41,text,true,,7381,246,22,22,https://blazedemo.com/reserve.php,316,0,0
+1757092433615,331,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,6715,321,22,22,null,0,2294,0
+1757092435909,331,Seleccionar,200,OK,Thread Group  - LOAD 2-28,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,325,0,0
+1757092436305,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-40,text,true,,567,0,22,22,null,0,0,0
+1757092435548,282,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,5780,463,23,23,null,0,637,0
+1757092436185,282,Completar compra,200,OK,Thread Group  - LOAD 2-37,text,true,,5780,463,23,23,https://blazedemo.com/confirmation.php,277,0,0
+1757092435199,1282,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,4757,116,23,23,null,0,0,0
+1757092436018,463,GET Home,200,OK,Thread Group  - LOAD 2-36,text,true,,4757,116,23,23,https://blazedemo.com/,461,0,0
+1757092435834,294,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-34,,true,,5780,496,23,23,null,0,372,0
+1757092436206,294,Completar compra,200,OK,Thread Group  - LOAD 2-34,text,true,,5780,496,23,23,https://blazedemo.com/confirmation.php,290,0,0
+1757092436613,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-27,text,true,,583,0,23,23,null,0,0,0
+1757092432111,4511,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,4757,116,22,22,null,0,0,218
+1757092436078,544,GET Home,200,OK,Thread Group  - LOAD 2-43,text,true,,4757,116,22,22,https://blazedemo.com/,544,0,218
+1757092434509,2211,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,4757,116,22,22,null,0,0,162
+1757092436244,476,GET Home,200,OK,Thread Group  - LOAD 2-47,text,true,,4757,116,22,22,https://blazedemo.com/,472,0,162
+1757092436208,319,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,6715,321,22,22,null,0,201,0
+1757092436409,319,Seleccionar,200,OK,Thread Group  - LOAD 2-41,text,true,,6715,321,22,22,https://blazedemo.com/purchase.php,316,0,0
+1757092435616,271,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,7437,261,22,22,null,0,872,0
+1757092436487,271,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-48,text,true,,7437,261,22,22,https://blazedemo.com/reserve.php,268,0,0
+1757092436779,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-37,text,true,,581,0,22,22,null,0,0,0
+1757092435273,324,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,7333,240,22,22,null,0,1224,0
+1757092436496,324,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-32,text,true,,7333,240,22,22,https://blazedemo.com/reserve.php,315,0,0
+1757092435247,266,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,7333,240,22,22,null,0,1394,0
+1757092436640,266,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-33,text,true,,7333,240,22,22,https://blazedemo.com/reserve.php,261,0,0
+1757092436306,643,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,4757,116,22,22,null,0,0,0
+1757092436648,301,GET Home,200,OK,Thread Group  - LOAD 2-40,text,true,,4757,116,22,22,https://blazedemo.com/,299,0,0
+1757092435259,329,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,5780,459,22,22,null,0,1407,0
+1757092436666,329,Completar compra,200,OK,Thread Group  - LOAD 2-39,text,true,,5780,459,22,22,https://blazedemo.com/confirmation.php,324,0,0
+1757092436721,279,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,7349,242,22,22,null,0,65,0
+1757092436785,279,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-47,text,true,,7349,242,22,22,https://blazedemo.com/reserve.php,271,0,0
+1757092436309,756,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,4757,116,22,22,null,0,0,207
+1757092436520,545,GET Home,200,OK,Thread Group  - LOAD 2-50,text,true,,4757,116,22,22,https://blazedemo.com/,544,0,207
+1757092434267,274,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,7381,246,22,22,null,0,2529,0
+1757092436796,274,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-35,text,true,,7381,246,22,22,https://blazedemo.com/reserve.php,268,0,0
+1757092435536,265,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,7325,239,22,22,null,0,1357,0
+1757092436892,265,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-44,text,true,,7325,239,22,22,https://blazedemo.com/reserve.php,260,0,0
+1757092437255,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-38,text,true,,578,0,22,22,null,0,0,0
+1757092435708,1552,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,4757,116,21,21,null,0,0,157
+1757092436570,690,GET Home,200,OK,Thread Group  - LOAD 2-49,text,true,,4757,116,21,21,https://blazedemo.com/,689,0,157
+1757092436240,339,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-28,,true,,5780,498,21,21,null,0,786,0
+1757092437026,339,Completar compra,200,OK,Thread Group  - LOAD 2-28,text,true,,5780,498,21,21,https://blazedemo.com/confirmation.php,335,0,0
+1757092437406,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-28,text,true,,588,0,21,21,null,0,0,0
+1757092436821,359,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,6715,321,20,20,null,0,420,0
+1757092437241,359,Seleccionar,200,OK,Thread Group  - LOAD 2-32,text,true,,6715,321,20,20,https://blazedemo.com/purchase.php,352,0,0
+1757092436728,319,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,5780,513,20,20,null,0,562,0
+1757092437290,319,Completar compra,200,OK,Thread Group  - LOAD 2-41,text,true,,5780,513,20,20,https://blazedemo.com/confirmation.php,315,0,0
+1757092436779,842,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,4757,116,20,20,null,0,0,0
+1757092437350,271,GET Home,200,OK,Thread Group  - LOAD 2-37,text,true,,4757,116,20,20,https://blazedemo.com/,267,0,0
+1757092435861,370,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-30,,true,,5780,473,20,20,null,0,1394,0
+1757092437254,370,Completar compra,200,OK,Thread Group  - LOAD 2-30,text,true,,5780,473,20,20,https://blazedemo.com/confirmation.php,365,0,0
+1757092435837,384,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-29,,true,,5780,528,20,20,null,0,1420,0
+1757092437257,384,Completar compra,200,OK,Thread Group  - LOAD 2-29,text,true,,5780,528,20,20,https://blazedemo.com/confirmation.php,380,0,0
+1757092437261,314,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,7389,247,20,20,null,0,110,0
+1757092437370,314,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-49,text,true,,7389,247,20,20,https://blazedemo.com/reserve.php,310,0,0
+1757092436949,287,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,7357,243,20,20,null,0,480,0
+1757092437428,287,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-40,text,true,,7357,243,20,20,https://blazedemo.com/reserve.php,280,0,0
+1757092437725,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-29,text,true,,578,0,20,20,null,0,0,0
+1757092436759,268,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,6715,321,19,19,null,0,733,0
+1757092437492,268,Seleccionar,200,OK,Thread Group  - LOAD 2-48,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,263,0,0
+1757092435493,274,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,6715,321,19,19,null,0,2010,0
+1757092437503,274,Seleccionar,200,OK,Thread Group  - LOAD 2-45,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,272,0,0
+1757092436907,266,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,6715,321,19,19,null,0,656,0
+1757092437563,266,Seleccionar,200,OK,Thread Group  - LOAD 2-33,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,262,0,0
+1757092436482,262,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,7389,247,19,19,null,0,1145,0
+1757092437626,262,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-36,text,true,,7389,247,19,19,https://blazedemo.com/reserve.php,261,0,0
+1757092437066,312,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,7437,253,19,19,null,0,632,0
+1757092437697,312,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-50,text,true,,7437,253,19,19,https://blazedemo.com/reserve.php,305,0,0
+1757092437600,304,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-32,,true,,5780,494,19,19,null,0,137,0
+1757092437737,304,Completar compra,200,OK,Thread Group  - LOAD 2-32,text,true,,5780,494,19,19,https://blazedemo.com/confirmation.php,298,0,0
+1757092437070,308,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,6715,321,19,19,null,0,707,0
+1757092437777,308,Seleccionar,200,OK,Thread Group  - LOAD 2-35,text,true,,6715,321,19,19,https://blazedemo.com/purchase.php,303,0,0
+1757092437760,302,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,5780,486,19,19,null,0,128,0
+1757092437888,302,Completar compra,200,OK,Thread Group  - LOAD 2-48,text,true,,5780,486,19,19,https://blazedemo.com/confirmation.php,298,0,0
+1757092438201,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-34,text,true,,592,0,19,19,null,0,0,0
+1757092436622,325,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,7333,240,18,18,null,0,1400,0
+1757092438022,325,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-43,text,true,,7333,240,18,18,https://blazedemo.com/reserve.php,316,0,0
+1757092437158,358,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,6715,321,18,18,null,0,898,0
+1757092438056,358,Seleccionar,200,OK,Thread Group  - LOAD 2-44,text,true,,6715,321,18,18,https://blazedemo.com/purchase.php,354,0,0
+1757092437685,311,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,6715,321,18,18,null,0,626,0
+1757092438311,311,Seleccionar,200,OK,Thread Group  - LOAD 2-49,text,true,,6715,321,18,18,https://blazedemo.com/purchase.php,307,0,0
+1757092435158,265,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,5780,483,18,18,null,0,3248,0
+1757092438406,265,Completar compra,200,OK,Thread Group  - LOAD 2-42,text,true,,5780,483,18,18,https://blazedemo.com/confirmation.php,263,0,0
+1757092438085,297,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-35,,true,,5780,466,18,18,null,0,398,0
+1757092438483,297,Completar compra,200,OK,Thread Group  - LOAD 2-35,text,true,,5780,466,18,18,https://blazedemo.com/confirmation.php,293,0,0
+1757092438347,358,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,6715,321,18,18,null,0,153,0
+1757092438500,358,Seleccionar,200,OK,Thread Group  - LOAD 2-43,text,true,,6715,321,18,18,https://blazedemo.com/purchase.php,353,0,0
+1757092435661,448,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,6715,321,18,18,null,0,2850,0
+1757092438511,448,Seleccionar,200,OK,Thread Group  - LOAD 2-46,text,true,,6715,321,18,18,https://blazedemo.com/purchase.php,443,0,0
+1757092438973,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-30,text,true,,581,0,18,18,null,0,0,0
+1757092437065,287,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,6715,321,17,17,null,0,1648,0
+1757092438713,287,Seleccionar,200,OK,Thread Group  - LOAD 2-47,text,true,,6715,321,17,17,https://blazedemo.com/purchase.php,281,0,0
+1757092439030,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-48,text,true,,582,0,17,17,null,0,0,0
+1757092439059,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-42,text,true,,581,0,17,17,null,0,0,0
+1757092439218,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-32,text,true,,579,0,17,17,null,0,0,0
+1757092437829,293,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-33,,true,,5780,473,16,16,null,0,1230,0
+1757092439059,293,Completar compra,200,OK,Thread Group  - LOAD 2-33,text,true,,5780,473,16,16,https://blazedemo.com/confirmation.php,290,0,0
+1757092439361,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-41,text,true,,583,0,16,16,null,0,0,0
+1757092438959,335,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,5780,461,16,16,null,0,141,0
+1757092439100,335,Completar compra,200,OK,Thread Group  - LOAD 2-46,text,true,,5780,461,16,16,https://blazedemo.com/confirmation.php,328,0,0
+1757092438414,317,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,5780,477,16,16,null,0,729,0
+1757092439143,317,Completar compra,200,OK,Thread Group  - LOAD 2-44,text,true,,5780,477,16,16,https://blazedemo.com/confirmation.php,313,0,0
+1757092439487,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-46,text,true,,565,0,16,16,null,0,0,0
+1757092437889,312,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,6715,321,16,16,null,0,1295,0
+1757092439184,312,Seleccionar,200,OK,Thread Group  - LOAD 2-36,text,true,,6715,321,16,16,https://blazedemo.com/purchase.php,308,0,0
+1757092439508,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-39,text,true,,569,0,16,16,null,0,0,0
+1757092439715,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-33,text,true,,577,0,16,16,null,0,0,0
+1757092437621,294,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,7381,254,15,15,null,0,1913,0
+1757092439533,294,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-37,text,true,,7381,254,15,15,https://blazedemo.com/reserve.php,290,0,0
+1757092439000,314,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,5780,488,15,15,null,0,685,0
+1757092439685,314,Completar compra,200,OK,Thread Group  - LOAD 2-47,text,true,,5780,488,15,15,https://blazedemo.com/confirmation.php,310,0,0
+1757092439030,993,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,4757,116,15,15,null,0,0,0
+1757092439618,405,GET Home,200,OK,Thread Group  - LOAD 2-48,text,true,,4757,116,15,15,https://blazedemo.com/,404,0,0
+1757092438010,320,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,6715,321,15,15,null,0,1776,0
+1757092439786,320,Seleccionar,200,OK,Thread Group  - LOAD 2-50,text,true,,6715,321,15,15,https://blazedemo.com/purchase.php,317,0,0
+1757092438858,447,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,5780,461,15,15,null,0,843,0
+1757092439700,447,Completar compra,200,OK,Thread Group  - LOAD 2-43,text,true,,5780,461,15,15,https://blazedemo.com/confirmation.php,442,0,0
+1757092439361,794,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,4757,116,15,15,null,0,0,0
+1757092439785,370,GET Home,200,OK,Thread Group  - LOAD 2-41,text,true,,4757,116,15,15,https://blazedemo.com/,366,0,0
+1757092439828,277,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,6715,321,15,15,null,0,66,0
+1757092439894,277,Seleccionar,200,OK,Thread Group  - LOAD 2-37,text,true,,6715,321,15,15,https://blazedemo.com/purchase.php,272,0,0
+1757092439059,1183,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,4757,116,15,15,null,0,0,0
+1757092439956,286,GET Home,200,OK,Thread Group  - LOAD 2-42,text,true,,4757,116,15,15,https://blazedemo.com/,285,0,0
+1757092437716,329,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,6715,321,15,15,null,0,2233,0
+1757092439949,329,Seleccionar,200,OK,Thread Group  - LOAD 2-40,text,true,,6715,321,15,15,https://blazedemo.com/purchase.php,325,0,0
+1757092437777,266,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,5780,495,15,15,null,0,2326,0
+1757092440102,266,Completar compra,200,OK,Thread Group  - LOAD 2-45,text,true,,5780,495,15,15,https://blazedemo.com/confirmation.php,264,0,0
+1757092440698,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-35,text,true,,577,0,15,15,null,0,0,0
+1757092440155,322,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,7333,240,14,14,null,0,509,0
+1757092440664,322,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-41,text,true,,7333,240,14,14,https://blazedemo.com/reserve.php,312,0,0
+1757092441154,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-44,text,true,,571,0,14,14,null,0,0,0
+1757092441256,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-45,text,true,,587,0,14,14,null,0,0,0
+1757092441338,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-43,text,true,,566,0,14,14,null,0,0,0
+1757092440243,269,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,7389,247,14,14,null,0,837,0
+1757092441080,269,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-42,text,true,,7389,247,14,14,https://blazedemo.com/reserve.php,262,0,0
+1757092439487,1866,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,4757,116,14,14,null,0,0,0
+1757092441044,309,GET Home,200,OK,Thread Group  - LOAD 2-46,text,true,,4757,116,14,14,https://blazedemo.com/,305,0,0
+1757092440278,291,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-40,,true,,5780,462,14,14,null,0,830,0
+1757092441107,291,Completar compra,200,OK,Thread Group  - LOAD 2-40,text,true,,5780,462,14,14,https://blazedemo.com/confirmation.php,287,0,0
+1757092439508,1978,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,4757,116,14,14,null,0,0,0
+1757092441142,344,GET Home,200,OK,Thread Group  - LOAD 2-39,text,true,,4757,116,14,14,https://blazedemo.com/,340,0,0
+1757092438622,318,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,5780,466,14,14,null,0,2715,0
+1757092441337,318,Completar compra,200,OK,Thread Group  - LOAD 2-49,text,true,,5780,466,14,14,https://blazedemo.com/confirmation.php,316,0,0
+1757092440171,306,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-37,,true,,5780,520,14,14,null,0,1413,0
+1757092441584,306,Completar compra,200,OK,Thread Group  - LOAD 2-37,text,true,,5780,520,14,14,https://blazedemo.com/confirmation.php,302,0,0
+1757092441154,755,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,4757,116,14,14,null,0,0,0
+1757092441555,354,GET Home,200,OK,Thread Group  - LOAD 2-44,text,true,,4757,116,14,14,https://blazedemo.com/,351,0,0
+1757092439496,588,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-36,,true,,5780,477,14,14,null,0,1850,0
+1757092441346,588,Completar compra,200,OK,Thread Group  - LOAD 2-36,text,true,,5780,477,14,14,https://blazedemo.com/confirmation.php,584,0,0
+1757092441338,604,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,4757,116,14,14,null,0,0,0
+1757092441595,347,GET Home,200,OK,Thread Group  - LOAD 2-43,text,true,,4757,116,14,14,https://blazedemo.com/,343,0,0
+1757092441349,533,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,6715,321,14,14,null,0,124,0
+1757092441473,533,Seleccionar,200,OK,Thread Group  - LOAD 2-42,text,true,,6715,321,14,14,https://blazedemo.com/purchase.php,528,0,0
+1757092440986,309,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,6715,321,14,14,null,0,873,0
+1757092441859,309,Seleccionar,200,OK,Thread Group  - LOAD 2-41,text,true,,6715,321,14,14,https://blazedemo.com/purchase.php,303,0,0
+1757092440107,319,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,5780,481,14,14,null,0,1755,0
+1757092441862,319,Completar compra,200,OK,Thread Group  - LOAD 2-50,text,true,,5780,481,14,14,https://blazedemo.com/confirmation.php,314,0,0
+1757092442208,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-40,text,true,,570,0,14,14,null,0,0,0
+1757092442006,263,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-42,,true,,5780,473,13,13,null,0,68,0
+1757092442074,263,Completar compra,200,OK,Thread Group  - LOAD 2-42,text,true,,5780,473,13,13,https://blazedemo.com/confirmation.php,259,0,0
+1757092442391,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-47,text,true,,575,0,13,13,null,0,0,0
+1757092440024,312,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,7357,243,13,13,null,0,2091,0
+1757092442115,312,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-48,text,true,,7357,243,13,13,https://blazedemo.com/reserve.php,308,0,0
+1757092441486,357,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,7381,246,13,13,null,0,735,0
+1757092442220,357,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-39,text,true,,7381,246,13,13,https://blazedemo.com/reserve.php,346,0,0
+1757092441256,1442,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,4757,116,13,13,null,0,0,0
+1757092442432,266,GET Home,200,OK,Thread Group  - LOAD 2-45,text,true,,4757,116,13,13,https://blazedemo.com/,263,0,0
+1757092441353,375,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,7381,246,13,13,null,0,1071,0
+1757092442423,375,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-46,text,true,,7381,246,13,13,https://blazedemo.com/reserve.php,367,0,0
+1757092442886,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-36,text,true,,589,0,13,13,null,0,0,0
+1757092442391,537,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,4757,116,12,12,null,0,0,0
+1757092442645,283,GET Home,200,OK,Thread Group  - LOAD 2-47,text,true,,4757,116,12,12,https://blazedemo.com/,281,0,0
+1757092441943,322,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,7333,240,12,12,null,0,931,0
+1757092442873,322,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-43,text,true,,7333,240,12,12,https://blazedemo.com/reserve.php,313,0,0
+1757092443364,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-37,text,true,,589,0,12,12,null,0,0,0
+1757092443469,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-42,text,true,,585,0,11,11,null,0,0,0
+1757092442698,312,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,7373,245,10,10,null,0,479,0
+1757092443176,312,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-45,text,true,,7373,245,10,10,https://blazedemo.com/reserve.php,306,0,0
+1757092443569,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-50,text,true,,589,0,10,10,null,0,0,0
+1757092442168,332,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-41,,true,,5780,505,10,10,null,0,1119,0
+1757092443287,332,Completar compra,200,OK,Thread Group  - LOAD 2-41,text,true,,5780,505,10,10,https://blazedemo.com/confirmation.php,328,0,0
+1757092443784,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-49,text,true,,577,0,10,10,null,0,0,0
+1757092444038,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-41,text,true,,569,0,10,10,null,0,0,0
+1757092442928,266,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,7381,246,9,9,null,0,1015,0
+1757092443943,266,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-47,text,true,,7381,246,9,9,https://blazedemo.com/reserve.php,262,0,0
+1757092443569,724,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,4757,116,9,9,null,0,0,0
+1757092444005,288,GET Home,200,OK,Thread Group  - LOAD 2-50,text,true,,4757,116,9,9,https://blazedemo.com/,283,0,0
+1757092441909,278,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,7381,254,9,9,null,0,2316,0
+1757092444225,278,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-44,text,true,,7381,254,9,9,https://blazedemo.com/reserve.php,274,0,0
+1757092442427,312,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,6715,321,9,9,null,0,1782,0
+1757092444209,312,Seleccionar,200,OK,Thread Group  - LOAD 2-48,text,true,,6715,321,9,9,https://blazedemo.com/purchase.php,308,0,0
+1757092443196,347,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,6715,321,9,9,null,0,1123,0
+1757092444318,347,Seleccionar,200,OK,Thread Group  - LOAD 2-43,text,true,,6715,321,9,9,https://blazedemo.com/purchase.php,343,0,0
+1757092443489,329,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,6715,321,9,9,null,0,1058,0
+1757092444547,329,Seleccionar,200,OK,Thread Group  - LOAD 2-45,text,true,,6715,321,9,9,https://blazedemo.com/purchase.php,328,0,0
+1757092444521,302,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-48,,true,,5780,473,9,9,null,0,54,0
+1757092444574,302,Completar compra,200,OK,Thread Group  - LOAD 2-48,text,true,,5780,473,9,9,https://blazedemo.com/confirmation.php,299,0,0
+1757092444293,311,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,7341,241,9,9,null,0,316,0
+1757092444608,311,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-50,text,true,,7341,241,9,9,https://blazedemo.com/reserve.php,302,0,0
+1757092444503,269,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,6715,321,9,9,null,0,169,0
+1757092444672,269,Seleccionar,200,OK,Thread Group  - LOAD 2-44,text,true,,6715,321,9,9,https://blazedemo.com/purchase.php,265,0,0
+1757092442799,357,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,6715,321,9,9,null,0,1880,0
+1757092444679,357,Seleccionar,200,OK,Thread Group  - LOAD 2-46,text,true,,6715,321,9,9,https://blazedemo.com/purchase.php,351,0,0
+1757092445163,1,Debug Sampler,200,OK,Thread Group  - LOAD 2-48,text,true,,581,0,9,9,null,0,0,0
+1757092444876,295,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-45,,true,,5780,470,8,8,null,0,94,0
+1757092444970,295,Completar compra,200,OK,Thread Group  - LOAD 2-45,text,true,,5780,470,8,8,https://blazedemo.com/confirmation.php,291,0,0
+1757092445036,348,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-46,,true,,5780,496,8,8,null,0,309,0
+1757092444920,436,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,6715,321,8,8,null,0,337,0
+1757092445345,348,Completar compra,200,OK,Thread Group  - LOAD 2-46,text,true,,5780,496,8,8,https://blazedemo.com/confirmation.php,340,0,0
+1757092445257,436,Seleccionar,200,OK,Thread Group  - LOAD 2-50,text,true,,6715,321,8,8,https://blazedemo.com/purchase.php,433,0,0
+1757092445798,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-45,text,true,,580,0,8,8,null,0,0,0
+1757092442578,330,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,6715,321,7,7,null,0,3081,0
+1757092445659,330,Seleccionar,200,OK,Thread Group  - LOAD 2-39,text,true,,6715,321,7,7,https://blazedemo.com/purchase.php,323,0,0
+1757092443784,2225,Home,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,4757,116,7,7,null,0,0,0
+1757092445727,282,GET Home,200,OK,Thread Group  - LOAD 2-49,text,true,,4757,116,7,7,https://blazedemo.com/,279,0,0
+1757092444666,349,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-43,,true,,5780,471,7,7,null,0,1257,0
+1757092445923,349,Completar compra,200,OK,Thread Group  - LOAD 2-43,text,true,,5780,471,7,7,https://blazedemo.com/confirmation.php,345,0,0
+1757092444209,314,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,6715,321,7,7,null,0,1861,0
+1757092446070,314,Seleccionar,200,OK,Thread Group  - LOAD 2-47,text,true,,6715,321,7,7,https://blazedemo.com/purchase.php,312,0,0
+1757092445693,308,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-50,,true,,5780,481,7,7,null,0,906,0
+1757092446599,308,Completar compra,200,OK,Thread Group  - LOAD 2-50,text,true,,5780,481,7,7,https://blazedemo.com/confirmation.php,303,0,0
+1757092446948,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-46,text,true,,587,0,7,7,null,0,0,0
+1757092447441,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-43,text,true,,576,0,6,6,null,0,0,0
+1757092445989,333,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-39,,true,,5780,480,5,5,null,0,1718,0
+1757092447708,333,Completar compra,200,OK,Thread Group  - LOAD 2-39,text,true,,5780,480,5,5,https://blazedemo.com/confirmation.php,328,0,0
+1757092444941,318,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-44,,true,,5780,523,5,5,null,0,3021,0
+1757092447963,318,Completar compra,200,OK,Thread Group  - LOAD 2-44,text,true,,5780,523,5,5,https://blazedemo.com/confirmation.php,315,0,0
+1757092446009,267,Buscar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,7389,255,5,5,null,0,2067,0
+1757092448076,267,Buscar Vuelo,200,OK,Thread Group  - LOAD 2-49,text,true,,7389,255,5,5,https://blazedemo.com/reserve.php,262,0,0
+1757092448624,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-39,text,true,,571,0,5,5,null,0,0,0
+1757092448792,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-50,text,true,,577,0,4,4,null,0,0,0
+1757092446384,298,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-47,,true,,5780,466,3,3,null,0,2439,0
+1757092448824,298,Completar compra,200,OK,Thread Group  - LOAD 2-47,text,true,,5780,466,3,3,https://blazedemo.com/confirmation.php,293,0,0
+1757092448344,262,Seleccionar Vuelo,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,6715,321,3,3,null,0,616,0
+1757092448960,262,Seleccionar,200,OK,Thread Group  - LOAD 2-49,text,true,,6715,321,3,3,https://blazedemo.com/purchase.php,258,0,0
+1757092449321,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-44,text,true,,582,0,3,3,null,0,0,0
+1757092449222,279,Completar Compra,200,"Number of samples in transaction : 1, number of failing samples : 0",Thread Group  - LOAD 2-49,,true,,5780,526,2,2,null,0,458,0
+1757092449680,279,Completar compra,200,OK,Thread Group  - LOAD 2-49,text,true,,5780,526,2,2,https://blazedemo.com/confirmation.php,275,0,0
+1757092450225,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-47,text,true,,577,0,2,2,null,0,0,0
+1757092450452,0,Debug Sampler,200,OK,Thread Group  - LOAD 2-49,text,true,,585,0,1,1,null,0,0,0
