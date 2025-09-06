@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+		"name": "Suite de Pruebas Demo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47546718",
+		"_collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+	},
+	"item": [
+		{
+			"name": "Registro de Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('201 Created', () => pm.response.to.have.status(201));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_api}}/auth/register",
+					"host": [
+						"{{base_api}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login de Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+							"\r",
+							"pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+							"pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_api}}/auth/login",
+					"host": [
+						"{{base_api}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación de Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+							"pm.test('201 Created', () => pm.response.to.have.status(201));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_api}}/productos",
+					"host": [
+						"{{base_api}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtención de Producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_api}}/productos/1",
+					"host": [
+						"{{base_api}}"
+					],
+					"path": [
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
