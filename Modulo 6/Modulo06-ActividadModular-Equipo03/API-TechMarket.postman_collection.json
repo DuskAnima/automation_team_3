@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "e10b0a54-0bb9-4441-aae6-2a09af893f9f",
+		"name": "API-TechMarket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47546718",
+		"_collection_link": "https://duskanima-7868103.postman.co/workspace/9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-e10b0a54-0bb9-4441-aae6-2a09af893f9f?action=share&source=collection_link&creator=47546718"
+	},
+	"item": [
+		{
+			"name": "Obtener lista de posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response 200 OK\", () => pm.response.to.have.status(200));\r",
+							"\r",
+							"pm.test(\"Array de posts presente\", pm.expect(Array.isArray(res)).to.be.true);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{posts_base}}",
+					"host": [
+						"{{posts_base}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear nuevo post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"if(res && res.id) pm.environment.set(\"post_id\", res.id);\r",
+							"\r",
+							"pm.test(\"Response 201 Created\", () => pm.response.to.have.status(201));\r",
+							"pm.test(\"Validación de propiedad userId\", () => pm.expect(res).to.have.property(\"userId\"));\r",
+							"pm.test(\"Validación de propiedad id\", () => pm.expect(res).to.have.property(\"id\"));\r",
+							"pm.test(\"Validación de propiedad title\", () => pm.expect(res).to.have.property(\"title\"));\r",
+							"pm.test(\"Validación de propiedad body\", () => pm.expect(res).to.have.property(\"body\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : 11,\r\n    \"id\" : 101,\r\n    \"title\" : \"Ph'nglui\",\r\n    \"body\" : \"mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{posts_base}}",
+					"host": [
+						"{{posts_base}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar post por id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"pm.test(\"Response 200 OK\", () => pm.response.to.have.status(200));\r",
+							"\r",
+							"pm.test(\"Validación de cambio de title\", () => pm.expect(res.title).to.contain(\"Biblioteca\"));\r",
+							"pm.test(\"Validación de cambio de body\", () => pm.expect(res.body).to.contain(\"Biblioteca\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"id\": 1,\r\n    \"title\": \"El universo (que otros llaman la Biblioteca) se compone de un número indefinido, y tal vez infinito, de galerías hexagonales.\",\r\n    \"body\": \"La Biblioteca es ilimitada y periódica. Si un eterno viajero la recorriera en cualquier dirección, comprobaría al cabo de los siglos que los mismos volúmenes se repiten en el mismo desorden (que, repetido, sería un orden: el Orden).\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{posts_base}}/1",
+					"host": [
+						"{{posts_base}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener post por id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response 200 OK\", () => pm.response.to.have.status(200));\r",
+							"pm.test(\"Validación de objeto no vacío\", pm.expect(res).to.be.not.empty);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{posts_base}}/1",
+					"host": [
+						"{{posts_base}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar post por id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"pm.test(\"Response 200 OK\", () => pm.response.to.have.status(200));\r",
+							"\r",
+							"pm.test(\"Validación de objeto vacío\", () => pm.expect(res).to.be.empty);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : 11,\r\n    \"id\" : 101,\r\n    \"title\" : \"Ph'nglui\",\r\n    \"body\" : \"mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn\"\r\n}"
+				},
+				"url": {
+					"raw": "{{posts_base}}/1",
+					"host": [
+						"{{posts_base}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
