@@ -1,5 +1,6 @@
 package cl.kibernum.apirest.security.controller;
 
+import java.net.URI;
 import java.util.Set;
 
 import org.springframework.http.ResponseEntity;
@@ -86,7 +87,8 @@ public class AuthController {
     ua.setActive(true);
     ua.setRoles(Set.of(Role.ROLE_USER));
     userRepo.save(ua);
-    return ResponseEntity.ok().build();
+    URI location = URI.create("/api/v1/user" + ua.getId());
+    return ResponseEntity.created(location).build();
   }
 
   /*

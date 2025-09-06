@@ -1,6 +1,7 @@
 package cl.kibernum.apirest.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +35,11 @@ public class ProductoController {
   @GetMapping
   public ResponseEntity<List<Producto>> getAllProductos() {
     return ResponseEntity.ok(this.productoService.findAll());
+  }
+
+  @GetMapping("/{id}")
+  public ResponseEntity<Optional<Producto>> getProductoByID (@PathVariable Long id) {
+    return ResponseEntity.ok(this.productoService.findById(id));
   }
 
   @GetMapping("/active")
