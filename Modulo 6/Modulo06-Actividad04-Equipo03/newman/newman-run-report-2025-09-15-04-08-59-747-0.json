@@ -1,0 +1,2277 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+      "exporter_id": "47546718",
+      "collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+    },
+    "item": [
+      {
+        "id": "8ac9e5ec-5501-4550-aeeb-9c741c8efcd1",
+        "name": "Registro de Usuario",
+        "request": {
+          "url": {
+            "path": [
+              "auth",
+              "register"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "946d1ddb-002b-496d-bb18-b208c741dc1c",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "pm.test('201 Created', () => pm.response.to.have.status(201));"
+              ],
+              "_lastExecutionId": "f65a6321-3085-497c-818c-67a64ef1ee49"
+            }
+          }
+        ]
+      },
+      {
+        "id": "5f6229b2-0955-4996-83f4-e08e14847050",
+        "name": "Login de Usuario",
+        "request": {
+          "url": {
+            "path": [
+              "auth",
+              "login"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "2c847365-e32c-4c62-8b85-1c51ede6f72b",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "const res = pm.response.json();\r",
+                "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                "\r",
+                "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+              ],
+              "_lastExecutionId": "68e5c980-4269-459e-bce9-a8547f86f973"
+            }
+          }
+        ]
+      },
+      {
+        "id": "8f770c9f-2412-4d9d-a2e0-e968f726aa2a",
+        "name": "Creación de Producto",
+        "request": {
+          "url": {
+            "path": [
+              "productos"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{JwtToken}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "af5e22b9-8adf-476f-b0a7-aa1f28e57af3",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "const res = pm.response.json();\r",
+                "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                "pm.test('201 Created', () => pm.response.to.have.status(201));"
+              ],
+              "_lastExecutionId": "66c34e34-d3a6-42ea-b468-024dac116e8e"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b17b1505-7290-478c-bf79-1189428c2921",
+        "name": "Obtención de Producto",
+        "request": {
+          "url": {
+            "path": [
+              "productos",
+              "1"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{JwtToken}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "eceed1e9-e19b-4917-98ca-a2e1ca559235",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+              ],
+              "_lastExecutionId": "af4fbae0-6dcd-42e9-b0d8-e8465bb13b0e"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "1381b7ba-18c1-4bde-9629-b7df20e98787",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "24dd8568-84df-47c6-8fb7-c39418f70c32"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "697d76be-bda1-462c-8437-5347ea95f506",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "524e8c8f-ccf9-41b6-9183-7d1f3a48324f"
+        }
+      }
+    ],
+    "variable": [],
+    "info": {
+      "_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+      "name": "Suite de Pruebas Demo API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2025-09-06T20:53:33.298Z",
+      "postman_exported_using": "Postman/11.61.10"
+    },
+    "id": "f0fde75f-63af-4d58-99f1-87b53d68fe28",
+    "name": "DemoAPI Enviroment",
+    "values": [
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "localhost:8080",
+        "key": "baseUrl"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQGVtYWlsLmNvbSIsInZlciI6MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6ImFwaXJlc3QiLCJleHAiOjE3NTc5MTAyMzksImlhdCI6MTc1NzkwOTMzOSwianRpIjoiNDg0ZGE5MTMtM2VjOS00ZWRkLWI4NDMtODAwYjFjMTg5YWQ0In0.GlLAJJMmJGJ61uqRRhtc_E7f_F2aEE55wrpcAf9um4g",
+        "key": "JwtToken"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "/api/v1",
+        "key": "api_prefix"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "{{baseUrl}}{{api_prefix}}",
+        "key": "base_api"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "",
+        "key": "product_id"
+      }
+    ]
+  },
+  "globals": {
+    "id": "bb6aa08d-7437-4001-9d01-64e0227df0fe",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 12,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 5,
+        "pending": 0,
+        "failed": 1
+      },
+      "testScripts": {
+        "total": 8,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 561,
+      "responseMin": 39,
+      "responseMax": 1520,
+      "responseSd": 596.5253557058576,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1757909336982,
+      "completed": 1757909339737
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 4,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "76ca7947-19e7-4e58-b518-c7d1f8a6a33f",
+          "httpRequestId": "95ed88f1-59ee-4317-81b5-75ece98dfc4d"
+        },
+        "item": {
+          "id": "8ac9e5ec-5501-4550-aeeb-9c741c8efcd1",
+          "name": "Registro de Usuario",
+          "request": {
+            "url": {
+              "path": [
+                "auth",
+                "register"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "946d1ddb-002b-496d-bb18-b208c741dc1c",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ],
+                "_lastExecutionId": "f65a6321-3085-497c-818c-67a64ef1ee49"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "auth",
+              "register"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "1209013f-8399-41c7-a486-e2867c5a7ac1",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "140",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "200b728f-2e42-45a3-a12c-aa22839c3cb8",
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "Location",
+              "value": "/api/v1/user1"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 15 Sep 2025 04:08:58 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": []
+          },
+          "cookie": [],
+          "responseTime": 1520,
+          "responseSize": 0
+        },
+        "id": "8ac9e5ec-5501-4550-aeeb-9c741c8efcd1",
+        "assertions": [
+          {
+            "assertion": "201 Created",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "b374915e-c7bd-4d5c-be3f-81c6ee49a69c",
+          "length": 4,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "3ef7f186-0328-49a7-9902-60527145d2d7"
+        },
+        "item": {
+          "id": "5f6229b2-0955-4996-83f4-e08e14847050",
+          "name": "Login de Usuario",
+          "request": {
+            "url": {
+              "path": [
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2c847365-e32c-4c62-8b85-1c51ede6f72b",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                  "\r",
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                  "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                ],
+                "_lastExecutionId": "68e5c980-4269-459e-bce9-a8547f86f973"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "auth",
+              "login"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "2e41fe8c-78d4-4517-9c5f-d78468eb219f",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "64",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "7963dbd1-76a9-4771-9fb8-e663bd957b67",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 15 Sep 2025 04:08:59 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              97,
+              99,
+              99,
+              101,
+              115,
+              115,
+              84,
+              111,
+              107,
+              101,
+              110,
+              34,
+              58,
+              34,
+              101,
+              121,
+              74,
+              48,
+              101,
+              88,
+              65,
+              105,
+              79,
+              105,
+              74,
+              75,
+              86,
+              49,
+              81,
+              105,
+              76,
+              67,
+              74,
+              104,
+              98,
+              71,
+              99,
+              105,
+              79,
+              105,
+              74,
+              73,
+              85,
+              122,
+              73,
+              49,
+              78,
+              105,
+              74,
+              57,
+              46,
+              101,
+              121,
+              74,
+              122,
+              100,
+              87,
+              73,
+              105,
+              79,
+              105,
+              74,
+              113,
+              100,
+              87,
+              70,
+              117,
+              81,
+              71,
+              86,
+              116,
+              89,
+              87,
+              108,
+              115,
+              76,
+              109,
+              78,
+              118,
+              98,
+              83,
+              73,
+              115,
+              73,
+              110,
+              90,
+              108,
+              99,
+              105,
+              73,
+              54,
+              77,
+              67,
+              119,
+              105,
+              99,
+              109,
+              57,
+              115,
+              90,
+              88,
+              77,
+              105,
+              79,
+              108,
+              115,
+              105,
+              85,
+              107,
+              57,
+              77,
+              82,
+              86,
+              57,
+              86,
+              85,
+              48,
+              86,
+              83,
+              73,
+              108,
+              48,
+              115,
+              73,
+              109,
+              108,
+              122,
+              99,
+              121,
+              73,
+              54,
+              73,
+              109,
+              70,
+              119,
+              97,
+              88,
+              74,
+              108,
+              99,
+              51,
+              81,
+              105,
+              76,
+              67,
+              74,
+              108,
+              101,
+              72,
+              65,
+              105,
+              79,
+              106,
+              69,
+              51,
+              78,
+              84,
+              99,
+              53,
+              77,
+              84,
+              65,
+              121,
+              77,
+              122,
+              107,
+              115,
+              73,
+              109,
+              108,
+              104,
+              100,
+              67,
+              73,
+              54,
+              77,
+              84,
+              99,
+              49,
+              78,
+              122,
+              107,
+              119,
+              79,
+              84,
+              77,
+              122,
+              79,
+              83,
+              119,
+              105,
+              97,
+              110,
+              82,
+              112,
+              73,
+              106,
+              111,
+              105,
+              78,
+              68,
+              103,
+              48,
+              90,
+              71,
+              69,
+              53,
+              77,
+              84,
+              77,
+              116,
+              77,
+              50,
+              86,
+              106,
+              79,
+              83,
+              48,
+              48,
+              90,
+              87,
+              82,
+              107,
+              76,
+              87,
+              73,
+              52,
+              78,
+              68,
+              77,
+              116,
+              79,
+              68,
+              65,
+              119,
+              89,
+              106,
+              70,
+              106,
+              77,
+              84,
+              103,
+              53,
+              89,
+              87,
+              81,
+              48,
+              73,
+              110,
+              48,
+              46,
+              71,
+              108,
+              76,
+              65,
+              74,
+              74,
+              77,
+              109,
+              74,
+              71,
+              74,
+              54,
+              49,
+              117,
+              113,
+              82,
+              82,
+              104,
+              116,
+              99,
+              95,
+              69,
+              55,
+              102,
+              95,
+              70,
+              50,
+              97,
+              69,
+              69,
+              53,
+              53,
+              119,
+              114,
+              112,
+              99,
+              65,
+              102,
+              57,
+              117,
+              109,
+              52,
+              103,
+              34,
+              44,
+              34,
+              101,
+              120,
+              112,
+              105,
+              114,
+              101,
+              115,
+              73,
+              110,
+              34,
+              58,
+              57,
+              48,
+              48,
+              44,
+              34,
+              114,
+              101,
+              102,
+              114,
+              101,
+              115,
+              104,
+              84,
+              111,
+              107,
+              101,
+              110,
+              34,
+              58,
+              34,
+              101,
+              121,
+              74,
+              48,
+              101,
+              88,
+              65,
+              105,
+              79,
+              105,
+              74,
+              75,
+              86,
+              49,
+              81,
+              105,
+              76,
+              67,
+              74,
+              104,
+              98,
+              71,
+              99,
+              105,
+              79,
+              105,
+              74,
+              73,
+              85,
+              122,
+              73,
+              49,
+              78,
+              105,
+              74,
+              57,
+              46,
+              101,
+              121,
+              74,
+              122,
+              100,
+              87,
+              73,
+              105,
+              79,
+              105,
+              74,
+              113,
+              100,
+              87,
+              70,
+              117,
+              81,
+              71,
+              86,
+              116,
+              89,
+              87,
+              108,
+              115,
+              76,
+              109,
+              78,
+              118,
+              98,
+              83,
+              73,
+              115,
+              73,
+              110,
+              90,
+              108,
+              99,
+              105,
+              73,
+              54,
+              77,
+              67,
+              119,
+              105,
+              99,
+              109,
+              57,
+              115,
+              90,
+              88,
+              77,
+              105,
+              79,
+              108,
+              115,
+              105,
+              85,
+              107,
+              57,
+              77,
+              82,
+              86,
+              57,
+              86,
+              85,
+              48,
+              86,
+              83,
+              73,
+              108,
+              48,
+              115,
+              73,
+              109,
+              108,
+              122,
+              99,
+              121,
+              73,
+              54,
+              73,
+              109,
+              70,
+              119,
+              97,
+              88,
+              74,
+              108,
+              99,
+              51,
+              81,
+              105,
+              76,
+              67,
+              74,
+              108,
+              101,
+              72,
+              65,
+              105,
+              79,
+              106,
+              69,
+              51,
+              78,
+              84,
+              103,
+              49,
+              77,
+              84,
+              81,
+              120,
+              77,
+              122,
+              107,
+              115,
+              73,
+              109,
+              108,
+              104,
+              100,
+              67,
+              73,
+              54,
+              77,
+              84,
+              99,
+              49,
+              78,
+              122,
+              107,
+              119,
+              79,
+              84,
+              77,
+              122,
+              79,
+              83,
+              119,
+              105,
+              97,
+              110,
+              82,
+              112,
+              73,
+              106,
+              111,
+              105,
+              77,
+              87,
+              86,
+              106,
+              77,
+              109,
+              77,
+              120,
+              79,
+              84,
+              65,
+              116,
+              77,
+              109,
+              73,
+              50,
+              77,
+              105,
+              48,
+              48,
+              89,
+              87,
+              85,
+              119,
+              76,
+              84,
+              103,
+              122,
+              90,
+              109,
+              73,
+              116,
+              90,
+              109,
+              73,
+              48,
+              78,
+              68,
+              82,
+              109,
+              78,
+              68,
+              99,
+              119,
+              77,
+              68,
+              69,
+              122,
+              73,
+              110,
+              48,
+              46,
+              76,
+              117,
+              97,
+              68,
+              100,
+              76,
+              95,
+              57,
+              70,
+              84,
+              104,
+              88,
+              68,
+              88,
+              82,
+              54,
+              90,
+              71,
+              88,
+              108,
+              51,
+              87,
+              78,
+              89,
+              106,
+              50,
+              68,
+              112,
+              84,
+              89,
+              57,
+              82,
+              87,
+              90,
+              90,
+              75,
+              53,
+              116,
+              112,
+              85,
+              70,
+              99,
+              119,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 603,
+          "responseSize": 612
+        },
+        "id": "5f6229b2-0955-4996-83f4-e08e14847050",
+        "assertions": [
+          {
+            "assertion": "200 OK",
+            "skipped": false
+          },
+          {
+            "assertion": "Jwt presente",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "56f35876-7375-4b3d-a88a-3f27c32cff72",
+          "length": 4,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "2a81dd40-8163-4629-9747-8dcc464f6d4c"
+        },
+        "item": {
+          "id": "8f770c9f-2412-4d9d-a2e0-e968f726aa2a",
+          "name": "Creación de Producto",
+          "request": {
+            "url": {
+              "path": [
+                "productos"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{JwtToken}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "af5e22b9-8adf-476f-b0a7-aa1f28e57af3",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ],
+                "_lastExecutionId": "66c34e34-d3a6-42ea-b468-024dac116e8e"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "productos"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQGVtYWlsLmNvbSIsInZlciI6MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6ImFwaXJlc3QiLCJleHAiOjE3NTc5MTAyMzksImlhdCI6MTc1NzkwOTMzOSwianRpIjoiNDg0ZGE5MTMtM2VjOS00ZWRkLWI4NDMtODAwYjFjMTg5YWQ0In0.GlLAJJMmJGJ61uqRRhtc_E7f_F2aEE55wrpcAf9um4g",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "380667d7-570b-4c14-995f-4e0be13a076b",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "130",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQGVtYWlsLmNvbSIsInZlciI6MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6ImFwaXJlc3QiLCJleHAiOjE3NTc5MTAyMzksImlhdCI6MTc1NzkwOTMzOSwianRpIjoiNDg0ZGE5MTMtM2VjOS00ZWRkLWI4NDMtODAwYjFjMTg5YWQ0In0.GlLAJJMmJGJ61uqRRhtc_E7f_F2aEE55wrpcAf9um4g",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "6eef2c88-75ec-4ae2-aeeb-341fc1ca77be",
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=ISO-8859-1"
+            },
+            {
+              "key": "Content-Length",
+              "value": "104"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 15 Sep 2025 04:08:59 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              112,
+              97,
+              116,
+              104,
+              34,
+              58,
+              34,
+              47,
+              97,
+              112,
+              105,
+              47,
+              118,
+              49,
+              47,
+              112,
+              114,
+              111,
+              100,
+              117,
+              99,
+              116,
+              111,
+              115,
+              34,
+              44,
+              34,
+              99,
+              111,
+              100,
+              101,
+              34,
+              58,
+              52,
+              48,
+              51,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              70,
+              111,
+              114,
+              98,
+              105,
+              100,
+              100,
+              101,
+              110,
+              34,
+              44,
+              34,
+              116,
+              105,
+              109,
+              101,
+              115,
+              116,
+              97,
+              109,
+              112,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              53,
+              45,
+              48,
+              57,
+              45,
+              49,
+              53,
+              84,
+              48,
+              52,
+              58,
+              48,
+              56,
+              58,
+              53,
+              57,
+              46,
+              52,
+              52,
+              55,
+              51,
+              54,
+              51,
+              57,
+              48,
+              48,
+              90,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 39,
+          "responseSize": 104
+        },
+        "id": "8f770c9f-2412-4d9d-a2e0-e968f726aa2a",
+        "assertions": [
+          {
+            "assertion": "201 Created",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "201 Created",
+              "message": "expected response to have status code 201 but got 403",
+              "stack": "AssertionError: expected response to have status code 201 but got 403\n   at Object.eval sandbox-script.js:1:3)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "8030fdb8-3205-480b-b841-2ff9ae2fb098",
+          "length": 4,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "35447f42-1f72-4c38-8918-877f91287877"
+        },
+        "item": {
+          "id": "b17b1505-7290-478c-bf79-1189428c2921",
+          "name": "Obtención de Producto",
+          "request": {
+            "url": {
+              "path": [
+                "productos",
+                "1"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{JwtToken}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "eceed1e9-e19b-4917-98ca-a2e1ca559235",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                ],
+                "_lastExecutionId": "af4fbae0-6dcd-42e9-b0d8-e8465bb13b0e"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "productos",
+              "1"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQGVtYWlsLmNvbSIsInZlciI6MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6ImFwaXJlc3QiLCJleHAiOjE3NTc5MTAyMzksImlhdCI6MTc1NzkwOTMzOSwianRpIjoiNDg0ZGE5MTMtM2VjOS00ZWRkLWI4NDMtODAwYjFjMTg5YWQ0In0.GlLAJJMmJGJ61uqRRhtc_E7f_F2aEE55wrpcAf9um4g",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "fd44eaf8-9926-49c2-907a-5d146e9bca07",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFuQGVtYWlsLmNvbSIsInZlciI6MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6ImFwaXJlc3QiLCJleHAiOjE3NTc5MTAyMzksImlhdCI6MTc1NzkwOTMzOSwianRpIjoiNDg0ZGE5MTMtM2VjOS00ZWRkLWI4NDMtODAwYjFjMTg5YWQ0In0.GlLAJJMmJGJ61uqRRhtc_E7f_F2aEE55wrpcAf9um4g",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "f2e0c328-6d2b-44f8-bce5-290ce8b52eb7",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 15 Sep 2025 04:08:59 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              110,
+              117,
+              108,
+              108
+            ]
+          },
+          "cookie": [],
+          "responseTime": 82,
+          "responseSize": 4
+        },
+        "id": "b17b1505-7290-478c-bf79-1189428c2921",
+        "assertions": [
+          {
+            "assertion": "Status 200 OK",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 720
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "201 Created",
+          "message": "expected response to have status code 201 but got 403",
+          "stack": "AssertionError: expected response to have status code 201 but got 403\n   at Object.eval sandbox-script.js:1:3)",
+          "checksum": "a05db7c9913e05fc5344787b7ce6fe8b",
+          "id": "b09418bc-9747-4973-ac82-ac3c623d97f5",
+          "timestamp": 1757909339516,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 3,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "8f770c9f-2412-4d9d-a2e0-e968f726aa2a",
+          "name": "Creación de Producto",
+          "request": {
+            "url": {
+              "path": [
+                "productos"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{JwtToken}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "af5e22b9-8adf-476f-b0a7-aa1f28e57af3",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ],
+                "_lastExecutionId": "66c34e34-d3a6-42ea-b468-024dac116e8e"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "exporter_id": "47546718",
+            "collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+          },
+          "item": [
+            {
+              "id": "8ac9e5ec-5501-4550-aeeb-9c741c8efcd1",
+              "name": "Registro de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "946d1ddb-002b-496d-bb18-b208c741dc1c",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "f65a6321-3085-497c-818c-67a64ef1ee49"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "5f6229b2-0955-4996-83f4-e08e14847050",
+              "name": "Login de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2c847365-e32c-4c62-8b85-1c51ede6f72b",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                      "\r",
+                      "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                      "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                    ],
+                    "_lastExecutionId": "68e5c980-4269-459e-bce9-a8547f86f973"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "8f770c9f-2412-4d9d-a2e0-e968f726aa2a",
+              "name": "Creación de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "af5e22b9-8adf-476f-b0a7-aa1f28e57af3",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "66c34e34-d3a6-42ea-b468-024dac116e8e"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "b17b1505-7290-478c-bf79-1189428c2921",
+              "name": "Obtención de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos",
+                    "1"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "eceed1e9-e19b-4917-98ca-a2e1ca559235",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                    ],
+                    "_lastExecutionId": "af4fbae0-6dcd-42e9-b0d8-e8465bb13b0e"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "1381b7ba-18c1-4bde-9629-b7df20e98787",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "24dd8568-84df-47c6-8fb7-c39418f70c32"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "697d76be-bda1-462c-8437-5347ea95f506",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "524e8c8f-ccf9-41b6-9183-7d1f3a48324f"
+              }
+            }
+          ],
+          "variable": [],
+          "info": {
+            "_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "name": "Suite de Pruebas Demo API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "56f35876-7375-4b3d-a88a-3f27c32cff72",
+          "length": 4,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "2a81dd40-8163-4629-9747-8dcc464f6d4c",
+          "scriptId": "af5e22b9-8adf-476f-b0a7-aa1f28e57af3",
+          "execution": "66c34e34-d3a6-42ea-b468-024dac116e8e"
+        }
+      }
+    ],
+    "error": null
+  }
+}

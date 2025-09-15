@@ -1,0 +1,2759 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+      "exporter_id": "47546718",
+      "collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+    },
+    "item": [
+      {
+        "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+        "name": "Registro de Usuario",
+        "request": {
+          "url": {
+            "path": [
+              "auth",
+              "register"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "pm.test('201 Created', () => pm.response.to.have.status(201));"
+              ],
+              "_lastExecutionId": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+        "name": "Login de Usuario",
+        "request": {
+          "url": {
+            "path": [
+              "auth",
+              "login"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "const res = pm.response.json();\r",
+                "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                "\r",
+                "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+              ],
+              "_lastExecutionId": "fa5f0766-e61d-46ef-82d6-09d2a197cd15"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+        "name": "Creación de Producto",
+        "request": {
+          "url": {
+            "path": [
+              "productos"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{JwtToken}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "const res = pm.response.json();\r",
+                "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                "pm.test('201 Created', () => pm.response.to.have.status(201));"
+              ],
+              "_lastExecutionId": "e0e5b5d3-6915-457f-9e93-692d77a9d968"
+            }
+          }
+        ]
+      },
+      {
+        "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+        "name": "Obtención de Producto",
+        "request": {
+          "url": {
+            "path": [
+              "productos",
+              "1"
+            ],
+            "host": [
+              "{{base_api}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{JwtToken}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+              ],
+              "_lastExecutionId": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      }
+    ],
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "9ef8b57d-8ec4-46d4-8615-59d7ba93c514",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "33d3af92-43d8-42d7-bd14-c15ca6aa1277"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "78ac3d48-b5a8-4d0d-bbab-1aac715208f1",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "39839237-df17-4150-bfaf-9b9744fc91a6"
+        }
+      }
+    ],
+    "variable": [],
+    "info": {
+      "_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+      "name": "Suite de Pruebas Demo API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2025-09-06T20:53:33.298Z",
+      "postman_exported_using": "Postman/11.61.10"
+    },
+    "id": "f0fde75f-63af-4d58-99f1-87b53d68fe28",
+    "name": "DemoAPI Enviroment",
+    "values": [
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "localhost:8080",
+        "key": "baseUrl"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "",
+        "key": "JwtToken"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "/api/v1",
+        "key": "api_prefix"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "{{baseUrl}}{{api_prefix}}",
+        "key": "base_api"
+      },
+      {
+        "description": {
+          "content": "",
+          "type": "text/plain"
+        },
+        "type": "any",
+        "value": "",
+        "key": "product_id"
+      }
+    ]
+  },
+  "globals": {
+    "id": "96fc8eb6-0f00-458f-82b1-4198f9edc4cb",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 12,
+        "pending": 0,
+        "failed": 2
+      },
+      "prerequests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 4
+      },
+      "tests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 2,
+        "pending": 0,
+        "failed": 2
+      },
+      "testScripts": {
+        "total": 8,
+        "pending": 0,
+        "failed": 2
+      },
+      "prerequestScripts": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 0,
+      "responseMin": 0,
+      "responseMax": 0,
+      "responseSd": 0,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1757908779381,
+      "completed": 1757908779933
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 4,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "95d257cd-d22c-4694-a8ff-aac8f70562df",
+          "httpRequestId": "6f0697b0-3591-4597-9fdc-a0cec26b88d7"
+        },
+        "item": {
+          "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+          "name": "Registro de Usuario",
+          "request": {
+            "url": {
+              "path": [
+                "auth",
+                "register"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ],
+                "_lastExecutionId": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "auth",
+              "register"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "23c083cf-0dfc-420e-9108-cbf88b2837d5",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+        "requestError": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080
+        },
+        "assertions": [
+          {
+            "assertion": "201 Created",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "201 Created",
+              "message": "expected PostmanResponse{ …(5) } to have property 'code'",
+              "stack": "AssertionError: expected PostmanResponse{ …(5) } to have property 'code'\n   at Object.eval sandbox-script.js:1:1)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "8005c790-273d-4232-acf9-db2281f3e788",
+          "length": 4,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "a05f1e61-0ea1-42ec-8ed9-6ca27fb30e77"
+        },
+        "item": {
+          "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+          "name": "Login de Usuario",
+          "request": {
+            "url": {
+              "path": [
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                  "\r",
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                  "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                ],
+                "_lastExecutionId": "fa5f0766-e61d-46ef-82d6-09d2a197cd15"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "auth",
+              "login"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "854d89c5-231c-4490-beed-150a04923546",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+        "requestError": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080
+        },
+        "testScript": [
+          {
+            "error": {
+              "type": "Error",
+              "name": "JSONError",
+              "message": "\"undefined\" is not valid JSON",
+              "checksum": "4db15f4d7d3ae61b799898db95379b99",
+              "id": "b45fa611-2475-4b44-8aaf-8335e0c53408",
+              "timestamp": 1757908779666,
+              "stacktrace": []
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "08484f0d-7a4e-46f1-86fc-8f4c6baad894",
+          "length": 4,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "1eeb1f94-f07e-42a1-be23-2406d13d2871"
+        },
+        "item": {
+          "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+          "name": "Creación de Producto",
+          "request": {
+            "url": {
+              "path": [
+                "productos"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{JwtToken}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ],
+                "_lastExecutionId": "e0e5b5d3-6915-457f-9e93-692d77a9d968"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "productos"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "8d6814e7-5fc3-485d-b092-4190b0d4663b",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+        "requestError": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080
+        },
+        "testScript": [
+          {
+            "error": {
+              "type": "Error",
+              "name": "JSONError",
+              "message": "\"undefined\" is not valid JSON",
+              "checksum": "4db15f4d7d3ae61b799898db95379b99",
+              "id": "e75cbf83-4d44-4bad-bdff-5adf696a46c0",
+              "timestamp": 1757908779805,
+              "stacktrace": []
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "99e2f43c-7ed3-473a-b90f-c8e11c537ed2",
+          "length": 4,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "fd03818d-ab08-4796-b7b2-391beca6da3e"
+        },
+        "item": {
+          "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+          "name": "Obtención de Producto",
+          "request": {
+            "url": {
+              "path": [
+                "productos",
+                "1"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{JwtToken}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                ],
+                "_lastExecutionId": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "8080",
+            "path": [
+              "api",
+              "v1",
+              "productos",
+              "1"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "3b13a8e9-0869-4617-95ee-92cc411d6b10",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:8080",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+        "requestError": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080
+        },
+        "assertions": [
+          {
+            "assertion": "Status 200 OK",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status 200 OK",
+              "message": "expected PostmanResponse{ …(5) } to have property 'code'",
+              "stack": "AssertionError: expected PostmanResponse{ …(5) } to have property 'code'\n   at Object.eval sandbox-script.js:1:4)"
+            }
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 0
+    },
+    "failures": [
+      {
+        "error": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080,
+          "name": "Error",
+          "message": "connect ECONNREFUSED 127.0.0.1:8080",
+          "stack": "Error: connect ECONNREFUSED 127.0.0.1:8080\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16)",
+          "checksum": "dd0840b7ca5d3f247c198c291b996b43",
+          "id": "ba4c05e8-5e5e-42e6-99b6-ae7d003dce56",
+          "timestamp": 1757908779509,
+          "stacktrace": [
+            {
+              "fileName": "node:net",
+              "lineNumber": 1634,
+              "functionName": "TCPConnectWrap.afterConnect [as oncomplete]",
+              "typeName": "TCPConnectWrap",
+              "methodName": "afterConnect [as oncomplete]",
+              "columnNumber": 16,
+              "native": false
+            }
+          ]
+        },
+        "at": "request",
+        "source": {
+          "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+          "name": "Registro de Usuario",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "system": true
+              },
+              {
+                "key": "User-Agent",
+                "value": "PostmanRuntime/7.39.1",
+                "system": true
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "system": true
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache",
+                "system": true
+              },
+              {
+                "key": "Postman-Token",
+                "value": "23c083cf-0dfc-420e-9108-cbf88b2837d5",
+                "system": true
+              },
+              {
+                "key": "Host",
+                "value": "localhost:8080",
+                "system": true
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "system": true
+              },
+              {
+                "key": "Connection",
+                "value": "keep-alive",
+                "system": true
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ]
+              }
+            }
+          ]
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 4,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "95d257cd-d22c-4694-a8ff-aac8f70562df",
+          "httpRequestId": "6f0697b0-3591-4597-9fdc-a0cec26b88d7"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "201 Created",
+          "message": "expected PostmanResponse{ …(5) } to have property 'code'",
+          "stack": "AssertionError: expected PostmanResponse{ …(5) } to have property 'code'\n   at Object.eval sandbox-script.js:1:1)",
+          "checksum": "434bcb66e7d6f8e30577fc093e60db28",
+          "id": "811b52a5-6a73-4a09-9a18-4b72b176e3b5",
+          "timestamp": 1757908779560,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+          "name": "Registro de Usuario",
+          "request": {
+            "url": {
+              "path": [
+                "auth",
+                "register"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ],
+                "_lastExecutionId": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "exporter_id": "47546718",
+            "collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+          },
+          "item": [
+            {
+              "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+              "name": "Registro de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+              "name": "Login de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                      "\r",
+                      "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                      "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                    ],
+                    "_lastExecutionId": "fa5f0766-e61d-46ef-82d6-09d2a197cd15"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+              "name": "Creación de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "e0e5b5d3-6915-457f-9e93-692d77a9d968"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+              "name": "Obtención de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos",
+                    "1"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                    ],
+                    "_lastExecutionId": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9ef8b57d-8ec4-46d4-8615-59d7ba93c514",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "33d3af92-43d8-42d7-bd14-c15ca6aa1277"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "78ac3d48-b5a8-4d0d-bbab-1aac715208f1",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "39839237-df17-4150-bfaf-9b9744fc91a6"
+              }
+            }
+          ],
+          "variable": [],
+          "info": {
+            "_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "name": "Suite de Pruebas Demo API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 4,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "95d257cd-d22c-4694-a8ff-aac8f70562df",
+          "httpRequestId": "6f0697b0-3591-4597-9fdc-a0cec26b88d7",
+          "scriptId": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+          "execution": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+        }
+      },
+      {
+        "error": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080,
+          "name": "Error",
+          "message": "connect ECONNREFUSED 127.0.0.1:8080",
+          "stack": "Error: connect ECONNREFUSED 127.0.0.1:8080\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16)",
+          "checksum": "dd0840b7ca5d3f247c198c291b996b43",
+          "id": "3cce15eb-98ae-4876-94f8-189c008321f2",
+          "timestamp": 1757908779645,
+          "stacktrace": [
+            {
+              "fileName": "node:net",
+              "lineNumber": 1634,
+              "functionName": "TCPConnectWrap.afterConnect [as oncomplete]",
+              "typeName": "TCPConnectWrap",
+              "methodName": "afterConnect [as oncomplete]",
+              "columnNumber": 16,
+              "native": false
+            }
+          ]
+        },
+        "at": "request",
+        "source": {
+          "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+          "name": "Login de Usuario",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "system": true
+              },
+              {
+                "key": "User-Agent",
+                "value": "PostmanRuntime/7.39.1",
+                "system": true
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "system": true
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache",
+                "system": true
+              },
+              {
+                "key": "Postman-Token",
+                "value": "854d89c5-231c-4490-beed-150a04923546",
+                "system": true
+              },
+              {
+                "key": "Host",
+                "value": "localhost:8080",
+                "system": true
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "system": true
+              },
+              {
+                "key": "Connection",
+                "value": "keep-alive",
+                "system": true
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                  "\r",
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                  "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                ]
+              }
+            }
+          ]
+        },
+        "cursor": {
+          "ref": "8005c790-273d-4232-acf9-db2281f3e788",
+          "length": 4,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "a05f1e61-0ea1-42ec-8ed9-6ca27fb30e77"
+        }
+      },
+      {
+        "error": {
+          "type": "Error",
+          "name": "JSONError",
+          "message": "\"undefined\" is not valid JSON",
+          "checksum": "4db15f4d7d3ae61b799898db95379b99",
+          "id": "b45fa611-2475-4b44-8aaf-8335e0c53408",
+          "timestamp": 1757908779666,
+          "stacktrace": []
+        },
+        "at": "test-script",
+        "source": {
+          "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+          "name": "Login de Usuario",
+          "request": {
+            "url": {
+              "path": [
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                  "\r",
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                  "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                ],
+                "_lastExecutionId": "fa5f0766-e61d-46ef-82d6-09d2a197cd15"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "exporter_id": "47546718",
+            "collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+          },
+          "item": [
+            {
+              "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+              "name": "Registro de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+              "name": "Login de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                      "\r",
+                      "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                      "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                    ],
+                    "_lastExecutionId": "fa5f0766-e61d-46ef-82d6-09d2a197cd15"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+              "name": "Creación de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "e0e5b5d3-6915-457f-9e93-692d77a9d968"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+              "name": "Obtención de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos",
+                    "1"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                    ],
+                    "_lastExecutionId": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9ef8b57d-8ec4-46d4-8615-59d7ba93c514",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "33d3af92-43d8-42d7-bd14-c15ca6aa1277"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "78ac3d48-b5a8-4d0d-bbab-1aac715208f1",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "39839237-df17-4150-bfaf-9b9744fc91a6"
+              }
+            }
+          ],
+          "variable": [],
+          "info": {
+            "_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "name": "Suite de Pruebas Demo API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "8005c790-273d-4232-acf9-db2281f3e788",
+          "length": 4,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "a05f1e61-0ea1-42ec-8ed9-6ca27fb30e77",
+          "scriptId": "8e17222e-6244-445e-82af-64dcc99cfe81"
+        }
+      },
+      {
+        "error": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080,
+          "name": "Error",
+          "message": "connect ECONNREFUSED 127.0.0.1:8080",
+          "stack": "Error: connect ECONNREFUSED 127.0.0.1:8080\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16)",
+          "checksum": "dd0840b7ca5d3f247c198c291b996b43",
+          "id": "b6b7b834-9591-4d51-b61b-16c6124e2ac7",
+          "timestamp": 1757908779761,
+          "stacktrace": [
+            {
+              "fileName": "node:net",
+              "lineNumber": 1634,
+              "functionName": "TCPConnectWrap.afterConnect [as oncomplete]",
+              "typeName": "TCPConnectWrap",
+              "methodName": "afterConnect [as oncomplete]",
+              "columnNumber": 16,
+              "native": false
+            }
+          ]
+        },
+        "at": "request",
+        "source": {
+          "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+          "name": "Creación de Producto",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "productos"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "system": true
+              },
+              {
+                "key": "User-Agent",
+                "value": "PostmanRuntime/7.39.1",
+                "system": true
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "system": true
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache",
+                "system": true
+              },
+              {
+                "key": "Postman-Token",
+                "value": "8d6814e7-5fc3-485d-b092-4190b0d4663b",
+                "system": true
+              },
+              {
+                "key": "Host",
+                "value": "localhost:8080",
+                "system": true
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "system": true
+              },
+              {
+                "key": "Connection",
+                "value": "keep-alive",
+                "system": true
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ]
+              }
+            }
+          ]
+        },
+        "cursor": {
+          "ref": "08484f0d-7a4e-46f1-86fc-8f4c6baad894",
+          "length": 4,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "1eeb1f94-f07e-42a1-be23-2406d13d2871"
+        }
+      },
+      {
+        "error": {
+          "type": "Error",
+          "name": "JSONError",
+          "message": "\"undefined\" is not valid JSON",
+          "checksum": "4db15f4d7d3ae61b799898db95379b99",
+          "id": "e75cbf83-4d44-4bad-bdff-5adf696a46c0",
+          "timestamp": 1757908779805,
+          "stacktrace": []
+        },
+        "at": "test-script",
+        "source": {
+          "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+          "name": "Creación de Producto",
+          "request": {
+            "url": {
+              "path": [
+                "productos"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{JwtToken}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "const res = pm.response.json();\r",
+                  "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                ],
+                "_lastExecutionId": "e0e5b5d3-6915-457f-9e93-692d77a9d968"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "exporter_id": "47546718",
+            "collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+          },
+          "item": [
+            {
+              "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+              "name": "Registro de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+              "name": "Login de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                      "\r",
+                      "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                      "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                    ],
+                    "_lastExecutionId": "fa5f0766-e61d-46ef-82d6-09d2a197cd15"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+              "name": "Creación de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "e0e5b5d3-6915-457f-9e93-692d77a9d968"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+              "name": "Obtención de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos",
+                    "1"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                    ],
+                    "_lastExecutionId": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9ef8b57d-8ec4-46d4-8615-59d7ba93c514",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "33d3af92-43d8-42d7-bd14-c15ca6aa1277"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "78ac3d48-b5a8-4d0d-bbab-1aac715208f1",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "39839237-df17-4150-bfaf-9b9744fc91a6"
+              }
+            }
+          ],
+          "variable": [],
+          "info": {
+            "_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "name": "Suite de Pruebas Demo API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "08484f0d-7a4e-46f1-86fc-8f4c6baad894",
+          "length": 4,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "1eeb1f94-f07e-42a1-be23-2406d13d2871",
+          "scriptId": "2a5028fd-30fb-4c22-b845-9b4cb7b68802"
+        }
+      },
+      {
+        "error": {
+          "errno": -4078,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8080,
+          "name": "Error",
+          "message": "connect ECONNREFUSED 127.0.0.1:8080",
+          "stack": "Error: connect ECONNREFUSED 127.0.0.1:8080\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16)",
+          "checksum": "dd0840b7ca5d3f247c198c291b996b43",
+          "id": "09a76721-e42c-4ad3-9501-80975f54edfe",
+          "timestamp": 1757908779877,
+          "stacktrace": [
+            {
+              "fileName": "node:net",
+              "lineNumber": 1634,
+              "functionName": "TCPConnectWrap.afterConnect [as oncomplete]",
+              "typeName": "TCPConnectWrap",
+              "methodName": "afterConnect [as oncomplete]",
+              "columnNumber": 16,
+              "native": false
+            }
+          ]
+        },
+        "at": "request",
+        "source": {
+          "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+          "name": "Obtención de Producto",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "productos",
+                "1"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "User-Agent",
+                "value": "PostmanRuntime/7.39.1",
+                "system": true
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "system": true
+              },
+              {
+                "key": "Cache-Control",
+                "value": "no-cache",
+                "system": true
+              },
+              {
+                "key": "Postman-Token",
+                "value": "3b13a8e9-0869-4617-95ee-92cc411d6b10",
+                "system": true
+              },
+              {
+                "key": "Host",
+                "value": "localhost:8080",
+                "system": true
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "system": true
+              },
+              {
+                "key": "Connection",
+                "value": "keep-alive",
+                "system": true
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "cursor": {
+          "ref": "99e2f43c-7ed3-473a-b90f-c8e11c537ed2",
+          "length": 4,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "fd03818d-ab08-4796-b7b2-391beca6da3e"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status 200 OK",
+          "message": "expected PostmanResponse{ …(5) } to have property 'code'",
+          "stack": "AssertionError: expected PostmanResponse{ …(5) } to have property 'code'\n   at Object.eval sandbox-script.js:1:4)",
+          "checksum": "366d7b9490e3804faa58cf81322a0346",
+          "id": "81e41182-b74a-42e8-9e09-1cb179da2d4c",
+          "timestamp": 1757908779906,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 4,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+          "name": "Obtención de Producto",
+          "request": {
+            "url": {
+              "path": [
+                "productos",
+                "1"
+              ],
+              "host": [
+                "{{base_api}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{JwtToken}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                ],
+                "_lastExecutionId": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "parent": {
+          "_": {
+            "postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "exporter_id": "47546718",
+            "collection_link": "https://duskanima-7868103.postman.co/workspace/Anima's-Workspace~9970fafd-e8b0-473b-8f26-8d79778c62c1/collection/47546718-80f4ba48-3bca-40ee-8c71-7b0eab19c599?action=share&source=collection_link&creator=47546718"
+          },
+          "item": [
+            {
+              "id": "3108d4b9-cded-4393-8603-c7b4bc5ff18d",
+              "name": "Registro de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"lastname\" : \"Perez\",\r\n    \"rut\" : \"20200200-2\",\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "e0f4ff74-4dd1-41bc-8ef9-8502c7e4fbdb",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "57b15ee8-a485-41a0-8b15-841724ece1d9"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "1d97d996-06b9-4cec-9b22-816d32e9597b",
+              "name": "Login de Usuario",
+              "request": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\" : \"juan@email.com\",\r\n    \"password\" : 12345678\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "8e17222e-6244-445e-82af-64dcc99cfe81",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if (res && res.accessToken) pm.environment.set('JwtToken', res.accessToken);\r",
+                      "\r",
+                      "pm.test('200 OK', () => pm.response.to.have.status(200));\r",
+                      "pm.test('Jwt presente', () => pm.expect(res).to.have.property(\"accessToken\"));"
+                    ],
+                    "_lastExecutionId": "fa5f0766-e61d-46ef-82d6-09d2a197cd15"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2bf99918-4382-4718-beaa-0f7c97479625",
+              "name": "Creación de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\" : \"sinco peso\",\r\n    \"description\" : \"plata\",\r\n    \"image\" : \"www.imagen.com\",\r\n    \"stock\" : 5,\r\n    \"price\" : 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2a5028fd-30fb-4c22-b845-9b4cb7b68802",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "const res = pm.response.json();\r",
+                      "if(res && res.id) pm.environment.set(\"product_id\", res.id);\r",
+                      "pm.test('201 Created', () => pm.response.to.have.status(201));"
+                    ],
+                    "_lastExecutionId": "e0e5b5d3-6915-457f-9e93-692d77a9d968"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "221550c1-3b1c-4ba9-8235-d60ee75589bd",
+              "name": "Obtención de Producto",
+              "request": {
+                "url": {
+                  "path": [
+                    "productos",
+                    "1"
+                  ],
+                  "host": [
+                    "{{base_api}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{JwtToken}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "62d5a965-0723-42c9-8856-d8d456e2f938",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test('Status 200 OK', () => pm.response.to.have.status(200));"
+                    ],
+                    "_lastExecutionId": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9ef8b57d-8ec4-46d4-8615-59d7ba93c514",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "33d3af92-43d8-42d7-bd14-c15ca6aa1277"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "78ac3d48-b5a8-4d0d-bbab-1aac715208f1",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "39839237-df17-4150-bfaf-9b9744fc91a6"
+              }
+            }
+          ],
+          "variable": [],
+          "info": {
+            "_postman_id": "80f4ba48-3bca-40ee-8c71-7b0eab19c599",
+            "name": "Suite de Pruebas Demo API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "99e2f43c-7ed3-473a-b90f-c8e11c537ed2",
+          "length": 4,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "fd03818d-ab08-4796-b7b2-391beca6da3e",
+          "scriptId": "62d5a965-0723-42c9-8856-d8d456e2f938",
+          "execution": "1c603ba9-151b-4717-83dc-887acedb3f0c"
+        }
+      }
+    ],
+    "error": null
+  }
+}
